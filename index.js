@@ -1,12 +1,20 @@
-const canvas = document.getElementById("canvas");
-// const DEBUG_TEXT = document.getElementById("t3");
+const canvas = document.getElementById("layer1");
+const canvas2 = document.getElementById("layer2");
 const ctx = canvas.getContext("2d");
+const ctx2 = canvas2.getContext("2d");
+
+const LEITMOTIF_COLOR = "#54527aff";
+const LEITMOTIF_TRACK_COLOR = "#54527aff";
+const TRACK_COLOR = "#b592db";
+const MINOR_TRACK_COLOR = "#b592db";
+const ISOLATE_COLOR = "#9797b3";
 
 var balls = {}
+var ballsMotifs = {} // for leitmotifs that coalesce into a track
 let data = {}
 async function initiate() {
-    console.log(window.location.origin + "/utdr-leitmotif-graph.json");
-    let rawJson = await fetch(window.location.origin + "/utdr-leitmotif-graph.json");
+    console.log(window.location.origin + "/rhythm-doctor-leitmotifs.json");
+    let rawJson = await fetch(window.location.origin + "/rhythm-doctor-leitmotifs.json");
     if (!rawJson.ok) 
         throw new Error(`Couldn't retrieve JSON! ${rawJson.status} - ${rawJson.statusText}`);
 
@@ -24,25 +32,59 @@ function mergeData(base, data) {
     }
 }
 
+function toTrackData(data) {
+    if (typeof data === "object") return data;
+    return {
+        name: data
+    };
+}
+
+function trackName(data) {
+    if (typeof data === "string") return data;
+    return data.name
+}
+
 function createTrees(newData) {
     mergeData(data, newData);
+    const isolates = Object.keys(newData.trackData);
 
     const seenTracks = [];
-    Object.entries(newData.motifGroups).forEach(([motif,tracks]) => {
-        balls[motif] = new ball(motif, data.trackMappings[motif], 20, "#54527aff")
-        tracks.forEach(track => {
+    Object.entries(newData.leitmotifs).forEach(([motif, subdata]) => {
+        // Here we handle motif coalescing -
+        // if a motif is primarily found in one track, then we consider the motif to be the track itself.
+        const motifID = subdata.id ??= motif;
+        balls[motifID] = new node(motifID, subdata.name ??= trackName(data.trackData[motifID]), 20, LEITMOTIF_COLOR);
+        ballsMotifs[motif] = balls[motifID];
+
+        if (motifID != motif) {
+            if (data.trackData[motifID].subtitle) balls[motifID].subtitle = data.trackData[motifID].subtitle;
+            balls[motifID].color = LEITMOTIF_TRACK_COLOR;
+            balls[motifID].sides = 5;
+        }
+
+        seenTracks.push(motifID);
+        isolates.splice(isolates.indexOf(motifID), 1);
+        if (subdata.subtitle) balls[motifID].subtitle = subdata.subtitle;
+
+        subdata.associations.forEach(track => {
+            // Don't do redundant handling.
             if (!seenTracks.includes(track)) {
-                balls[track] = new ball(track, data.trackMappings[track], 15, "#b592db")
+                balls[track] = new node(track, data.trackData[track].name ?? data.trackData[track], 15, TRACK_COLOR)
+                if (data.trackData[track].subtitle) balls[track].subtitle = data.trackData[track].subtitle;
+                if (data.trackData[track].isMinor) balls[track].color = MINOR_TRACK_COLOR;
+                balls[track].sides = 3;
+
                 seenTracks.push(track);
+                isolates.splice(isolates.indexOf(track), 1);
             }
 
-            balls[motif].children.push(balls[track]);
-            balls[track].parents.push(balls[motif]);
+            balls[motifID].children.push(balls[track]);
+            balls[track].parents.push(balls[motifID]);
         });
     });
 
-    newData.isolatedTracks.forEach(orphan => {
-        balls[orphan] = new ball(orphan, data.trackMappings[orphan], 15, "#9797b3")
+    isolates.forEach(orphan => {
+        balls[orphan] = new node(orphan, data.trackData[orphan].name ?? data.trackData[orphan], 15, ISOLATE_COLOR)
     });
 }
 
@@ -60,16 +102,23 @@ function pythagoras(dx, dy) {
 }
 
 SPRING_CONSTANT = 0.0025
-IDEAL = 100
-REPULSE_DISTANCE_MIN = 256
+IDEAL = 125
+REPULSE_DISTANCE_MIN = 127
 PERMITTIVITY = 250
-FRICTION = 0.1
-GRAVITY = 0.0001
+FRICTION = 0.15
+GRAVITY = 0.0005
 
-class ball {
+class node {
     parents = [];
     children = [];
     isEnabled = true;
+
+    data;
+    subtitle;
+    dist = 0;
+
+    sides = 0;
+    angle = 0;
 
     vx = 0;
     vy = 0;
@@ -77,8 +126,8 @@ class ball {
     ay = 0;
 
     constructor(id, name, radius, color, x, y) {
-        this.x = x == undefined ? ball.randomPosition() : x;
-        this.y = y == undefined ? ball.randomPosition() : y;
+        this.x = x == undefined ? node.randomPosition() : x;
+        this.y = y == undefined ? node.randomPosition() : y;
         this.radius = radius
         this.id = id
         this.name = name || id
@@ -87,16 +136,39 @@ class ball {
 
     draw() {
         if (!this.isEnabled) return;
-        ctx.beginPath();
-        ctx.arc(...toScreenCoords(this.x,this.y), this.radius/zoom, 0, Math.PI * 2, true);
-        ctx.closePath();
-        ctx.fillStyle = this.color;
-        ctx.fill();
-        ctx.textAlign = "center"
-        ctx.font = `${300/zoom/Math.max(10, this.name.length)}px determinationsans`
-        ctx.fillStyle = "#ffffff";
+
         let [sx,sy] = toScreenCoords(this.x,this.y)
-        ctx.fillText(this.name, sx, sy+3 / zoom * this.radius);
+        this.dist = pythagoras(sx - cursor.x, sy - cursor.y);
+
+        ctx.globalAlpha = node.bodyAlpha(this.dist);
+        if (this.sides <= 0) node.drawBall(this);
+        else node.drawPolygon(this);
+
+        ctx2.textAlign = "center"
+        ctx2.font = `${16/zoom}px rhythmdoctor`
+        // ctx.font = `${300/zoom/Math.max(24, this.name.length)}px rhythmdoctor`
+        ctx2.fillStyle = "#ffffff";
+        ctx2.strokeStyle = "#000000";
+
+        const textY = sy + (2.5 + this.radius * 2) / zoom;
+        ctx2.globalAlpha = node.textAlpha(this.dist);
+        ctx2.strokeText(this.name, sx, textY);
+        ctx2.fillText(this.name, sx, textY);
+
+        if (this.subtitle) {
+            ctx.textAlign = "center"
+            ctx.font = `${16/zoom}px rhythmdoctor`
+            ctx.fillStyle = "#7f7f7f";
+            ctx.strokeStyle = "#000000";
+
+            const textY = sy + (20.5 + this.radius * 2) / zoom;
+            ctx.globalAlpha = ctx2.globalAlpha;
+            ctx.strokeText(this.subtitle, sx, textY);
+            ctx.fillText(this.subtitle, sx, textY);
+        }
+
+        ctx.globalAlpha = 1;
+        ctx2.globalAlpha = 1;
     }
 
     // Interacts with another ball, handling repulsion and spring physics.
@@ -108,7 +180,7 @@ class ball {
             const dist = pythagoras(dx, dy)
 
             const isChild = this.parents.includes(ball);
-            if (isChild) drawEdge(this.x, this.y, ball.x, ball.y);
+            if (isChild) drawEdge(this.x, this.y, ball.x, ball.y, node.bodyAlpha(this.dist));
 
             if (isChild || this.children.includes(ball)) {
                 let spring = Math.max(-1000, Math.min(1000, -SPRING_CONSTANT * (dist - IDEAL)))
@@ -126,7 +198,7 @@ class ball {
     // Else, this is handled by interact(), for minor performance reasons.
     drawEdges() {
         Object.entries(this.parents).forEach(([_, ball]) => {
-            drawEdge(this.x, this.y, ball.x, ball.y);
+            drawEdge(this.x, this.y, ball.x, ball.y, 1);
         });
     }
 
@@ -135,28 +207,76 @@ class ball {
     applyMotion() {
         this.x += this.vx;
         this.y += this.vy;
+        this.angle += Math.min(25, pythagoras(this.vx, this.vy) * 0.125) * Math.sign(this.vx) * Math.sign(this.vy)
+    }
+
+    static bodyAlpha(dist) {
+        return Math.max(0.5, Math.min(1, 500 / dist));
+    }
+
+    static textAlpha(dist) {
+        return Math.max(0.5, Math.min(1, Math.max(50 / dist + 0.5, 150 / dist - 1.5)));
+    }
+
+    // Draws a circle ball on screen.
+    static drawBall(ball) {
+        ctx.beginPath();
+        ctx.arc(...toScreenCoords(ball.x,ball.y), ball.radius/zoom, 0, Math.PI * 2, true);
+        ctx.closePath();
+        ctx.fillStyle = ball.color;
+        ctx.fill();
+    }
+
+    // Jesus christ
+    static drawPolygon(ball) {
+        ctx.beginPath();
+        const [x, y] = toScreenCoords(ball.x, ball.y);
+
+        const rad = Math.PI * 2 + ball.angle;
+        const radius = ball.radius / zoom;
+        ctx.moveTo(x + Math.cos(rad) * radius, y + Math.sin(rad) * radius);
+
+        for (let i = 1; i <= ball.sides; i++) {
+            const rad = Math.PI * 2 * (i / ball.sides) + ball.angle;
+            ctx.lineTo(x + Math.cos(rad) * radius, y + Math.sin(rad) * radius);
+        }
+
+        ctx.closePath();
+        ctx.fillStyle = ball.color;
+        ctx.fill();
     }
 
     static randomPosition() {
-        return Math.random() * 500 - 250;
+        return Math.random() * 200 - 100;
     }
 }
 
-function drawEdge(x1,y1,x2,y2) {
+function drawEdge(x1,y1,x2,y2,a) {
     ctx.strokeStyle = "#aaaacc";
+    ctx.globalAlpha = a;
     ctx.beginPath();
     ctx.moveTo(...toScreenCoords(x1,y1));
     ctx.lineTo(...toScreenCoords(x2,y2));
     ctx.stroke();
+    ctx.globalAlpha = 1;
+}
+
+var cursor = {
+    x: 0, y: 0,
+    screenX: 0, screenY: 0
 }
 
 var xoffset = 0
 var yoffset = 0
 var zoom = 1
 
+function getCanvasOffset() {
+    return canvas.getBoundingClientRect().top;
+}
+
 function* toScreenCoords(x,y) {
     yield (x-xoffset)/zoom+canvas.width/2
-    yield (y-yoffset)/zoom+canvas.height/2 
+    yield (y-yoffset)/zoom+canvas.height/2
 }
 function* fromScreenCoords(x,y) {
     yield (x-canvas.width/2)*zoom + xoffset
@@ -166,12 +286,14 @@ function* fromScreenCoords(x,y) {
 function clear() {
     ctx.fillStyle = "#1f1f1f88";
     ctx.fillRect(0, 0, canvas.width, canvas.height);
+    ctx2.clearRect(0, 0, canvas.width, canvas.height);
 }
 
 function draw() {
     clear();
     ctx.canvas.width  = window.innerWidth;
     ctx.canvas.height = window.innerHeight;
+    [cursor.screenX, cursor.screenY] = fromScreenCoords(cursor.x, cursor.y);
 
     // Process physics, draw edges
     Object.entries(balls).forEach(([id, ball]) => {
@@ -219,8 +341,8 @@ function dragStart(event, radius = 1.5) {
     draggedNode = null
     Object.entries(balls).forEach(([id,ball]) => {
         let [screenx,screeny] = toScreenCoords(ball.x, ball.y)
-        const dist = pythagoras(event.pageX - screenx, event.pageY - screeny);
-        if (dist <= ball.radius/zoom * radius) {
+        const dist = pythagoras(event.pageX - screenx, event.pageY - screeny - getCanvasOffset());
+        if (dist <= ball.radius / zoom * radius) {
             draggedNode = id
         }
     });
@@ -247,6 +369,8 @@ canvas.ontouchstart = event => {
 }
 
 function dragMove(event) {
+    cursor.x = event.pageX;
+    cursor.y = event.pageY;
     if (isDragging) {
         if (draggedNode === null) {
             xoffset = Math.min(10000,Math.max(-10000,dragAnchor.x+(dragOffset.x-event.pageX)*zoom))
