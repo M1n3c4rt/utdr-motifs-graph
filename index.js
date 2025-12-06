@@ -302,6 +302,9 @@ function draw() {
     clear();
     ctx.canvas.width  = window.innerWidth;
     ctx.canvas.height = window.innerHeight;
+
+    ctx2.canvas.width  = window.innerWidth;
+    ctx2.canvas.height = window.innerHeight;
     [cursor.screenX, cursor.screenY] = fromScreenCoords(cursor.x, cursor.y);
 
     // Process physics, draw edges
