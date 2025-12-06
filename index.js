@@ -97,6 +97,10 @@ initiate();
 
 ctx.canvas.width  = window.innerWidth;
 ctx.canvas.height = window.innerHeight;
+
+ctx2.canvas.width  = window.innerWidth;
+ctx2.canvas.height = window.innerHeight;
+
 ctx.rect(0, 0, canvas.width, canvas.height);
 ctx.fillStyle = "#1f1f1f";
 ctx.fill();
