@@ -1,0 +1,433 @@
+{
+    "name": "UNDERTALE",
+    "description": "placeholder",
+
+    "id": "undertale",
+    "dependencies": [""],
+
+    "trackNames": {
+        "A-1": "Once Upon a Time",
+        "A-2": "Start Menu",
+        "A-3": "Your Best Friend",
+        "A-4": "Fallen Down",
+        "A-5": "Ruins",
+        "A-6": "Uwa!! So Temperate♫",
+        "A-7": "Anticipation",
+        "A-8": "Unnecessary Tension",
+        "A-9": "Enemy Approaching",
+        "A-10": "Ghost Fight",
+        "A-11": "Determination",
+        "A-12": "Home",
+        "A-13": "Home (Music Box)",
+        "A-14": "Heartache",
+        "A-15": "sans.",
+        "A-16": "Nyeh Heh Heh!",
+        "A-17": "Snowy",
+        "A-18": "Uwa!! So Holiday♫",
+        "A-19": "Dogbass",
+        "A-20": "Mysterious Place",
+        "A-21": "Dogsong",
+        "A-22": "Snowdin Town",
+        "A-23": "Shop",
+        "A-24": "Bonetrousle",
+        "A-25": "Dating Start!",
+        "A-26": "Dating Tense!",
+        "A-27": "Dating Fight!",
+        "A-28": "Premonition",
+        "A-29": "Danger Mystery",
+        "A-30": "Undyne",
+        "A-31": "Waterfall",
+        "A-32": "Run!",
+        "A-33": "Quiet Water",
+        "A-34": "Memory",
+        "A-35": "Bird That Carries You Over A Disproportionately Small Gap",
+        "A-36": "Dummy!",
+        "A-37": "Pathetic House",
+        "A-38": "Spooktune",
+        "A-39": "Spookwave",
+        "A-40": "Ghouliday",
+        "A-41": "Chill",
+        "A-42": "Thundersnail",
+        "A-43": "Temmie Village",
+        "A-44": "Tem Shop",
+        "A-45": "NGAHHH!!",
+        "A-46": "Spear of Justice",
+        "A-47": "Ooo",
+        "A-48": "Alphys",
+        "A-49": "It's Showtime!",
+        "A-50": "Metal Crusher",
+        "A-51": "Another Medium",
+        "A-52": "Uwa!! So HEATS!!♫",
+        "A-53": "Stronger Monsters",
+        "A-54": "Hotel",
+        "A-55": "Can You Really Call This A Hotel, I Didn't Receive A Mint On My Pillow Or Anything",
+        "A-56": "Confession",
+        "A-57": "Live Report",
+        "A-58": "Death Report",
+        "A-59": "Spider Dance",
+        "A-60": "Wrong Enemy !?",
+        "A-61": "Oh! One True Love",
+        "A-62": "Oh! Dungeon",
+        "A-63": "It's Raining Somewhere Else",
+        "A-64": "CORE Approach",
+        "A-65": "CORE",
+        "A-66": "Last Episode!",
+        "A-67": "Oh My...",
+        "A-68": "Death by Glamour",
+        "A-69": "For the Fans",
+        "A-70": "Long Elevator",
+        "A-71": "Undertale",
+        "A-72": "Song That Might Play When You Fight Sans",
+        "A-73": "The Choice",
+        "A-74": "Small Shock",
+        "A-75": "Barrier",
+        "A-76": "Bergentrückung",
+        "A-77": "ASGORE",
+        "A-78": "You Idiot",
+        "A-79": "Your Best Nightmare",
+        "A-80": "Finale",
+        "A-81": "An Ending",
+        "A-82": "She's Playing Piano",
+        "A-83": "Here We Are",
+        "A-84": "Amalgam",
+        "A-85": "Fallen Down (Reprise)",
+        "A-86": "Don't Give Up",
+        "A-87": "Hopes and Dreams",
+        "A-88": "Burn in Despair!",
+        "A-89": "SAVE the World",
+        "A-90": "His Theme",
+        "A-91": "Final Power",
+        "A-92": "Reunited",
+        "A-93": "Menu (Full)",
+        "A-94": "Respite",
+        "A-95": "Bring It In, Guys!",
+        "A-96": "Last Goodbye",
+        "A-97": "But the Earth Refused to Die",
+        "A-98": "Battle Against a True Hero",
+        "A-99": "Power of \"NEO\"",
+        "A-100": "MEGALOVANIA",
+        "A-101": "Good Night",
+        "A-102": "Mad Mew Mew"
+    },
+
+    "leitmotifs": {
+        "once_upon_a_time_A": "Once Upon A Time (A)",
+        "once_upon_a_time_B": "Once Upon A Time (B)",
+        "once_upon_a_time_C": "Once Upon A Time (C)",
+        "once_upon_a_time_embellishment": "Once Upon A Time (Embellishment)",
+        "flowey": "Flowey",
+        "toriel": "Toriel",
+        "ruins": "Ruins",
+        "ruins_variation": "Ruins (Variation)",
+        "uwa___so": "Uwa!!! So",
+        "enemy_approaching": "Enemy Approaching",
+        "dogsong": "Dogsong",
+        "ghost_fight_A": "Ghost Fight (A)",
+        "ghost_fight_B": "Ghost Fight (B)",
+        "determination": "Determination",
+        "sans": "Sans",
+        "papyrus": "Papyrus",
+        "snowdin_A": "Snowdin (A)",
+        "snowdin_B": "Snowdin (B)",
+        "undyne": "Undyne",
+        "undyne_variation": "Undyne (Variation)",
+        "another_medium": "Another Medium",
+        "alphys_A": "Alphys (A)",
+        "alphys_B": "Alphys (B)",
+        "alphys_C": "Alphys (C)",
+        "it_s_showtime_": "Showtime",
+        "metal_crusher": "Metal Crusher",
+        "hotel": "Hotel",
+        "oh_": "Oh!",
+        "asriel": "Asriel",
+        "asgore": "Asgore",
+        "your_best_nightmare": "Your Best Nightmare",
+        "home": "Home",
+        "heartache": "Heartache",
+        "spooktune": "Napstablook",
+        "jingle_bells": "Jingle Bells",
+        "battle_against_a_true_hero": "Battle Against a True Hero",
+        "dummy": "Dummy",
+        "snowdin_town": "Snowdin Town",
+        "it_s_raining_somewhere_else": "It's Raining Somewhere Else"
+    },
+
+    "associations": {
+        "once_upon_a_time_A": [
+            "A-1",
+            "A-2",
+            "A-12",
+            "A-13",
+            "A-54",
+            "A-55",
+            "A-71",
+            "A-73",
+            "A-85",
+            "A-87",
+            "A-89",
+            "A-92",
+            "A-93",
+            "A-95",
+            "A-96",
+            "A-101"
+        ],
+
+        "once_upon_a_time_B": [
+            "A-1",
+            "A-12",
+            "A-13",
+            "A-54",
+            "A-55",
+            "A-71",
+            "A-85",
+            "A-92",
+            "A-96"
+        ],
+
+        "once_upon_a_time_C": [
+            "A-1",
+            "A-85",
+            "A-87",
+            "A-89",
+            "A-91",
+            "A-92",
+            "A-93",
+            "A-96"
+        ],
+
+        "once_upon_a_time_embellishment": [
+            "A-54",
+            "A-55",
+            "A-71",
+            "A-87",
+            "A-89",
+            "A-96"
+        ],
+
+        "flowey": [
+            "A-3",
+            "A-79",
+            "A-80",
+            "A-87",
+            "A-89",
+            "A-96"
+        ],
+
+        "toriel": [
+            "A-4",
+            "A-85",
+            "A-95"
+        ],
+
+        "ruins": [
+            "A-5",
+            "A-31",
+            "A-33",
+            "A-45",
+            "A-46"
+        ],
+
+        "ruins_variation": [
+            "A-81",
+            "A-86",
+            "A-94",
+            "A-95",
+            "A-97",
+            "A-98"
+        ],
+
+        "uwa___so": [
+            "A-6",
+            "A-18",
+            "A-52"
+        ],
+
+        "enemy_approaching": [
+            "A-7",
+            "A-9",
+            "A-14",
+            "A-95"
+        ],
+
+        "dogsong": [
+            "A-21",
+            "A-43",
+            "A-44"
+        ],
+
+        "ghost_fight_A": [
+            "A-10",
+            "A-19",
+            "A-36"
+        ],
+
+        "ghost_fight_B": [
+            "A-10",
+            "A-36",
+            "A-37",
+            "A-59",
+            "A-102"
+        ],
+
+        "determination": [
+            "A-11",
+            "A-77"
+        ],
+
+        "sans": [
+            "A-15",
+            "A-63",
+            "A-72",
+            "A-95"
+        ],
+
+        "papyrus": [
+            "A-16",
+            "A-24",
+            "A-72",
+            "A-95"
+        ],
+
+        "snowdin_A": [
+            "A-17",
+            "A-22",
+            "A-23",
+            "A-25",
+            "A-27",
+            "A-95"
+        ],
+
+        "snowdin_B": [
+            "A-22",
+            "A-23",
+            "A-25",
+            "A-27",
+            "A-56",
+            "A-87",
+            "A-92",
+            "A-95"
+        ],
+
+        "undyne": [
+            "A-26",
+            "A-30",
+            "A-32"
+        ],
+
+        "undyne_variation": [
+            "A-45",
+            "A-46",
+            "A-77",
+            "A-95"
+        ],
+
+        "another_medium": [
+            "A-5",
+            "A-31",
+            "A-51",
+            "A-65",
+            "A-68",
+            "A-95"
+        ],
+
+        "alphys_A": [
+            "A-35",
+            "A-48",
+            "A-83"
+        ],
+
+        "alphys_B": [
+            "A-48",
+            "A-83"
+        ],
+
+        "alphys_C": [
+            "A-48",
+            "A-82",
+            "A-83"
+        ],
+
+        "it_s_showtime_": [
+            "A-49",
+            "A-50",
+            "A-57",
+            "A-58",
+            "A-68"
+        ],
+
+        "metal_crusher": [
+            "A-50",
+            "A-66",
+            "A-68"
+        ],
+
+        "hotel": [
+            "A-49",
+            "A-54",
+            "A-55",
+            "A-64"
+        ],
+
+        "oh_": [
+            "A-61",
+            "A-62",
+            "A-69"
+        ],
+
+        "asriel": [
+            "A-34",
+            "A-71",
+            "A-73",
+            "A-80",
+            "A-90"
+        ],
+
+        "asgore": [
+            "A-76",
+            "A-77",
+            "A-95"
+        ],
+
+        "your_best_nightmare": [
+            "A-78",
+            "A-79",
+            "A-88"
+        ],
+
+        "home": [
+            "A-12",
+            "A-13"
+        ],
+
+        "heartache": [
+            "A-14",
+            "A-77"
+        ],
+
+        "spooktune": [
+            "A-38",
+            "A-39"
+        ],
+
+        "jingle_bells": [
+            "A-40"
+        ],
+
+        "battle_against_a_true_hero": [
+            "A-98",
+            "A-99"
+        ],
+
+        "dummy" : [
+            "A-36"
+        ],
+
+        "snowdin_town" : [
+            "A-22"
+        ],
+
+        "it_s_raining_somewhere_else" : [
+            "A-63"
+        ]
+    }
+}

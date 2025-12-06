@@ -1,0 +1,30 @@
+#canvas {
+    padding: 0;
+    margin: 0;
+    touch-action: none;
+}
+
+#t1 {
+    position: absolute;
+    z-index: 1000;
+    float: inline-start;
+    backdrop-filter: blur(10px);
+}
+
+#t2 {
+    position: absolute;
+    z-index: 1000;
+    float: right;
+    right: 10px;
+    backdrop-filter: blur(10px);
+}
+
+@font-face {
+  font-family: determinationmono;
+  src: url('dtm-fonts/DeterminationMonoWeb.woff');
+}
+
+@font-face {
+  font-family: determinationsans;
+  src: url('dtm-fonts/DeterminationSansWeb.woff');
+}

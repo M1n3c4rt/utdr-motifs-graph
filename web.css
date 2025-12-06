@@ -1,0 +1,107 @@
+* {
+  font-family: 'profontwindowsregular';
+}
+
+body {
+  background-color: #1f1f1f;
+  color: #ccccdd
+}
+
+.heading {
+  text-align: center;
+  height: 50px;
+  line-height: 50px;
+  width: 100%;
+  position: fixed;
+  top: 0;
+  background-color: #1f1f1faa;
+  z-index: 10;
+}
+
+.text_heading {
+  color: #b592db;
+  text-decoration: none;
+  font-size: 20px;
+}
+
+h1 {
+  font-size: 100px;
+  margin-bottom: 0;
+}
+
+.text_general {
+  font-size: 150%;
+}
+
+.greyed {
+  color: #777788;
+}
+
+.stuff {
+  width: 100%;
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: center;
+}
+
+.thing {
+  flex-basis: 10%;
+  padding: 20px;
+}
+
+.thing_image {
+  object-fit: contain;
+  width: 400px;
+  height: 200px;
+  padding-bottom: calc(400-width);
+  filter: invert(13%) sepia(21%) saturate(6545%) hue-rotate(203deg) brightness(88%) contrast(96%);
+  z-index: -10;
+}
+
+.thing_title, .shuffle_button {
+  width: 400px;
+  text-align: center;
+  color: #ccccdd;
+  text-decoration: none;
+  display: inline-block;
+  font-size: 80px;
+}
+
+.thing_title:hover {
+  text-decoration: underline;
+}
+
+.thing_desc {
+  width: 400px;
+  text-align: center;
+}
+
+.shitpost_head {
+  left: 0;
+  display: inline;
+}
+
+.shitposts {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: space-between;
+  
+}
+
+.shitpost_image {
+  height: 200px;
+  width: auto;
+  padding-bottom: 20px;
+}
+
+.back {
+  color: #ccccdd;
+}
+
+@font-face {
+    font-family: 'profontwindowsregular';
+    src: url('pfw-webfont.woff2') format('woff2'),
+         url('pfw-webfont.woff') format('woff');
+    font-weight: normal;
+    font-style: normal;
+}
