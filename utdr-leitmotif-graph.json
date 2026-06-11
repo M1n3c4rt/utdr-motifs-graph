@@ -1015,7 +1015,8 @@
             "name": "Susie",
             "associations": [
                 "B-4",
-                "B-24"
+                "B-24",
+                "D-42"
             ]
         },
         "field_of_hopes_and_dreams": {
@@ -1074,6 +1075,14 @@
                 "B-35",
                 "D-1",
                 "D-32"
+            ]
+        },
+        "the_holy_C": {
+            "name": "The Holy (C)",
+            "associations": [
+                "B-35",
+                "D-55",
+                "D-48"
             ]
         },
         "cyber_world": {
