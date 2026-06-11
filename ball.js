@@ -8,7 +8,7 @@ SPRING_CONSTANT = 0.0025
 IDEAL = 100
 REPULSE_DISTANCE_MIN = 256
 REPULSE_DISTANCE_MAX = 1000;
-PERMITTIVITY = 250
+PERMITTIVITY = 1000 //250
 
 class node {
     data; // This is the raw JSON definition of this node, used to display names, subtitles, etc.

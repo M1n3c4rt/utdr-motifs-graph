@@ -115,8 +115,8 @@ function refreshTree(newData) {
 }
 
 FRICTION = 0.1
-GRAVITY = 0.0001
-const HALFGRID = 11.5; // Half of the `GridSquare.png`'s size in pixels.
+GRAVITY = 0.00001
+const HALFGRID = 46; // Half of the `GridSquare.png`'s size in pixels.
 
 // // Physics step.
 // let lastStepTime = 0;
