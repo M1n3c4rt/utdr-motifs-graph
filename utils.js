@@ -1,6 +1,5 @@
 // some extra utility stuff that don't really make sense to put anywhere else.js
-const githubPath = '/rhythm-doctor-motifs';
-const rootDirectory = (window.location.pathname.endsWith(githubPath)) ? githubPath : '';
+const rootDirectory = window.location.href.replace("/index.html", "");
 
 function mergeData(base, data) {
     for (const [key, value] of Object.entries(data)) {
