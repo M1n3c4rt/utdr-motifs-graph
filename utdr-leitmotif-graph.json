@@ -1,734 +1,28 @@
 {
-    "motifGroups" : {
-        "once_upon_a_time_A": [
-            "A-1",
-            "A-2",
-            "A-12",
-            "A-13",
-            "A-54",
-            "A-55",
-            "A-71",
-            "A-73",
-            "A-85",
-            "A-87",
-            "A-89",
-            "A-92",
-            "A-93",
-            "A-95",
-            "A-96",
-            "A-101",
-            "B-38",
-            "B-40",
-            "C-44",
-            "C-46"
-        ],
-
-        "once_upon_a_time_B": [
-            "A-1",
-            "A-12",
-            "A-13",
-            "A-54",
-            "A-55",
-            "A-71",
-            "A-85",
-            "A-92",
-            "A-96"
-        ],
-
-        "once_upon_a_time_C": [
-            "A-1",
-            "A-85",
-            "A-87",
-            "A-89",
-            "A-91",
-            "A-92",
-            "A-93",
-            "A-96",
-            "B-2",
-            "B-38",
-            "C-44"
-        ],
-
-        "once_upon_a_time_embellishment": [
-            "A-54",
-            "A-55",
-            "A-71",
-            "A-87",
-            "A-89",
-            "A-96"
-        ],
-
-        "flowey": [
-            "A-3",
-            "A-79",
-            "A-80",
-            "A-87",
-            "A-89",
-            "A-96"
-        ],
-
-        "toriel": [
-            "A-4",
-            "A-85",
-            "A-95"
-        ],
-
-        "ruins": [
-            "A-5",
-            "A-31",
-            "A-33",
-            "A-45",
-            "A-46",
-            "D-51",
-            "D-52",
-            "D-58",
-            "D-69"
-        ],
-
-        "ruins_variation": [
-            "A-81",
-            "A-86",
-            "A-94",
-            "A-95",
-            "A-97",
-            "A-98"
-        ],
-
-        "uwa___so": [
-            "A-6",
-            "A-18",
-            "A-52",
-            "D-22"
-        ],
-
-        "enemy_approaching": [
-            "A-7",
-            "A-9",
-            "A-14",
-            "A-95"
-        ],
-
-        "dogsong": [
-            "A-21",
-            "A-43",
-            "A-44"
-        ],
-
-        "ghost_fight_A": [
-            "A-10",
-            "A-19",
-            "A-36",
-            "D-71"
-        ],
-
-        "ghost_fight_B": [
-            "A-10",
-            "A-36",
-            "A-37",
-            "A-59",
-            "A-102",
-            "C-43"
-        ],
-
-        "determination": [
-            "A-11",
-            "A-77"
-        ],
-
-        "sans": [
-            "A-15",
-            "A-63",
-            "A-72",
-            "A-95",
-            "C-42"
-        ],
-
-        "papyrus": [
-            "A-16",
-            "A-24",
-            "A-72",
-            "A-95"
-        ],
-
-        "snowdin_A": [
-            "A-17",
-            "A-22",
-            "A-23",
-            "A-25",
-            "A-27",
-            "A-95"
-        ],
-
-        "snowdin_B": [
-            "A-22",
-            "A-23",
-            "A-25",
-            "A-27",
-            "A-56",
-            "A-87",
-            "A-92",
-            "A-95",
-            "B-3",
-            "B-37",
-            "D-41"
-        ],
-
-        "undyne": [
-            "A-26",
-            "A-30",
-            "A-32",
-            "D-51",
-            "D-52"
-        ],
-
-        "undyne_variation": [
-            "A-45",
-            "A-46",
-            "A-77",
-            "A-95",
-            "D-56",
-            "D-58",
-            "D-69"
-        ],
-
-        "another_medium": [
-            "A-5",
-            "A-31",
-            "A-51",
-            "A-65",
-            "A-68",
-            "A-95"
-        ],
-
-        "alphys_A": [
-            "A-35",
-            "A-48",
-            "A-83"
-        ],
-
-        "alphys_B": [
-            "A-48",
-            "A-83"
-        ],
-
-        "alphys_C": [
-            "A-48",
-            "A-82",
-            "A-83"
-        ],
-
-        "it_s_showtime_": [
-            "A-49",
-            "A-50",
-            "A-57",
-            "A-58",
-            "A-68"
-        ],
-
-        "metal_crusher": [
-            "A-50",
-            "A-66",
-            "A-68"
-        ],
-
-        "hotel": [
-            "A-49",
-            "A-54",
-            "A-55",
-            "A-64"
-        ],
-
-        "oh_": [
-            "A-61",
-            "A-62",
-            "A-69"
-        ],
-
-        "asriel": [
-            "A-34",
-            "A-71",
-            "A-73",
-            "A-80",
-            "A-90"
-        ],
-
-        "asgore": [
-            "A-76",
-            "A-77",
-            "A-95"
-        ],
-
-        "your_best_nightmare": [
-            "A-78",
-            "A-79",
-            "A-88"
-        ],
-
-        "home": [
-            "A-12",
-            "A-13",
-            "B-38",
-            "C-44"
-        ],
-
-        "heartache": [
-            "A-14",
-            "A-77"
-        ],
-
-        "spooktune": [
-            "A-38",
-            "A-39",
-            "D-53"
-        ],
-
-        "jingle_bells": [
-            "A-40",
-            "C-19"
-        ],
-
-        "battle_against_a_true_hero": [
-            "A-98",
-            "A-99",
-            "C-39"
-        ],
-
-        "dummy" : [
-            "A-36",
-            "C-39"
-        ],
-
-        "snowdin_town" : [
-            "A-22",
-            "D-41"
-        ],
-
-        "it_s_raining_somewhere_else" : [
-            "A-63",
-            "D-70"
-        ],
-
-        "don_t_forget_A" : [
-            "B-2",
-            "B-13",
-            "B-19",
-            "B-34",
-            "B-39",
-            "C-1",
-            "C-36",
-            "C-45",
-            "D-40",
-            "D-50",
-            "D-57",
-            "D-64",
-            "D-74"
-        ],
-
-        "don_t_forget_B" : [
-            "B-2",
-            "B-3",
-            "B-13",
-            "B-19",
-            "B-33",
-            "B-34",
-            "B-36",
-            "B-37",
-            "B-39",
-            "C-1",
-            "C-36",
-            "C-44",
-            "C-45",
-            "D-20",
-            "D-40",
-            "D-41",
-            "D-43",
-            "D-49",
-            "D-50",
-            "D-57",
-            "D-64",
-            "D-68",
-            "D-74"
-        ],
-
-        "hometown" : [
-            "B-3",
-            "B-37",
-            "D-41"
-        ],
-
-        "the_door" : [
-            "B-5",
-            "B-7",
-            "D-30"
-        ],
-
-        "the_legend_A" : [
-            "B-8",
-            "C-3",
-            "D-39",
-            "D-49",
-            "D-60",
-            "D-73"
-        ],
-
-        "the_legend_B" : [
-            "B-8",
-            "B-11",
-            "C-3",
-            "D-39",
-            "D-43",
-            "D-49",
-            "D-60",
-            "D-63"
-        ],
-
-        "the_legend_C" : [
-            "B-8",
-            "B-11",
-            "B-30",
-            "C-3"
-        ],
-
-        "lancer_A" : [
-            "B-9",
-            "B-16",
-            "B-20",
-            "B-21",
-            "B-25",
-            "B-30",
-            "C-28",
-            "D-9"
-        ],
-
-        "lancer_B" : [
-            "B-9",
-            "B-20",
-            "B-21",
-            "C-28",
-            "C-29"
-        ],
-
-        "hip_shop" : [
-            "B-28",
-            "D-14",
-            "D-26",
-            "D-32"
-        ],
-
-        "the_world_revolving_A" : [
-            "B-33",
-            "C-39",
-            "D-58",
-            "D-77"
-        ],
-
-        "the_world_revolving_B" : [
-            "B-32",
-            "B-33",
-            "C-41"
-        ],
-
-        "lost_girl_A" : [
-            "C-2",
-            "C-30",
-            "C-31",
-            "D-20",
-            "D-46"
-        ],
-
-        "lost_girl_B" : [
-            "C-2",
-            "C-30",
-            "C-31"
-        ],
-
-        "queen_A" : [
-            "C-5",
-            "C-7",
-            "C-15",
-            "C-20",
-            "C-24",
-            "C-26",
-            "C-32",
-            "C-33",
-            "C-35",
-            "D-44"
-        ],
-
-        "queen_B" : [
-            "C-5",
-            "C-24",
-            "C-26"
-        ],
-
-        "queen_C" : [
-            "C-7",
-            "C-20",
-            "C-32",
-            "C-33"
-        ],
-
-        "queen_D" : [
-            "C-20",
-            "C-32"
-        ],
-
-        "sweet_cap_n_cakes_A" : [
-            "C-6",
-            "C-8",
-            "C-11",
-            "C-12",
-            "C-17",
-            "C-18"
-        ],
-
-        "sweet_cap_n_cakes_B" : [
-            "C-11",
-            "C-13",
-            "C-18",
-            "C-19"
-        ],
-
-        "berdly_A" : [
-            "C-14",
-            "C-15",
-            "C-25",
-            "C-32",
-            "C-35",
-            "D-44"
-        ],
-
-        "berdly_B" : [
-            "C-14",
-            "C-15",
-            "C-25",
-            "C-32"
-        ],
-
-        "hey_every_" : [
-            "C-21",
-            "C-40",
-            "D-2",
-            "D-28",
-            "D-32",
-            "D-76"
-        ],
-
-        "spamton_A" : [
-            "C-22",
-            "C-23",
-            "C-38",
-            "C-39",
-            "D-76",
-            "D-77"        
-        ],
-
-        "spamton_B" : [
-            "C-23",
-            "C-39",
-            "D-76"
-        ],
-
-        "tenna" : [
-            "D-2",
-            "D-3",
-            "D-4",
-            "D-5",
-            "D-6",
-            "D-7",
-            "D-8",
-            "D-12",
-            "D-13",
-            "D-16",
-            "D-23",
-            "D-24",
-            "D-25",
-            "D-26",
-            "D-27",
-            "D-33",
-            "D-76"
-        ],
-
-        "dark_sanctuary" : [
-            "D-49",
-            "D-50",
-            "D-55",
-            "D-66",
-            "D-67",
-            "D-68",
-            "D-72"
-        ],
-
-        "gerson_boom" : [
-            "D-51",
-            "D-56",
-            "D-58",
-            "D-69"
-        ],
-
-        "titan" : [
-            "D-65",
-            "D-66",
-            "D-67",
-            "D-68"
-        ],
-
-        "the_dark_truth" : [
-            "B-23",
-            "B-24",
-            "C-36",
-            "D-64",
-            "D-72"
-        ],
-
-        "susie" : [
-            "B-4",
-            "B-24"
-        ],
-
-        "field_of_hopes_and_dreams" : [
-            "B-13",
-            "B-19"
-        ],
-
-        "fanfare" : [
-            "B-14",
-            "D-28"
-        ],
-
-        "quiet_autumn" : [
-            "B-18",
-            "B-19"
-        ],
-
-        "rouxls_kaard" : [
-            "B-26",
-            "C-29"
-        ],
-
-        "darkness_falls" : [
-            "B-31",
-            "C-16"
-        ],
-
-        "card_castle" : [
-            "B-22",
-            "B-25",
-            "B-30"
-        ],
-
-        "the_holy_A" : [
-            "B-35",
-            "D-33"
-        ],
-
-        "the_holy_B" : [
-            "B-35",
-            "D-1",
-            "D-32"
-        ],
-
-        "cyber_world" : [
-            "C-6",
-            "C-17"
-        ],
-
-        "powers_combined" : [
-            "C-34",
-            "C-35",
-            "D-44"
-        ],
-
-        "digital_roots" : [
-            "C-37",
-            "D-36"
-        ],
-
-        "flashback" : [
-            "D-1",
-            "D-34"
-        ],
-
-        "doom_board" : [
-            "D-24",
-            "D-25",
-            "D-27"
-        ],
-
-        "king_of_rolypoly" : [
-            "D-21",
-            "D-26",
-            "D-27"
-        ],
-
-        "the_second_sanctuary" : [
-            "D-60",
-            "D-63"
-        ],
-
-        "mike" : [
-            "D-75",
-            "D-76"
-        ],
-
-        "girl_next_door_bassline" : [
-            "C-2",
-            "D-42",
-            "D-45"
-        ],
-
-        "rude_buster" : [
-            "B-10",
-            "B-15",
-            "D-11",
-            "D-15"
-        ]
-    },
-    "isolatedTracks" : [
-        "A-8",
-        "A-20",
-        "A-28",
-        "A-29",
-        "A-41",
-        "A-42",
-        "A-47",
-        "A-53",
-        "A-60",
-        "A-67",
-        "A-70",
-        "A-74",
-        "A-75",
-        "A-84",
-        "A-100",
-        "B-1",
-        "B-6",
-        "B-12",
-        "B-17",
-        "B-27",
-        "B-29",
-        "C-4",
-        "C-9",
-        "C-10",
-        "C-27",
-        "C-47",
-        "D-10",
-        "D-17",
-        "D-18",
-        "D-19",
-        "D-29",
-        "D-31",
-        "D-35",
-        "D-37",
-        "D-38",
-        "D-47",
-        "D-48",
-        "D-54",
-        "D-59",
-        "D-61",
-        "D-62",
-        "D-78"
+    "name": "UNDERTALE / DELTARUNE",
+    "description": "A leitmotif graph for UNDERTALE & DELTARUNE Chapters 1-4",
+    "id": "utdr",
+    "dependencies": [
+        ""
     ],
-    "trackMappings" : {
+    "priority": 0,
+    "styles": {
+        "default": {
+            "color": "#F5E253",
+            "outline": "#E78320",
+            "radius": 15
+        },
+        "leitmotif": {
+            "color": "#ff0d40",
+            "outline": "#880A47",
+            "radius": 20
+        },
+        "isolate": {
+            "color": "#434E61",
+            "outline": "#0d1517"
+        }
+    },
+    "tracks": {
         "A-1": "Once Upon a Time",
         "A-2": "Start Menu",
         "A-3": "Your Best Friend",
@@ -783,7 +77,7 @@
         "A-52": "Uwa!! So HEATS!!♫",
         "A-53": "Stronger Monsters",
         "A-54": "Hotel",
-        "A-55": "Can You Really Call This A Hotel, I Didn't Receive A Mint On My Pillow Or Anything",
+        "A-55": "Can You Really Call This A Hotel,\nI Didn't Receive A Mint On My Pillow Or Anything",
         "A-56": "Confession",
         "A-57": "Live Report",
         "A-58": "Death Report",
@@ -995,94 +289,868 @@
         "D-75": "Volume Adjustment",
         "D-76": "Catswing",
         "D-77": "Air Waves",
-        "D-78": "Concert for you",
-        "once_upon_a_time_A": "Once Upon A Time (A)",
-        "once_upon_a_time_B": "Once Upon A Time (B)",
-        "once_upon_a_time_C": "Once Upon A Time (C)",
-        "once_upon_a_time_embellishment": "Once Upon A Time (Embellishment)",
-        "flowey": "Flowey",
-        "toriel": "Toriel",
-        "ruins": "Ruins",
-        "ruins_variation": "Ruins (Variation)",
-        "uwa___so": "Uwa!!! So",
-        "enemy_approaching": "Enemy Approaching",
-        "dogsong": "Dogsong",
-        "ghost_fight_A": "Ghost Fight (A)",
-        "ghost_fight_B": "Ghost Fight (B)",
-        "determination": "Determination",
-        "sans": "Sans",
-        "papyrus": "Papyrus",
-        "snowdin_A": "Snowdin (A)",
-        "snowdin_B": "Snowdin (B)",
-        "undyne": "Undyne",
-        "undyne_variation": "Undyne (Variation)",
-        "another_medium": "Another Medium",
-        "alphys_A": "Alphys (A)",
-        "alphys_B": "Alphys (B)",
-        "alphys_C": "Alphys (C)",
-        "it_s_showtime_": "Showtime",
-        "metal_crusher": "Metal Crusher",
-        "hotel": "Hotel",
-        "oh_": "Oh!",
-        "asriel": "Asriel",
-        "asgore": "Asgore",
-        "your_best_nightmare": "Your Best Nightmare",
-        "home": "Home",
-        "heartache": "Heartache",
-        "spooktune": "Napstablook",
-        "jingle_bells": "Jingle Bells",
-        "battle_against_a_true_hero": "Battle Against a True Hero",
-        "dummy": "Dummy",
-        "snowdin_town": "Snowdin Town",
-        "it_s_raining_somewhere_else": "It's Raining Somewhere Else",
-        "don_t_forget_A": "Don't Forget (A)",
-        "don_t_forget_B": "Don't Forget (B)",
-        "hometown": "Hometown",
-        "the_door": "The Door",
-        "the_legend_A": "The Legend (A)",
-        "the_legend_B": "The Legend (B)",
-        "the_legend_C": "The Legend (C)",
-        "lancer_A": "Lancer (A)",
-        "lancer_B": "Lancer (B)",
-        "hip_shop": "Hip Shop",
-        "the_world_revolving_A": "THE WORLD REVOLVING (A)",
-        "the_world_revolving_B": "THE WORLD REVOLVING (B) ",
-        "lost_girl_A": "Lost Girl (A)",
-        "lost_girl_B": "Lost Girl (B)",
-        "queen_A": "Queen (A)",
-        "queen_B": "Queen (B)",
-        "queen_C": "Queen (C)",
-        "queen_D": "Queen (D)",
-        "sweet_cap_n_cakes_A": "Sweet Cap'n Cakes (A)",
-        "sweet_cap_n_cakes_B": "Sweet Cap'n Cakes (B)",
-        "berdly_A": "Berdly (A)",
-        "berdly_B": "Berdly (B)",
-        "hey_every_": "HEY EVERY !",
-        "spamton_A": "Spamton (A)",
-        "spamton_B": "Spamton (B)",
-        "tenna": "Tenna",
-        "dark_sanctuary": "Dark Sanctuary",
-        "gerson_boom": "Gerson",
-        "titan": "Titan",
-        "the_dark_truth": "Dark Truth",
-        "susie": "Susie",
-        "field_of_hopes_and_dreams": "Field of Hopes and Dreams",
-        "fanfare": "Fanfare",
-        "quiet_autumn": "Quiet Autumn",
-        "rouxls_kaard": "Rouxls Kaard",
-        "darkness_falls": "Darkness Falls",
-        "card_castle": "Card Castle",
-        "the_holy_A": "The Holy (A)",
-        "the_holy_B": "The Holy (B)",
-        "cyber_world": "Cyber World",
-        "powers_combined": "Powers Combined",
-        "digital_roots": "Digital Roots",
-        "flashback": "Flashback",
-        "doom_board": "Doom Board",
-        "king_of_rolypoly": "KING OF ROLYPOLY",
-        "the_second_sanctuary": "Second Sanctuary",
-        "mike": "Mike",
-        "girl_next_door_bassline": "Girl Next Door (Bassline)",
-        "rude_buster": "Rude Buster"
+        "D-78": "Concert for you"
+    },
+    "leitmotifs": {
+        "once_upon_a_time_A": {
+            "name": "Once Upon A Time (A)",
+            "associations": [
+                "A-1",
+                "A-2",
+                "A-12",
+                "A-13",
+                "A-54",
+                "A-55",
+                "A-71",
+                "A-73",
+                "A-85",
+                "A-87",
+                "A-89",
+                "A-92",
+                "A-93",
+                "A-95",
+                "A-96",
+                "A-101",
+                "B-38",
+                "B-40",
+                "C-44",
+                "C-46"
+            ]
+        },
+        "once_upon_a_time_B": {
+            "name": "Once Upon A Time (B)",
+            "associations": [
+                "A-1",
+                "A-12",
+                "A-13",
+                "A-54",
+                "A-55",
+                "A-71",
+                "A-85",
+                "A-92",
+                "A-96"
+            ]
+        },
+        "once_upon_a_time_C": {
+            "name": "Once Upon A Time (C)",
+            "associations": [
+                "A-1",
+                "A-85",
+                "A-87",
+                "A-89",
+                "A-91",
+                "A-92",
+                "A-93",
+                "A-96",
+                "B-2",
+                "B-38",
+                "C-44"
+            ]
+        },
+        "once_upon_a_time_embellishment": {
+            "name": "Once Upon A Time (Embellishment)",
+            "associations": [
+                "A-54",
+                "A-55",
+                "A-71",
+                "A-87",
+                "A-89",
+                "A-96"
+            ]
+        },
+        "flowey": {
+            "name": "Flowey",
+            "associations": [
+                "A-3",
+                "A-79",
+                "A-80",
+                "A-87",
+                "A-89",
+                "A-96"
+            ]
+        },
+        "toriel": {
+            "name": "Toriel",
+            "associations": [
+                "A-4",
+                "A-85",
+                "A-95"
+            ]
+        },
+        "ruins": {
+            "name": "Ruins",
+            "associations": [
+                "A-5",
+                "A-31",
+                "A-33",
+                "A-45",
+                "A-46",
+                "D-51",
+                "D-52",
+                "D-58",
+                "D-69"
+            ]
+        },
+        "ruins_variation": {
+            "name": "Ruins (Variation)",
+            "associations": [
+                "A-81",
+                "A-86",
+                "A-94",
+                "A-95",
+                "A-97",
+                "A-98"
+            ]
+        },
+        "uwa___so": {
+            "name": "Uwa!!! So",
+            "associations": [
+                "A-6",
+                "A-18",
+                "A-52",
+                "D-22"
+            ]
+        },
+        "enemy_approaching": {
+            "name": "Enemy Approaching",
+            "associations": [
+                "A-7",
+                "A-9",
+                "A-14",
+                "A-95"
+            ]
+        },
+        "dogsong": {
+            "name": "Dogsong",
+            "associations": [
+                "A-21",
+                "A-43",
+                "A-44"
+            ]
+        },
+        "ghost_fight_A": {
+            "name": "Ghost Fight (A)",
+            "associations": [
+                "A-10",
+                "A-19",
+                "A-36",
+                "D-71"
+            ]
+        },
+        "ghost_fight_B": {
+            "name": "Ghost Fight (B)",
+            "associations": [
+                "A-10",
+                "A-36",
+                "A-37",
+                "A-59",
+                "A-102",
+                "C-43"
+            ]
+        },
+        "determination": {
+            "name": "Determination",
+            "associations": [
+                "A-11",
+                "A-77"
+            ]
+        },
+        "sans": {
+            "name": "Sans",
+            "associations": [
+                "A-15",
+                "A-63",
+                "A-72",
+                "A-95",
+                "C-42"
+            ]
+        },
+        "papyrus": {
+            "name": "Papyrus",
+            "associations": [
+                "A-16",
+                "A-24",
+                "A-72",
+                "A-95"
+            ]
+        },
+        "snowdin_A": {
+            "name": "Snowdin (A)",
+            "associations": [
+                "A-17",
+                "A-22",
+                "A-23",
+                "A-25",
+                "A-27",
+                "A-95"
+            ]
+        },
+        "snowdin_B": {
+            "name": "Snowdin (B)",
+            "associations": [
+                "A-22",
+                "A-23",
+                "A-25",
+                "A-27",
+                "A-56",
+                "A-87",
+                "A-92",
+                "A-95",
+                "B-3",
+                "B-37",
+                "D-41"
+            ]
+        },
+        "undyne": {
+            "name": "Undyne",
+            "associations": [
+                "A-26",
+                "A-30",
+                "A-32",
+                "D-51",
+                "D-52"
+            ]
+        },
+        "undyne_variation": {
+            "name": "Undyne (Variation)",
+            "associations": [
+                "A-45",
+                "A-46",
+                "A-77",
+                "A-95",
+                "D-56",
+                "D-58",
+                "D-69"
+            ]
+        },
+        "another_medium": {
+            "name": "Another Medium",
+            "associations": [
+                "A-5",
+                "A-31",
+                "A-51",
+                "A-65",
+                "A-68",
+                "A-95"
+            ]
+        },
+        "alphys_A": {
+            "name": "Alphys (A)",
+            "associations": [
+                "A-35",
+                "A-48",
+                "A-83"
+            ]
+        },
+        "alphys_B": {
+            "name": "Alphys (B)",
+            "associations": [
+                "A-48",
+                "A-83"
+            ]
+        },
+        "alphys_C": {
+            "name": "Alphys (C)",
+            "associations": [
+                "A-48",
+                "A-82",
+                "A-83"
+            ]
+        },
+        "it_s_showtime_": {
+            "name": "Showtime",
+            "associations": [
+                "A-49",
+                "A-50",
+                "A-57",
+                "A-58",
+                "A-68"
+            ]
+        },
+        "metal_crusher": {
+            "name": "Metal Crusher",
+            "associations": [
+                "A-50",
+                "A-66",
+                "A-68"
+            ]
+        },
+        "hotel": {
+            "name": "Hotel",
+            "associations": [
+                "A-49",
+                "A-54",
+                "A-55",
+                "A-64"
+            ]
+        },
+        "oh_": {
+            "name": "Oh!",
+            "associations": [
+                "A-61",
+                "A-62",
+                "A-69"
+            ]
+        },
+        "asriel": {
+            "name": "Asriel",
+            "associations": [
+                "A-34",
+                "A-71",
+                "A-73",
+                "A-80",
+                "A-90"
+            ]
+        },
+        "asgore": {
+            "name": "Asgore",
+            "associations": [
+                "A-76",
+                "A-77",
+                "A-95"
+            ]
+        },
+        "your_best_nightmare": {
+            "name": "Your Best Nightmare",
+            "associations": [
+                "A-78",
+                "A-79",
+                "A-88"
+            ]
+        },
+        "home": {
+            "name": "Home",
+            "associations": [
+                "A-12",
+                "A-13",
+                "B-38",
+                "C-44"
+            ]
+        },
+        "heartache": {
+            "name": "Heartache",
+            "associations": [
+                "A-14",
+                "A-77"
+            ]
+        },
+        "spooktune": {
+            "name": "Napstablook",
+            "associations": [
+                "A-38",
+                "A-39",
+                "D-53"
+            ]
+        },
+        "jingle_bells": {
+            "name": "Jingle Bells",
+            "associations": [
+                "A-40",
+                "C-19"
+            ]
+        },
+        "battle_against_a_true_hero": {
+            "name": "Battle Against a True Hero",
+            "associations": [
+                "A-98",
+                "A-99",
+                "C-39"
+            ]
+        },
+        "dummy": {
+            "name": "Dummy",
+            "associations": [
+                "A-36",
+                "C-39"
+            ]
+        },
+        "snowdin_town": {
+            "name": "Snowdin Town",
+            "associations": [
+                "A-22",
+                "D-41"
+            ]
+        },
+        "it_s_raining_somewhere_else": {
+            "name": "It's Raining Somewhere Else",
+            "associations": [
+                "A-63",
+                "D-70"
+            ]
+        },
+        "don_t_forget_A": {
+            "name": "Don't Forget (A)",
+            "associations": [
+                "B-2",
+                "B-13",
+                "B-19",
+                "B-34",
+                "B-39",
+                "C-1",
+                "C-36",
+                "C-45",
+                "D-40",
+                "D-50",
+                "D-57",
+                "D-64",
+                "D-74"
+            ]
+        },
+        "don_t_forget_B": {
+            "name": "Don't Forget (B)",
+            "associations": [
+                "B-2",
+                "B-3",
+                "B-13",
+                "B-19",
+                "B-33",
+                "B-34",
+                "B-36",
+                "B-37",
+                "B-39",
+                "C-1",
+                "C-36",
+                "C-44",
+                "C-45",
+                "D-20",
+                "D-40",
+                "D-41",
+                "D-43",
+                "D-49",
+                "D-50",
+                "D-57",
+                "D-64",
+                "D-68",
+                "D-74"
+            ]
+        },
+        "hometown": {
+            "name": "Hometown",
+            "associations": [
+                "B-3",
+                "B-37",
+                "D-41"
+            ]
+        },
+        "the_door": {
+            "name": "The Door",
+            "associations": [
+                "B-5",
+                "B-7",
+                "D-30"
+            ]
+        },
+        "the_legend_A": {
+            "name": "The Legend (A)",
+            "associations": [
+                "B-8",
+                "C-3",
+                "D-39",
+                "D-49",
+                "D-60",
+                "D-73"
+            ]
+        },
+        "the_legend_B": {
+            "name": "The Legend (B)",
+            "associations": [
+                "B-8",
+                "B-11",
+                "C-3",
+                "D-39",
+                "D-43",
+                "D-49",
+                "D-60",
+                "D-63"
+            ]
+        },
+        "the_legend_C": {
+            "name": "The Legend (C)",
+            "associations": [
+                "B-8",
+                "B-11",
+                "B-30",
+                "C-3"
+            ]
+        },
+        "lancer_A": {
+            "name": "Lancer (A)",
+            "associations": [
+                "B-9",
+                "B-16",
+                "B-20",
+                "B-21",
+                "B-25",
+                "B-30",
+                "C-28",
+                "D-9"
+            ]
+        },
+        "lancer_B": {
+            "name": "Lancer (B)",
+            "associations": [
+                "B-9",
+                "B-20",
+                "B-21",
+                "C-28",
+                "C-29"
+            ]
+        },
+        "hip_shop": {
+            "name": "Hip Shop",
+            "associations": [
+                "B-28",
+                "D-14",
+                "D-26",
+                "D-32"
+            ]
+        },
+        "the_world_revolving_A": {
+            "name": "THE WORLD REVOLVING (A)",
+            "associations": [
+                "B-33",
+                "C-39",
+                "D-58",
+                "D-77"
+            ]
+        },
+        "the_world_revolving_B": {
+            "name": "THE WORLD REVOLVING (B) ",
+            "associations": [
+                "B-32",
+                "B-33",
+                "C-41"
+            ]
+        },
+        "lost_girl_A": {
+            "name": "Lost Girl (A)",
+            "associations": [
+                "C-2",
+                "C-30",
+                "C-31",
+                "D-20",
+                "D-46"
+            ]
+        },
+        "lost_girl_B": {
+            "name": "Lost Girl (B)",
+            "associations": [
+                "C-2",
+                "C-30",
+                "C-31"
+            ]
+        },
+        "queen_A": {
+            "name": "Queen (A)",
+            "associations": [
+                "C-5",
+                "C-7",
+                "C-15",
+                "C-20",
+                "C-24",
+                "C-26",
+                "C-32",
+                "C-33",
+                "C-35",
+                "D-44"
+            ]
+        },
+        "queen_B": {
+            "name": "Queen (B)",
+            "associations": [
+                "C-5",
+                "C-24",
+                "C-26"
+            ]
+        },
+        "queen_C": {
+            "name": "Queen (C)",
+            "associations": [
+                "C-7",
+                "C-20",
+                "C-32",
+                "C-33"
+            ]
+        },
+        "queen_D": {
+            "name": "Queen (D)",
+            "associations": [
+                "C-20",
+                "C-32"
+            ]
+        },
+        "sweet_cap_n_cakes_A": {
+            "name": "Sweet Cap'n Cakes (A)",
+            "associations": [
+                "C-6",
+                "C-8",
+                "C-11",
+                "C-12",
+                "C-17",
+                "C-18"
+            ]
+        },
+        "sweet_cap_n_cakes_B": {
+            "name": "Sweet Cap'n Cakes (B)",
+            "associations": [
+                "C-11",
+                "C-13",
+                "C-18",
+                "C-19"
+            ]
+        },
+        "berdly_A": {
+            "name": "Berdly (A)",
+            "associations": [
+                "C-14",
+                "C-15",
+                "C-25",
+                "C-32",
+                "C-35",
+                "D-44"
+            ]
+        },
+        "berdly_B": {
+            "name": "Berdly (B)",
+            "associations": [
+                "C-14",
+                "C-15",
+                "C-25",
+                "C-32"
+            ]
+        },
+        "hey_every_": {
+            "name": "HEY EVERY !",
+            "associations": [
+                "C-21",
+                "C-40",
+                "D-2",
+                "D-28",
+                "D-32",
+                "D-76"
+            ]
+        },
+        "spamton_A": {
+            "name": "Spamton (A)",
+            "associations": [
+                "C-22",
+                "C-23",
+                "C-38",
+                "C-39",
+                "D-76",
+                "D-77"
+            ]
+        },
+        "spamton_B": {
+            "name": "Spamton (B)",
+            "associations": [
+                "C-23",
+                "C-39",
+                "D-76"
+            ]
+        },
+        "tenna": {
+            "name": "Tenna",
+            "associations": [
+                "D-2",
+                "D-3",
+                "D-4",
+                "D-5",
+                "D-6",
+                "D-7",
+                "D-8",
+                "D-12",
+                "D-13",
+                "D-16",
+                "D-23",
+                "D-24",
+                "D-25",
+                "D-26",
+                "D-27",
+                "D-33",
+                "D-76"
+            ]
+        },
+        "dark_sanctuary": {
+            "name": "Dark Sanctuary",
+            "associations": [
+                "D-49",
+                "D-50",
+                "D-55",
+                "D-66",
+                "D-67",
+                "D-68",
+                "D-72"
+            ]
+        },
+        "gerson_boom": {
+            "name": "Gerson",
+            "associations": [
+                "D-51",
+                "D-56",
+                "D-58",
+                "D-69"
+            ]
+        },
+        "titan": {
+            "name": "Titan",
+            "associations": [
+                "D-65",
+                "D-66",
+                "D-67",
+                "D-68"
+            ]
+        },
+        "the_dark_truth": {
+            "name": "Dark Truth",
+            "associations": [
+                "B-23",
+                "B-24",
+                "C-36",
+                "D-64",
+                "D-72"
+            ]
+        },
+        "susie": {
+            "name": "Susie",
+            "associations": [
+                "B-4",
+                "B-24"
+            ]
+        },
+        "field_of_hopes_and_dreams": {
+            "name": "Field of Hopes and Dreams",
+            "associations": [
+                "B-13",
+                "B-19"
+            ]
+        },
+        "fanfare": {
+            "name": "Fanfare",
+            "associations": [
+                "B-14",
+                "D-28"
+            ]
+        },
+        "quiet_autumn": {
+            "name": "Quiet Autumn",
+            "associations": [
+                "B-18",
+                "B-19"
+            ]
+        },
+        "rouxls_kaard": {
+            "name": "Rouxls Kaard",
+            "associations": [
+                "B-26",
+                "C-29"
+            ]
+        },
+        "darkness_falls": {
+            "name": "Darkness Falls",
+            "associations": [
+                "B-31",
+                "C-16"
+            ]
+        },
+        "card_castle": {
+            "name": "Card Castle",
+            "associations": [
+                "B-22",
+                "B-25",
+                "B-30"
+            ]
+        },
+        "the_holy_A": {
+            "name": "The Holy (A)",
+            "associations": [
+                "B-35",
+                "D-33"
+            ]
+        },
+        "the_holy_B": {
+            "name": "The Holy (B)",
+            "associations": [
+                "B-35",
+                "D-1",
+                "D-32"
+            ]
+        },
+        "cyber_world": {
+            "name": "Cyber World",
+            "associations": [
+                "C-6",
+                "C-17"
+            ]
+        },
+        "powers_combined": {
+            "name": "Powers Combined",
+            "associations": [
+                "C-34",
+                "C-35",
+                "D-44"
+            ]
+        },
+        "digital_roots": {
+            "name": "Digital Roots",
+            "associations": [
+                "C-37",
+                "D-36"
+            ]
+        },
+        "flashback": {
+            "name": "Flashback",
+            "associations": [
+                "D-1",
+                "D-34"
+            ]
+        },
+        "doom_board": {
+            "name": "Doom Board",
+            "associations": [
+                "D-24",
+                "D-25",
+                "D-27"
+            ]
+        },
+        "king_of_rolypoly": {
+            "name": "KING OF ROLYPOLY",
+            "associations": [
+                "D-21",
+                "D-26",
+                "D-27"
+            ]
+        },
+        "the_second_sanctuary": {
+            "name": "Second Sanctuary",
+            "associations": [
+                "D-60",
+                "D-63"
+            ]
+        },
+        "mike": {
+            "name": "Mike",
+            "associations": [
+                "D-75",
+                "D-76"
+            ]
+        },
+        "girl_next_door_bassline": {
+            "name": "Girl Next Door (Bassline)",
+            "associations": [
+                "C-2",
+                "D-42",
+                "D-45"
+            ]
+        },
+        "rude_buster": {
+            "name": "Rude Buster",
+            "associations": [
+                "B-10",
+                "B-15",
+                "D-11",
+                "D-15"
+            ]
+        }
     }
 }

@@ -1,0 +1,151 @@
+:root {
+    --BACKGROUND_COLOR: #1f1f1f7f;
+    background-color: #1f1f1f;
+
+    font-family: 'profontwindowsregular';
+    color: #ccccdd;
+}
+
+body {
+    width: 100%;
+    height: 100%;
+
+    position: fixed;
+    background-image: url("./GridSquare.png");
+    image-rendering: pixelated;
+}
+
+#canvas {
+    padding: 0;
+    margin: 0;
+    touch-action: none;
+    display: contents;
+    position: absolute;
+    top: 0px; left: 0px;
+}
+
+.layer {
+    position: absolute;
+    pointer-events: none;
+    width: 100%;
+    height: 100%;
+    top: 0px; left: 0px;
+}
+
+#layer1 {
+    pointer-events: inherit;
+}
+
+#searchlayer {
+    /* position: absolute; */
+    /* width: calc(100% - 256em); */
+    width: 100%;
+    height: 100%;
+    top: 0px; left: 0px;
+}
+
+#searchbox {
+    position: absolute;
+    backdrop-filter: blur(10px);
+    background-color: var(--BACKGROUND_COLOR);
+    pointer-events: all;
+    right: 0px;
+    bottom: 0px;
+}
+
+#searchview {
+    position: absolute;
+    overflow-y: scroll;
+    pointer-events: all;
+    touch-action: all;
+    backdrop-filter: blur(10px);
+    background-color: var(--BACKGROUND_COLOR);
+    height: 100%;
+    width: 100%;
+    right: -100%;
+    bottom: 3em;
+    padding-right: 3em;
+    transition: right ease-in-out 1s;
+}
+
+.hud:focus-within #searchview, #searchview:focus {
+    right: 0px;
+}
+
+/*
+i didnt know stackoverflow could copy code like this. huh!
+
+Source - https://stackoverflow.com/questions/23885255/how-to-remove-ignore-hover-css-style-on-touch-devices
+Posted by Hải Bùi, modified by community. See post 'Timeline' for change history
+Retrieved 2025-12-30, License - CC BY-SA 4.0
+*/
+@media (hover: hover) and (pointer: fine) {
+  #searchview:hover { right: 0px; }
+}
+
+.hud {
+    position: fixed;
+    pointer-events: none;
+    z-index: 1000;
+    bottom: 3em;
+    right: 10px;
+    height: 50%;
+    width: 36em;
+}
+
+@font-face {
+  font-family: determinationmono;
+  src: url('./fonts/dtm-fonts/DeterminationMonoWeb.woff');
+}
+
+@font-face {
+  font-family: determinationsans;
+  src: url('./fonts/dtm-fonts/DeterminationSansWeb.woff');
+}
+
+@font-face {
+    font-family: 'profontwindowsregular';
+    src: url('./fonts/pfw-webfont.woff2') format('woff2'),
+         url('./fonts/pfw-webfont.woff') format('woff');
+    font-weight: normal;
+    font-style: normal;
+}
+
+.t1 {
+    position: fixed;
+    z-index: 1000;
+    float: inline-start;
+    backdrop-filter: blur(10px);
+    background-color: var(--BACKGROUND_COLOR);
+}
+
+.t2 {
+    position: fixed;
+    z-index: 1000;
+    float: right;
+    right: 10px;
+    backdrop-filter: blur(10px);
+    background-color: var(--BACKGROUND_COLOR);
+}
+
+a:link {
+    color: rgb(149, 136, 238)
+}
+
+
+a:hover {
+    color: rgb(180, 169, 252)
+}
+
+
+a:visited {
+    color: rgb(180, 169, 252)
+}
+
+a:visited:hover {
+    color: rgb(149, 136, 238)
+}
+
+a:active {
+    color: rgb(79, 67, 161) !important
+}
