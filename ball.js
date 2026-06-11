@@ -1,8 +1,9 @@
 const EDGE_DISTANCE = 160;
 const UNFOCUS_DISTANCE = 130;
 const CULLING_DISTANCE = 120;
+const SLOW_DISTANCE = 250;
 
-const OFFSCREEN_SKIP = 2;
+const OFFSCREEN_SKIP = 8;
 
 SPRING_CONSTANT = 0.0025
 IDEAL = 100
@@ -81,7 +82,12 @@ class node {
     // Draws the whole ball unto the screen using `bodyLayer` and `textLayer`.
     // TODO: I wonder if we can rewrite this to be cleaner in the future -w-"
     draw() {
-        if (this.x != this.x) throw "Position is NaN, something went wrong! - id: " + this.id + ", node name: " + this.name;
+        if (this.x != this.x) {
+            throw ("Position is NaN, something went wrong! - id: " + this.id + ", node name: " + this.name);
+            // console.warn("Position is NaN, something went wrong! - id: " + this.id + ", node name: " + this.name);
+            // this.x = 0;
+            // this.y = 0;
+        }
         if (!this.isEnabled && !this.inFocus) return;
 
         [this.sx, this.sy] = this.camera.toScreenCoords(this.x, this.y);
@@ -104,7 +110,7 @@ class node {
         ctx2.strokeStyle = "#000000";
 
         ctx2.lineWidth = node.getStrokeZoomed(4, this.camera.zoom);
-        ctx2.globalAlpha = this.inFocus ? 1 : node.textAlpha(this.scenedist);
+        ctx2.globalAlpha = this.inFocus ? 1 : node.textAlpha(this.scenedist, this.camera);
         const textY = this.sy + this.getTextOffset();
 
         if (!this.prefix) {
@@ -156,10 +162,18 @@ class node {
         return 0;
     }
 
+    marginallyVisible = false; // Used to track if a node's edge may still be visible.
     get isOffscreen() {
         var offscreen = 0;
         if (-CULLING_DISTANCE > this.sx || this.sx > camera.width + CULLING_DISTANCE) return true;
         if (-CULLING_DISTANCE > this.sy || this.sy > camera.height + CULLING_DISTANCE * 2) return true;
+        return false;
+    }
+
+    get isSlow() {
+        var offscreen = 0;
+        if (-SLOW_DISTANCE > this.sx || this.sx > camera.width + SLOW_DISTANCE) return true;
+        if (-SLOW_DISTANCE > this.sy || this.sy > camera.height + SLOW_DISTANCE) return true;
         return false;
     }
 
@@ -275,14 +289,12 @@ class node {
 
     // Interacts with another ball, handling repulsion and spring physics.
     // If connected, also draws the edge between. Never called if the node is held.
-    interact(ball) {
+    interact(ball, deltaTime) {
         if (!ball.isEnabled || this.id == ball.id) return;
 
         const isChild = this.motifs.includes(ball);
         const linedist = Math.min(this.dist, ball.dist);
         if (isChild) this.drawEdge(ball, node.lineAlpha(linedist), node.lineWeight(linedist));
-
-        if (this.isOffscreen && (this.skippedFrames < OFFSCREEN_SKIP - 1)) return;
 
         const dx = this.x - ball.x
         const dy = this.y - ball.y
@@ -341,6 +353,9 @@ class node {
         if (offscreenX && (offscreenX == ball.offscreenX)) return;
         if (offscreenY && (offscreenY == ball.offscreenY)) return;
 
+        this.marginallyVisible = true;
+        ball.marginallyVisible = true;
+
         const ctx = ball.edgeLayer;
 
         ctx.strokeStyle = "#92a39bff";
@@ -358,17 +373,21 @@ class node {
 
     // Applies motion at the end of every frame.
     // Done separately from the interact() loop to ensure consistency in interactions.
+    accumulatedTime = 0;
     applyMotion(deltaTime) {
-        if (this.isOffscreen && this.skippedFrames < OFFSCREEN_SKIP) {
+        this.accumulatedTime += deltaTime;
+        if (!this.marginallyVisible && this.isSlow && this.skippedFrames < OFFSCREEN_SKIP) {
             this.skippedFrames++;
             return;
         }
 
-        this.x += this.vx * deltaTime * this.skippedFrames;
-        this.y += this.vy * deltaTime * this.skippedFrames;
-        this.angle += Math.min(25, pythagoras(this.vx, this.vy) * 0.125 * deltaTime) * Math.sign(this.vx) * Math.sign(this.vy);
+        this.x += this.vx * this.accumulatedTime;
+        this.y += this.vy * this.accumulatedTime;
+        this.angle += Math.min(25, pythagoras(this.vx, this.vy) * 0.125 * this.accumulatedTime) * Math.sign(this.vx) * Math.sign(this.vy);
 
         this.skippedFrames = 1;
+        this.accumulatedTime = 0;
+        this.marginallyVisible = false;
     }
 
     // Quick function to add a child to this node.
@@ -407,8 +426,8 @@ class node {
         return Math.max(0.5, Math.min(1, Math.max(75 / dist + 0.5, 100 / dist - 1.5)));
     }
 
-    static textAlpha(dist) {
-        return Math.max(0.5, Math.min(1, Math.max(50 / dist + 0.5, 100 / dist - 1.5)));
+    static textAlpha(dist, camera) {
+        return Math.max(0.5, Math.min(1, Math.max(50 / dist + 0.5, 100 / dist - 1.5))) * Math.min(1, 2 / (camera?.zoom ?? 1));
     }
 
     static lineAlpha(dist) {
