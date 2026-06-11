@@ -1,24 +1,43 @@
 <!DOCTYPE html>
 <html>
 	<head>
-		<title>m1n3c4rt.github.io</title>
-		<link rel="stylesheet" type="text/css" href="web.css">
-		<link rel="stylesheet" type="text/css" href="utdr-leitmotif-graph.css">
-		<link rel="shortcut icon" type="image/x-icon" href="favicon.ico">
+		<title>UT/DR Leitmotifs</title>
+		<link rel="stylesheet" type="text/css" href="stylesheet.css">
+		<link rel="shortcut icon" type="image/x-icon" href="favicon.png">
 		<meta name=“viewport” content=“width=device-width, initial-scale=1.0”>
 		<meta http-equiv=“X-UA-Compatible” content=“ie=edge”>
+		<!-- thank you https://stackoverflow.com/questions/59335731/how-to-create-own-embed-site-for-discord ! -->
 		<meta property="og:title" content="m1n3c4rt.github.io | undertale/deltarune leitmotif graph" />
 		<meta property="og:url" content="https://m1n3c4rt.github.io/utdr-leitmotif-graph.html" />
 		<meta property="og:image" content="" />
 		<meta property="og:description" content="graph of the undertale/deltarune ost !!" />
-		<meta name="theme-color" content="#b592db">
+		<meta name="theme-color" content="#5a319e">
+		<meta name="twitter:card" content="summary_large_image">
+		<script src="utils.js"></script>
 	</head>
-	<body onload="draw()" style="position: fixed;">
-		<div id="t1">the undertale/deltarune leitmotif graph is unofficial and unaffiliated with Toby Fox, UNDERTALE and DELTARUNE.</div>
-		<div id="t2">drag to pan, scroll to zoom, drag nodes to move them around</div>
-		<br/>
+	<body>
+		<div id="canvas">
+			<canvas id="layer1" class="layer" width="1920" height="1080"></canvas>
+			<canvas id="layer2" class="layer" width="1920" height="1080"></canvas>
+			<canvas id="layer3" class="layer" width="1920" height="1080"></canvas>
+		</div>
+		<div class="t1">the undertale/deltarune leitmotif graph is unofficial and unaffiliated with Toby Fox, UNDERTALE and DELTARUNE.</div>
+		<div class="t2">drag to pan, scroll to zoom, drag nodes to move them around</div>
+		<div class="hud">
+			<div id="searchview" tabindex="2">
+				<canvas id="searchlayer"></canvas>
+			</div>
+			<div id="searchbox">
+				awa <label for="search">search for node:</label> <input id="search" tabindex="1">
+				<br/>
+				<input value="toggle selected node" id="toggle" type="button" tabindex="3">
+				<label for="speed">graph speed:</label> <input id="speed" type="number" value="1" min="0", max="5", step="0.25" tabindex="4">
+			</div>
+		</div>
 		<!-- <div id="t3">debugtext</div> -->
-		<canvas id="canvas" width="1920" height="1080"></canvas>
 	</body>
-	<script src="utdr-leitmotif-graph.js"></script>
+	<!-- would have loved to use `type="module"` here but goodness is it annoying to work with -->
+	<script src="ball.js"></script>
+	<script src="camera.js"></script>
+	<script src="index.js"></script>
 </html>
