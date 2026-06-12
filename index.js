@@ -3,7 +3,6 @@
 // import { mergeData, removeFrom } from "/utils.js";
 
 const DRAW_FPS = 60;
-
 const DRAW_DELTA = 1000 / DRAW_FPS;
 
 const layers = [...document.getElementById("canvas").children];
@@ -127,27 +126,25 @@ const HALFGRID = 46; // Half of the `GridSquare.png`'s size in pixels.
 
 let edgeLerp = 0;
 let lastDrawTime = 0;
-function draw(timestamp = 0) {
+function draw(timestamp) {
+    if (speed.value < -4) speed.value = -4;
+    else if (speed.value > 1.5) speed.value = 1.5;
+
     // If you somehow have perfect 60 FPS, this will always be 1.
-    let deltaTime = Math.min(4, (timestamp - lastDrawTime) / DRAW_DELTA) || 1;
+    let deltaTime = Math.min(4, Math.min(DRAW_FPS, timestamp - lastDrawTime) * speed.value / DRAW_DELTA);
+    console.log(deltaTime);
+    lastDrawTime = timestamp;
 
     camera.refresh(deltaTime);
     [cursor.screenX, cursor.screenY] = camera.fromScreenCoords(cursor.x, cursor.y);
 
     if (document.activeElement == document.body) {
-        if (movement.A) camera.x -= 16 * movement.A * deltaTime;
-        if (movement.D) camera.x += 16 * movement.D * deltaTime;
+        if (movement.A) camera.x -= 16 * movement.A * deltaTime * camera.zoom;
+        if (movement.D) camera.x += 16 * movement.D * deltaTime * camera.zoom;
 
-        if (movement.W) camera.y -= 16 * movement.W * deltaTime;
-        if (movement.S) camera.y += 16 * movement.S * deltaTime;
+        if (movement.W) camera.y -= 16 * movement.W * deltaTime * camera.zoom;
+        if (movement.S) camera.y += 16 * movement.S * deltaTime * camera.zoom;
     }
-
-    if (speed.value < -4) speed.value = -4;
-    else if (speed.value > 4) speed.value = 4;
-    deltaTime *= speed.value;
-
-    // deltaTime *= 2;
-    // console.log(deltaTime);
 
     // Process physics, draw edges
     Object.entries(balls).forEach(([id, ball]) => {
@@ -217,7 +214,6 @@ function draw(timestamp = 0) {
     // document.body.style.backgroundSize = `${50 / camera.zoom}px`;
 
     raf = window.requestAnimationFrame(draw);
-    lastTime = timestamp;
 }
 
 var isDragging = false
@@ -556,5 +552,5 @@ search.addEventListener("blur", ({}) => {
     sfxExit.play();
 })
 
-window.onload = draw;
+window.onload = (e) => raf = window.requestAnimationFrame(draw);
 loadJson(rootDirectory + "/utdr-leitmotif-graph.json");
