@@ -22,6 +22,28 @@
             "outline": "#0d1517"
         }
     },
+    "groups": {
+        "A-": {
+            "name": "UNDERTALE",
+            "prefix": "UT"
+        },
+        "B-": {
+            "name": "Deltarune Chapter 1",
+            "prefix": "DR-1"
+        },
+        "C-": {
+            "name": "Deltarune Chapter 2",
+            "prefix": "DR-2"
+        },
+        "D-": {
+            "name": "Deltarune Chapters 3&4",
+            "prefix": "DR-3&4"
+        },
+        "AV-": {
+            "name": "UNDERTALE 10th Anniversary",
+            "prefix": "UT-10"
+        }
+    },
     "tracks": {
         "A-1": "Once Upon a Time",
         "A-2": "Start Menu",
@@ -37,7 +59,9 @@
         "A-12": "Home",
         "A-13": "Home (Music Box)",
         "A-14": "Heartache",
-        "A-15": "sans.",
+        "A-15": {
+            "name": "sans."
+        },
         "A-16": "Nyeh Heh Heh!",
         "A-17": "Snowy",
         "A-18": "Uwa!! So Holiday♫",
@@ -127,7 +151,9 @@
         "A-102": "Mad Mew Mew",
         "B-1": "ANOTHER HIM",
         "B-2": "Beginning",
-        "B-3": "School",
+        "B-3": {
+            "name": "School"
+        },
         "B-4": "Susie",
         "B-5": "The Door",
         "B-6": "Cliffs",
@@ -162,7 +188,9 @@
         "B-35": "THE HOLY",
         "B-36": "Your Power",
         "B-37": "A Town Called Hometown",
-        "B-38": "You Can Always Come Home",
+        "B-38": {
+            "name": "You Can Always Come Home"
+        },
         "B-39": "Don't Forget",
         "B-40": "Before the Story",
         "C-1": "Faint Glow",
@@ -206,9 +234,13 @@
         "C-39": "BIG SHOT",
         "C-40": "A Real Boy!",
         "C-41": "Dialtone",
-        "C-42": "sans.",
+        "C-42": {
+            "name": "sans."
+        },
         "C-43": "Chill Jailbreak Alarm To Study And Relax To",
-        "C-44": "You Can Always Come Home",
+        "C-44": {
+            "name": "You Can Always Come Home"
+        },
         "C-45": "Until Next Time",
         "C-46": "Before The Story",
         "C-47": "Berdly (Rejected Concept)",
@@ -289,7 +321,30 @@
         "D-75": "Volume Adjustment",
         "D-76": "Catswing",
         "D-77": "Air Waves",
-        "D-78": "Concert for you"
+        "D-78": "Concert for you",
+        "AV-1": "Abandoned Town",
+        "AV-2": "Doghole",
+        "AV-3": "Memory (10 Years Later)",
+        "AV-4": "Pseudo Legendary Tree",
+        "AV-5":{
+            "name": "School"
+        },
+        "AV-6": "Snowdrift",
+        "AV-7": {
+            "name": "Snowed In Jazz",
+            "subtitle": "by insaneintherainmusic"
+        },
+        "AV-8": "Song that Plays when Somebody Verses sans.",
+        "AV-9": "Strongerer Monsters",
+        "AV-10": "Ultranap",
+        "AV-11": "Underwater Town",
+        "AV-12": {
+            "name": "what's up?",
+            "subtitle": "by insaneintherainmusic"
+        },
+        "AV-13": {
+            "name": "Wrong Number (Camellia Remix)"
+        }
     },
     "leitmotifs": {
         "once_upon_a_time_A": {
@@ -314,7 +369,8 @@
                 "B-38",
                 "B-40",
                 "C-44",
-                "C-46"
+                "C-46",
+                "AV-5"
             ]
         },
         "once_upon_a_time_B": {
@@ -328,7 +384,8 @@
                 "A-71",
                 "A-85",
                 "A-92",
-                "A-96"
+                "A-96",
+                "AV-5"
             ]
         },
         "once_upon_a_time_C": {
@@ -599,7 +656,8 @@
                 "A-71",
                 "A-73",
                 "A-80",
-                "A-90"
+                "A-90",
+                "AV-3"
             ]
         },
         "asgore": {
@@ -664,6 +722,14 @@
                 "C-39"
             ]
         },
+        "mewmew": {
+            "name": "Mew Mew Kissy Cutie",
+            "subtitle": "Undertale - Nintendo Switch Trailer",
+            "associations": [
+                "AV-4",
+                "AV-5"
+            ]
+        },
         "snowdin_town": {
             "name": "Snowdin Town",
             "associations": [
@@ -676,6 +742,14 @@
             "associations": [
                 "A-63",
                 "D-70"
+            ]
+        },
+        "megalovania": {
+            "name": "Megalovania",
+            "associations": [
+                "A-100",
+                "AV-8",
+                "AV-12"
             ]
         },
         "don_t_forget_A": {
@@ -1051,7 +1125,8 @@
             "name": "Darkness Falls",
             "associations": [
                 "B-31",
-                "C-16"
+                "C-16",
+                "AV-1"
             ]
         },
         "card_castle": {
@@ -1066,7 +1141,8 @@
             "name": "The Holy (A)",
             "associations": [
                 "B-35",
-                "D-33"
+                "D-33",
+                "AV-1"
             ]
         },
         "the_holy_B": {

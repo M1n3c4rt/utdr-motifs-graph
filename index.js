@@ -4,6 +4,9 @@
 
 const DRAW_FPS = 60;
 const DRAW_DELTA = 1000 / DRAW_FPS;
+const SEARCH_HEIGHT = 36;
+const SEARCH_LOAD = 120;
+const SEARCH_GAP = 69;
 
 const layers = [...document.getElementById("canvas").children];
 const camera = new Camera(layers);
@@ -11,12 +14,21 @@ const searchCamera = new Camera([document.getElementById("searchlayer")]);
 const searchLayer = searchCamera.scenes[0];
 const searchView = searchLayer.parentNode;
 
+let searchBounds = searchView.getBoundingClientRect();
+let searchHeight = searchBounds.bottom - searchBounds.top - SEARCH_GAP;
+let searchScroll = 0;
+
 // For the UI + Search menu !!
 const sfxPagerIn = new Audio(rootDirectory + '/sfx/snd_select.wav');
 const sfxPagerOut = new Audio(rootDirectory + '/sfx/snd_smallswing.wav');
-const sfxNope = new Audio(rootDirectory + '/sfx/snd_error.wav');
+const sfxNope = new Audio(rootDirectory + '/sfx/snd_cantselect.wav');
 const sfxFocus = new Audio(rootDirectory + '/sfx/snd_menumove.wav');
-const sfxExit = new Audio(rootDirectory + '/sfx/snd_menumove.wav');
+const sfxExit = new Audio(rootDirectory + '/sfx/snd_cantselect.wav');
+const sfxToggle = new Audio(rootDirectory + '/sfx/snd_equip.wav');
+
+sfxPagerOut.volume = 0.75;
+sfxNope.volume = 0.5;
+sfxExit.volume = 0.5;
 
 // ui elements!
 const toggle = document.getElementById("toggle");
@@ -104,10 +116,21 @@ function refreshTree(newData) {
         });
     });
 
+    let allNames = {}
     Object.entries(newData.tracks).forEach(([id, track]) => {
         if (balls[id].isIsolate) balls[id].applyStyle("isolate");
         if (track.style) balls[id].applyStyle(track.style)
         else if (track.isMinor) balls[id].applyStyle("minor")
+
+        if (allNames[balls[id].name]) {
+            balls[id].shouldDisambiguate = true;
+            allNames[balls[id].name].shouldDisambiguate = true;
+        }
+        allNames[balls[id].name] = balls[id];
+
+        Object.entries(newData.groups).forEach(([gID, group]) => {
+            if (id.startsWith(gID)) balls[id].applyGroup(group, gID);
+        });
     });
 
     searchResults.push(...Object.values(balls));
@@ -132,7 +155,7 @@ function draw(timestamp) {
 
     // If you somehow have perfect 60 FPS, this will always be 1.
     let deltaTime = Math.min(4, Math.min(DRAW_FPS, timestamp - lastDrawTime) * speed.value / DRAW_DELTA);
-    console.log(deltaTime);
+    // console.log(deltaTime);
     lastDrawTime = timestamp;
 
     camera.refresh(deltaTime);
@@ -185,13 +208,6 @@ function draw(timestamp) {
         }
     });
 
-    // Draw balls in search menu
-    searchCamera.refresh();
-    searchLayer.style.height = `${searchResults.length * 69}px`
-    Object.entries(searchResults).forEach(([index, ball]) => {
-        ball.searchBall.draw(32, index * 69 + 36);
-    });
-
     if (balls[draggedNode]) {
         const node = balls[draggedNode];
         edgeLerp = freyalerp(edgeLerp, node.onScreenEdge ? 1 : 0, 40, deltaTime);
@@ -213,7 +229,17 @@ function draw(timestamp) {
     // document.body.style.backgroundPositionY = `${-(camera.y - HALFGRID) / camera.zoom + camera.height * 0.5}px`;
     // document.body.style.backgroundSize = `${50 / camera.zoom}px`;
 
+    searchDraw();
     raf = window.requestAnimationFrame(draw);
+}
+
+function searchDraw() {
+    // Draw balls in search menu
+    searchCamera.refresh();
+    searchLayer.style.height = `${searchResults.length * SEARCH_GAP}px`
+    Object.entries(searchResults).forEach(([index, ball]) => {
+        ball.searchBall.draw(32, index * SEARCH_GAP + SEARCH_HEIGHT);
+    });
 }
 
 var isDragging = false
@@ -411,20 +437,29 @@ function setBallFocus(ball, sound = true) {
 
         const index = searchResults.indexOf(ballInFocus);
         if (index > -1) {
-            const bounding = searchView.getBoundingClientRect();
+            searchBounds = searchView.getBoundingClientRect();
+            searchHeight = searchBounds.bottom - searchBounds.top - SEARCH_GAP;
+            const newScroll = index * SEARCH_GAP;
 
-            const height = bounding.bottom - bounding.top - 69;
-            const newScroll = index * 69;
-
+            console.log(searchView.scrollTop);
             if (newScroll < searchView.scrollTop) {
                 searchView.scrollTop = newScroll;
-            } else if (newScroll > searchView.scrollTop + height) {
-                searchView.scrollTop = newScroll - height; 
+            } else if (newScroll > searchView.scrollTop + searchHeight) {
+                searchView.scrollTop = newScroll - searchHeight; 
             }
         }
         if (sound) {
             sfxPagerIn.currentTime = 0;
             sfxPagerIn.play();
+        }
+
+        if (ballInFocus.trackID) {
+            // regex: item_id=([0-9]+)
+            fetch("https://tobyfox.bandcamp.com/track/" + ballInFocus.trackID)
+                .then((response) => {
+                    const data = response.body.getElementById("pagedata");
+                    console.log(data);
+                });
         }
     } else {
         camera.focus.enabled = false;
@@ -495,7 +530,14 @@ search.addEventListener("input", () => {
 
 toggle.addEventListener("click", () => {
     console.log("nya");
-    if (ballInFocus) ballInFocus.isEnabled = !ballInFocus.isEnabled;
+    if (ballInFocus) {
+        sfxToggle.currentTime = 0;
+        sfxToggle.play();
+        ballInFocus.isEnabled = !ballInFocus.isEnabled;
+    } else {
+        sfxNope.currentTime = 0;
+        sfxNope.play();
+    }
 })
 
 searchLayer.onwheel = event => {
@@ -504,7 +546,7 @@ searchLayer.onwheel = event => {
 
 searchLayer.onmousedown = event => {
     event.stopPropagation();
-    const ballIndex = Math.floor((event.pageY - searchLayer.getBoundingClientRect().top) / 69);
+    const ballIndex = Math.floor((event.pageY - searchLayer.getBoundingClientRect().top) / SEARCH_GAP);
     if (searchResults[ballIndex]) {
         setBallFocus(searchResults[ballIndex]);
         searchIndex = ballIndex + 1;
@@ -547,9 +589,15 @@ search.addEventListener("focus", ({}) => {
     sfxFocus.play();
 })
 
-search.addEventListener("blur", ({}) => {
-    sfxExit.currentTime = 0;
-    sfxExit.play();
+// search.addEventListener("blur", ({}) => {
+//     sfxExit.currentTime = 0;
+//     sfxExit.play();
+// })
+
+searchView.addEventListener("scroll", ({}) => {
+    // console.log(searchView.scrollTop);
+    searchScroll = searchView.scrollTop;
+    searchDraw();
 })
 
 window.onload = (e) => raf = window.requestAnimationFrame(draw);
