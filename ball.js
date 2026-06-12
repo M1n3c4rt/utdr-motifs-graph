@@ -13,8 +13,11 @@ PERMITTIVITY = 1000 //250
 
 class node {
     data; // This is the raw JSON definition of this node, used to display names, subtitles, etc.
-    impliedPrefix; // If the prefix is 'implied', just use the ID of the node.
     isIsolate = true; // Used ONLY on tree refresh, to apply the isolate color style.
+
+    group; // What group the ball is in.
+    groupID; // ID of the ball group.
+    shouldDisambiguate; // If the track has a duplicate, always show its subtitle.
 
     isEnabled = true; // Handles if the node should be processed in drawing and physics calculations
     inFocus = false; // Tracks if this node is in the camera's focus. Handled by index.js.
@@ -28,8 +31,8 @@ class node {
 
     id; // Must be present.
     get name() { return this.data.name || this.data; }
-    get subtitle() { return this.data.subtitle; } // May be null!
-    get prefix() { return this.impliedPrefix ? this.id : this.data.prefix; }
+    get subtitle() { return this.data.subtitle || this.group?.name; } // May be null!
+    get prefix() { return this.data.prefix || this.group?.prefix; }
 
     // Relationships!
     motifs = [];
@@ -37,6 +40,7 @@ class node {
 
     // Rendering information
     x = 0; y = 0;
+    spawnX = 0; spawnY = 0;
     sides = 0; angle = 0;
 
     // Scene information
@@ -59,10 +63,12 @@ class node {
         this.color = this.data.color ?? "#00000000";
         this.outline = this.data.outline ?? "#00000000";
         this.thin = this.data.thin ?? false;
-        this.x = (x == undefined) ? node.randomPosition() : x;
-        this.y = (y == undefined) ? node.randomPosition() : y;
-        this.impliedPrefix = (this.id.replace(/[0-9\-NX]*/, '') == '');
+        this.spawnX = this.x = x ?? node.randomPosition();
+        this.spawnY = this.y = y ?? node.randomPosition();
+        this.reloadSearchTerms();
+    }
 
+    reloadSearchTerms() {
         this.searchTerms = [
             {
                 weight: 1,
@@ -113,7 +119,7 @@ class node {
         ctx2.globalAlpha = this.inFocus ? 1 : node.textAlpha(this.scenedist, this.camera);
         const textY = this.sy + this.getTextOffset();
 
-        if (!this.prefix) {
+        if (!this.inFocus || !this.prefix) {
             ctx2.textAlign = "center";
             node.drawText(ctx2, this.name, this.sx, textY);
         } else {
@@ -133,7 +139,7 @@ class node {
             node.drawText(ctx2, this.prefix, preX, textY);
         }
 
-        if (this.subtitle) {
+        if (this.shouldDisambiguate || this.inFocus && this.subtitle) {
             ctx.textAlign = "center";
             ctx.fillStyle = "#7f7f7f";
             ctx.strokeStyle = "#000000";
@@ -148,6 +154,28 @@ class node {
 
         ctx2.lineWidth = 1;
         ctx2.globalAlpha = 1;
+    }
+
+    // `origin` - id of what initially called the function
+    // `ball` - which node propagated the function
+    attachPosition(ball, origin) {
+        let [motifsX, motifsY] = [0, 0];
+        this.motifs.forEach(ball2 => {
+            motifsX += ball2.x;
+            motifsY += ball2.y;
+        });
+
+        motifsX /= Math.max(1, this.motifs.length);
+        motifsY /= Math.max(1, this.motifs.length);
+        this.x = this.spawnX + ball.x + motifsX;
+        this.y = this.spawnY + ball.y + motifsY;
+
+        // [this.motifs, this.children].forEach(nodes => {
+            this.children.forEach(ball2 => {
+                if (ball2.id == ball.id || ball2.id == origin) return;
+                ball2.attachPosition(this, origin);
+            });
+        // });
     }
 
     get offscreenX() {
@@ -280,7 +308,10 @@ class node {
 
     // The random position applied to a node on creation.
     static randomPosition() {
-        return Math.random() * 750 - 375;
+        // return Math.random() * 0.001 - 0.0005;
+        // return Math.random() * 750 - 375;
+        // return Math.random() * 2000 - 1000;
+        return Math.random() * 500 - 250;
     }
 
     // Velocity & acceleration
@@ -298,7 +329,7 @@ class node {
 
         const dx = this.x - ball.x
         const dy = this.y - ball.y
-        const dist = pythagoras(dx, dy)
+        const dist = Math.max(0.0001, pythagoras(dx, dy))
 
         if (isChild || this.children.includes(ball)) {
             let spring = Math.max(-2000, Math.min(2000, -SPRING_CONSTANT * (dist - IDEAL)))
@@ -398,6 +429,8 @@ class node {
 
         this.isolate = false;
         ball.isolate = false;
+
+        ball.attachPosition(this, this.id);
     }
 
     // Force-applies the specified style to this node.
@@ -419,6 +452,14 @@ class node {
         if (id) this.style = id;
         const style = data.styles[this.style];
         if (style) this.forceStyle(style);
+        return this;
+    }
+
+    // Apply the specified group to this node.
+    applyGroup(group, id) {
+        this.group = group;
+        this.groupID = id;
+        this.reloadSearchTerms();
         return this;
     }
 
@@ -464,7 +505,10 @@ class searchnode {
     draw(x, y) {
         this.sx = x; this.sy = y;
         if (!this.ball.isEnabled) this.ctx.globalAlpha = 0.25;
-        
+
+        const testY = this.sy - searchScroll;
+        if (testY > (searchHeight + SEARCH_LOAD) || testY < -SEARCH_LOAD) return;
+
         node.drawGeneric(this);
         this.ctx.globalAlpha = 1;
 

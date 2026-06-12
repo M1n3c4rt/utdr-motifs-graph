@@ -44,6 +44,14 @@ body {
     top: 0px; left: 0px;
 }
 
+#bandcampintegration {
+    /* position: absolute; */
+    /* width: calc(100% - 256em); */
+    width: 100%;
+    height: 42px;
+    top: 0px; left: 0px;
+}
+
 #searchbox {
     position: absolute;
     backdrop-filter: blur(10px);
