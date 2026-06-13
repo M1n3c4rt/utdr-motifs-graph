@@ -1,4 +1,3 @@
-const SEARCH_HEIGHT = 36;
 const SEARCH_LOAD = 160;
 const SEARCH_GAP = 69;
 
@@ -34,15 +33,27 @@ function searchDraw() {
     searchCamera.refresh();
     searchLayer.style.height = `${searchResults.length * SEARCH_GAP}px`
     Object.entries(searchResults).forEach(([index, ball]) => {
-        ball.searchBall.draw(32, index * SEARCH_GAP + SEARCH_HEIGHT);
+        ball.searchBall.draw(32, index * SEARCH_GAP + NODE_HUD_HEIGHT);
     });
 
-    searchraf = window.requestAnimationFrame(searchDraw);
+    // searchraf = window.requestAnimationFrame(searchDraw);
+}
+
+function updateBall(ball) {
+    const index = searchResults.indexOf(ball);
+    const newScroll = index * SEARCH_GAP;
+
+    searchCamera.clearArea(0, index * SEARCH_GAP, searchCamera.width, SEARCH_GAP)
+    ball.searchBall.draw(32, index * SEARCH_GAP + NODE_HUD_HEIGHT);
 }
 
 var ballInFocus;
 function setBallFocus(ball, sound = true) {
-    if (ballInFocus) ballInFocus.inFocus = false;
+    if (ballInFocus) {
+        ballInFocus.inFocus = false;
+        updateBall(ballInFocus);
+    }
+
     ballInFocus = ball;
 
     if (ballInFocus) {
@@ -61,6 +72,8 @@ function setBallFocus(ball, sound = true) {
             } else if (newScroll > searchView.scrollTop + searchHeight) {
                 searchView.scrollTop = newScroll - searchHeight; 
             }
+
+            updateBall(ballInFocus);
         }
         if (sound) {
             sfxPagerIn.currentTime = 0;
@@ -146,6 +159,10 @@ search.addEventListener("input", () => {
         searchResults.sort((a, b) => a.matchString.localeCompare(b.matchString));
         searchResults.sort((a, b) => b.matchPercent - a.matchPercent);
     }
+
+    searchDraw();
+
+    searchDraw();
 })
 
 toggle.addEventListener("click", () => {
@@ -177,20 +194,33 @@ searchLayer.onmouseup = event => {
     event.stopPropagation();
 }
 
-search.addEventListener("focus", ({}) => {
+search.addEventListener("focus", (e) => {
     sfxFocus.currentTime = 0;
     sfxFocus.play();
 })
+
+class searchnode extends uinode {
+    draw(x, y) {
+        // const testY = y - searchScroll;
+        // if (testY > (searchHeight + SEARCH_LOAD) || testY < -SEARCH_LOAD) return;
+        super.draw(x, y);
+    }
+}
 
 // search.addEventListener("blur", ({}) => {
 //     sfxExit.currentTime = 0;
 //     sfxExit.play();
 // })
 
-searchView.addEventListener("scroll", ({}) => {
+searchView.addEventListener("scroll", (e) => {
     // console.log(searchView.scrollTop);
     searchScroll = searchView.scrollTop;
+})
+
+window.addEventListener("resize", (e) => {
     searchDraw();
 })
 
-searchraf = window.requestAnimationFrame(searchDraw);
+searchDraw();
+
+// searchraf = window.requestAnimationFrame(searchDraw);

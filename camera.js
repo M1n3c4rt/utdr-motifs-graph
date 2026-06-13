@@ -50,6 +50,12 @@ class Camera {
         }
     }
 
+    clearArea(x, y, width, height) {
+        for (let i in this.layers) {
+            this.layers[i].clearRect(x, y, width, height);
+        }
+    }
+
     checkBoundsHit() {
         if (this.x < -this.bounds.x || this.x > this.bounds.x ||
             this.y < -this.bounds.y || this.y > this.bounds.y) return true;
