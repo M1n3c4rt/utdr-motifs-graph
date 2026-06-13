@@ -9,10 +9,12 @@
 - (X) fix lag w/ search bar
 - minor fixes
     - (bandaid fixed) graph speed is weird and broken (maybe just force it to be 1?)
-    - camera moves way too fast when you drag a node outside it
+    - (X) camera moves way too fast when you drag a node outside it
     - (X) text doesnt change size (not sure if this should be changed at all ...) (edit: better idea: make text very transparent when at the broadest zoom level)
     - (X) adjust physics so nodes are less clumped together (i think the physics are carried over from the rd version  where there's less nodes so it's fine there but not here)
     - do something about the initial node explosion (maybe skip the very first few frames so there's still something to enjoy watching)
     - (X) should grid squares scale with camera zoom? (verdict. no)
-    - decrease bounds?
+    - (X) decrease bounds?
     - opacity unfocus bug (hell)
+    - sounds for closing/opening hud?
+    - make it so that clicking off the hud doesn't close it

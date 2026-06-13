@@ -188,7 +188,7 @@ function draw(timestamp) {
 
     if (balls[draggedNode]) {
         const node = balls[draggedNode];
-        edgeLerp = freyalerp(edgeLerp, node.onScreenEdge ? 1 : 0, 40, deltaTime);
+        edgeLerp = freyalerp(edgeLerp, node.onScreenEdge ? 1 : 0, 150, deltaTime);
 
         if (edgeLerp > 0) {
             camera.x = freyalerp(camera.x, lerp(camera.x, balls[draggedNode].x, edgeLerp), 20, deltaTime);
