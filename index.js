@@ -188,7 +188,7 @@ function draw(timestamp) {
 
     if (balls[draggedNode]) {
         const node = balls[draggedNode];
-        edgeLerp = freyalerp(edgeLerp, node.onScreenEdge ? 1 : 0, 40, deltaTime);
+        edgeLerp = freyalerp(edgeLerp, node.onScreenEdge ? 1 : 0, 150, deltaTime);
 
         if (edgeLerp > 0) {
             camera.x = freyalerp(camera.x, lerp(camera.x, balls[draggedNode].x, edgeLerp), 20, deltaTime);
@@ -236,14 +236,18 @@ function select(event, radius = 1.5) {
 }
 canvas.ondblclick = select
 
+function setCursorPos(x, y) {
+    if (x) cursor.x = x;
+    if (y) cursor.y = y;
+}
+
 function dragStart(event, radius = 1.5) {
     isDragging = true
     camera.focus.blocked = true;
 
     dragOffset.x = event.pageX
     dragOffset.y = event.pageY
-    cursor.x = event.pageX;
-    cursor.y = event.pageY;
+    setCursorPos(event.pageX, event.pageY);
     
     draggedNode = null
     Object.entries(balls).forEach(([id,ball]) => {
@@ -293,8 +297,7 @@ canvas.addEventListener("touchstart", event => {
 }, { passive : false });
 
 function dragMove(event) {
-    cursor.x = event.pageX;
-    cursor.y = event.pageY;
+    setCursorPos(event.pageX, event.pageY);
     if (isDragging) {
         if (draggedNode === null) {
             camera.x = dragAnchor.x + (dragOffset.x - cursor.x) * camera.zoom
@@ -360,8 +363,7 @@ function dragEnd(event) {
     camera.focus.blocked = false;
     draggedNode = null
     document.body.style.cursor = "auto"
-    cursor.x = event.pageX;
-    cursor.y = event.pageY;
+    setCursorPos(event.pageX, event.pageY);
 }
 
 function touchEnd(event) {
