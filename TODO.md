@@ -15,6 +15,6 @@
     - do something about the initial node explosion (maybe skip the very first few frames so there's still something to enjoy watching)
     - (X) should grid squares scale with camera zoom? (verdict. no)
     - (X) decrease bounds?
-    - opacity unfocus bug (hell)
+    - (X) opacity unfocus bug (hell)
     - sounds for closing/opening hud?
     - make it so that clicking off the hud doesn't close it
