@@ -1,0 +1,17 @@
+# TODO
+- add the drawers on the right border
+    - credits
+- (X) change bg and node style
+- add ch5 songs
+- preview image
+- bandcamp/soundcloud integration
+- motif midis
+- fix lag w/ search bar
+- minor fixes
+    - graph speed is weird and broken (maybe just force it to be 1?)
+    - camera moves way too fast when you drag a node outside it
+    - (X) text doesnt change size (not sure if this should be changed at all ...) (edit: better idea: make text very transparent when at the broadest zoom level)
+    - (X) adjust physics so nodes are less clumped together (i think the physics are carried over from the rd version  where there's less nodes so it's fine there but not here)
+    - do something about the initial node explosion (maybe skip the very first few frames so there's still something to enjoy watching)
+    - should grid squares scale with camera zoom?
+    - decrease bounds?
