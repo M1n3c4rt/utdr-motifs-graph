@@ -79,7 +79,7 @@ function changePage(element, button) {
     currentButton = button;
 }
 
-changePage(searchui, searchbutton);
+// changePage(searchui, searchbutton);
 
 class uinode {
     sx; sy;

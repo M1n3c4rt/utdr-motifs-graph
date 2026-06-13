@@ -3,13 +3,13 @@
 	<head>
 		<title>UT/DR Leitmotifs</title>
 		<link rel="stylesheet" type="text/css" href="stylesheet.css">
-		<link rel="shortcut icon" type="image/x-icon" href="favicon.png">
+		<link rel="shortcut icon" type="image/x-icon" href="assets/favicon.png">
 		<meta name=“viewport” content=“width=device-width, initial-scale=1.0”>
 		<meta http-equiv=“X-UA-Compatible” content=“ie=edge”>
 		<!-- thank you https://stackoverflow.com/questions/59335731/how-to-create-own-embed-site-for-discord ! -->
 		<meta property="og:title" content="m1n3c4rt.github.io | undertale/deltarune leitmotif graph" />
 		<meta property="og:url" content="https://m1n3c4rt.github.io/utdr-leitmotif-graph.html" />
-		<meta property="og:image" content="https://raw.githubusercontent.com/M1n3c4rt/m1n3c4rt.github.io/refs/heads/main/utdr-motifs-graph/preview.png" />
+		<meta property="og:image" content="https://raw.githubusercontent.com/M1n3c4rt/m1n3c4rt.github.io/refs/heads/main/utdr-motifs-graph/assets/preview.png" />
 		<meta property="og:description" content="graph of the undertale/deltarune ost !!" />
 		<meta name="theme-color" content="#5a319e">
 		<meta name="twitter:card" content="summary_large_image">
@@ -21,23 +21,23 @@
 			<canvas id="layer2" class="layer" width="1920" height="1080"></canvas>
 			<canvas id="layer3" class="layer" width="1920" height="1080"></canvas>
 		</div>
-		<div class="t1">the undertale/deltarune leitmotif graph is unofficial and unaffiliated with Toby Fox, UNDERTALE and DELTARUNE.</div>
-		<div class="t2">drag to pan, scroll to zoom, drag nodes to move them around. double-click to select</div>
+		<!--<div class="t1">the undertale/deltarune leitmotif graph is unofficial and unaffiliated with Toby Fox, UNDERTALE and DELTARUNE.</div>
+		<div class="t2">drag to pan, scroll to zoom, drag nodes to move them around. double-click to select</div>-->
 		<div id="hudslide">
 			<div id="uiselector">
-				<button class="uiselector" id="uiselector-info" type="button" tabindex="3">
-					<img src="menuinfo.png" class="uibuttonimg">
+				<button class="uiselector" id="uiselector-info" type="button" tabindex="3" selected="false">
+					<img src="assets/menuinfo.png" class="uibuttonimg">
 				</button>
-				<button class="uiselector" id="uiselector-guide" type="button" tabindex="3">
-					<img src="menuguide.png" class="uibuttonimg">
+				<button class="uiselector" id="uiselector-guide" type="button" tabindex="3" selected="false">
+					<img src="assets/menuguide.png" class="uibuttonimg">
 				</button>
-				<button class="uiselector" id="uiselector-search" type="button" tabindex="3">
-					<img src="menusearch.png" class="uibuttonimg">
+				<button class="uiselector" id="uiselector-search" type="button" tabindex="3" selected="false">
+					<img src="assets/menusearch.png" class="uibuttonimg">
 				</button>
 			</div>
 			<div id="hud">
 				<div id="infoui" class="uipage" uivisible="false">
-					<div id="guideview" class="uiview" tabindex="2">
+					<div id="infoview" class="uiview" tabindex="2">
 						Credits:
 						<br/>
 						- M1n3c4rt, project founder
@@ -47,6 +47,10 @@
 						- catwoofer_, hyperfixating fuck
 						<br/>
 						- hydrogencitrus, motif midis
+						<br/>
+						And, of course,
+						<br/>
+						- Toby Fox, creator of UNDERTALE and DELTARUNE
 					</div>
 				</div>
 				<div id="guideui" class="uipage" uivisible="false">
@@ -56,21 +60,21 @@
 				</div>
 				<div id="searchui" class="uipage" uivisible="false">
 					<div id="searchview" class="uiview" tabindex="2">
+					    <label for="search"></label> <input id="search" placeholder="awa search for node" tabindex="1">
 						<canvas id="searchlayer"></canvas>
 					</div>
 					<div id="searchbox" class="uibox">
-						awa <label for="search">search for node:</label> <input id="search" tabindex="1">
 						<br/>
-						<input value="toggle selected node" id="toggle" type="button" tabindex="3">
-						<label for="speed">graph speed:</label> <input id="speed" type="number" value="1" min="0", max="5", step="0.25" tabindex="4">
+						<!--<input value="toggle selected node" id="toggle" type="button" tabindex="3">
+						<label for="speed">graph speed:</label> <input id="speed" type="number" value="1" min="0", max="5", step="0.25" tabindex="4">-->
 					</div>
 				</div>
-				<div id="bandcampbox" class="uibox">
+				<!--<div id="bandcampbox" class="uibox">
 					<iframe id="bandcampintegration" title="Bandcamp Integration"
 						src="dummysong.html"
 						seamless><a/></iframe>
 					<br/>
-				</div>
+				</div>-->
 			</div>
 		</div>
 		<!-- <div id="t3">debugtext</div> -->

@@ -2,16 +2,17 @@
     --BACKGROUND_COLOR: #0000007f;
     background-color: #000000;
 
-    font-family: 'profontwindowsregular';
+    font-family: 'determinationmono';
     color: #ccccdd;
 }
 
 body {
     width: 100%;
     height: 100%;
-
+    margin: 0;
+    
     position: fixed;
-    background-image: url("./GridSquare.png");
+    background-image: url("./assets/GridSquare.png");
     image-rendering: pixelated;
 }
 
@@ -44,11 +45,25 @@ body {
     top: 0px; left: 0px;
 }
 
+#search {
+    border: none;
+    background-color: black;
+    color: white;
+    font-family: determinationmono;
+    font-size: 20px;
+    margin-left: 10px;
+}
+
+#search:focus {
+    outline: none !important;
+    border-bottom: 1px solid white;
+}
+
 #bandcampintegration {
     /* position: absolute; */
     /* width: calc(100% - 256em); */
     display: none;
-    width: 27em;
+    width: 432px;
     height: 42px;
     top: 0px; left: 0px;
 }
@@ -57,11 +72,11 @@ body {
     display: flex;
     position: fixed;
     z-index: 1000;
-    bottom: 4em;
+    bottom: 64px;
     height: calc(50% + 1em);
-    width: 36em;
-    right: -31em;
-    transition: right ease-in-out 1s;
+    width: 576px;
+    right: -558px;
+    transition: right ease-out 0.5s;
     transition-delay: 0.01s;
 }
 
@@ -84,7 +99,7 @@ Retrieved 2025-12-30, License - CC BY-SA 4.0
 }
 
 #hudslide:has(#hud:hover), #hudslide[isfocused="true"] {
-    right: 4em;
+    right: 64px;
     transition-delay: 0s;
 }
 
@@ -93,7 +108,7 @@ Retrieved 2025-12-30, License - CC BY-SA 4.0
     pointer-events: all;
     flex-direction: column;
     position: relative;
-    right: 0px;
+    right: 42.24px;
 }
 
 .uipage {
@@ -104,7 +119,7 @@ Retrieved 2025-12-30, License - CC BY-SA 4.0
     align-content: right;
     align-items: right;
     height: 100%;
-    width: 36em;
+    width: 576px;
 }
 
 .uipage[uivisible="false"] {
@@ -117,16 +132,18 @@ Retrieved 2025-12-30, License - CC BY-SA 4.0
     overflow-y: auto;
     pointer-events: all;
     touch-action: all;
-    backdrop-filter: blur(10px);
-    background-color: var(--BACKGROUND_COLOR);
+    background-color: black;
     height: 100%;
     width: 100%;
+    border: 5px solid white;
+    padding: 16px;
+    font-size: 20px;
+    color: white;
 }
 
 .uibox {
     direction: ltr;
     position: relative;
-    backdrop-filter: blur(10px);
     background-color: var(--BACKGROUND_COLOR);
     pointer-events: all;
     width: fit-content;
@@ -138,16 +155,18 @@ Retrieved 2025-12-30, License - CC BY-SA 4.0
     background-color: #ff7f27;
     /* background-image: url('./menubase.png'); */
     /* background-size: contain; */
-    width: 4em;
-    height: 4em;
+    width: 60px;
+    height: 56px;
     margin: 0px;
     padding: 0px;
+
+    border: none;
 }
 
 .uibuttonimg {
     filter: none;
-    width: 3.5em;
-    height: 3.5em;
+    width: 56px;
+    height: 56px;
 }
 
 .uiselector[selected="true"] {
@@ -170,23 +189,6 @@ Retrieved 2025-12-30, License - CC BY-SA 4.0
          url('./fonts/pfw-webfont.woff') format('woff');
     font-weight: normal;
     font-style: normal;
-}
-
-.t1 {
-    position: fixed;
-    z-index: 1000;
-    float: inline-start;
-    backdrop-filter: blur(10px);
-    background-color: var(--BACKGROUND_COLOR);
-}
-
-.t2 {
-    position: fixed;
-    z-index: 1000;
-    float: right;
-    right: 10px;
-    backdrop-filter: blur(10px);
-    background-color: var(--BACKGROUND_COLOR);
 }
 
 a:link {

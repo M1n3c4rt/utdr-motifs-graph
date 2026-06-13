@@ -128,11 +128,11 @@ const HALFGRID = 46; // Half of the `GridSquare.png`'s size in pixels.
 let edgeLerp = 0;
 let lastDrawTime = 0;
 function draw(timestamp) {
-    if (speed.value < -4) speed.value = -4;
-    else if (speed.value > 1.5) speed.value = 1.5;
+    // if (speed.value < -4) speed.value = -4;
+    // else if (speed.value > 1.5) speed.value = 1.5;
 
     // If you somehow have perfect 60 FPS, this will always be 1.
-    let deltaTime = Math.min(4, Math.min(DRAW_FPS, timestamp - lastDrawTime) * speed.value / DRAW_DELTA);
+    let deltaTime = Math.min(4, Math.min(DRAW_FPS, timestamp - lastDrawTime) / DRAW_DELTA);
     // console.log(deltaTime);
     lastDrawTime = timestamp;
 
@@ -422,4 +422,4 @@ document.addEventListener("keyup", ({key}) => {
 })
 
 window.onload = (e) => raf = window.requestAnimationFrame(draw);
-loadJson(rootDirectory + "/utdr-leitmotif-graph.json", rootDirectory + "/utdr-bandcamp.json");
+loadJson(rootDirectory + "/utdr-leitmotif-graph.json");//, rootDirectory + "/utdr-bandcamp.json");

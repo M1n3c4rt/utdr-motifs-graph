@@ -14,9 +14,9 @@ sfxNope.volume = 0.5;
 sfxExit.volume = 0.5;
 
 // ui elements!
-const toggle = document.getElementById("toggle");
+// const toggle = document.getElementById("toggle");
 const search = document.getElementById("search");
-const speed = document.getElementById("speed");
+// const speed = document.getElementById("speed");
 
 var searchraf; // I'm not sure why this is being kept track of, but... ok!
 
@@ -165,18 +165,18 @@ search.addEventListener("input", () => {
     searchDraw();
 })
 
-toggle.addEventListener("click", () => {
-    console.log("nya");
-    if (ballInFocus) {
-        sfxToggle.currentTime = 0;
-        sfxToggle.play();
-        ballInFocus.isEnabled = !ballInFocus.isEnabled;
-        updateBall(ballInFocus);
-    } else {
-        sfxNope.currentTime = 0;
-        sfxNope.play();
-    }
-})
+// toggle.addEventListener("click", () => {
+//     console.log("nya");
+//     if (ballInFocus) {
+//         sfxToggle.currentTime = 0;
+//         sfxToggle.play();
+//         ballInFocus.isEnabled = !ballInFocus.isEnabled;
+//         updateBall(ballInFocus);
+//     } else {
+//         sfxNope.currentTime = 0;
+//         sfxNope.play();
+//     }
+// })
 
 searchLayer.onwheel = event => {
     event.stopPropagation();
