@@ -99,7 +99,7 @@ function refreshTree(newData) {
         if (track.style) balls[id].applyStyle(track.style)
         else if (track.isMinor) balls[id].applyStyle("minor")
 
-        const lowerName = balls[id].name.toLowerCase;
+        const lowerName = balls[id].name.toLowerCase();
         if (allNames[lowerName]) {
             balls[id].shouldDisambiguate = true;
             allNames[lowerName].shouldDisambiguate = true;
