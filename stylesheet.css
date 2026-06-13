@@ -59,7 +59,7 @@ body {
     bottom: 4em;
     height: 50%;
     width: 36em;
-    right: -32em;
+    right: -31em;
     transition: right ease-in-out 1s;
     transition-delay: 0.01s;
 }
@@ -131,14 +131,26 @@ Retrieved 2025-12-30, License - CC BY-SA 4.0
     width: fit-content;
 }
 
+/* https://codepen.io/sosuke/pen/Pjoqqp */
 .uiselector {
-    color: #ff7f27;
+    /* color: #ff7f27; */
+    background-color: #ff7f27;
+    /* background-image: url('./menubase.png'); */
+    /* background-size: contain; */
     width: 4em;
     height: 4em;
+    margin: 0px;
+    padding: 0px;
 }
 
-.uiselector:focus {
-    color: #ffff00
+.uibuttonimg {
+    filter: none;
+    width: 3.5em;
+    height: 3.5em;
+}
+
+.uiselector[selected="true"] {
+    background-color: #ffff00;
 }
 
 @font-face {

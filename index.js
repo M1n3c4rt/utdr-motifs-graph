@@ -111,7 +111,7 @@ function refreshTree(newData) {
         });
     });
 
-    searchResults.push(...Object.values(balls));
+    loadInitialSearch();
 }
 
 FRICTION = 0.1

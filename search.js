@@ -9,14 +9,6 @@ let searchBounds = searchView.getBoundingClientRect();
 let searchHeight = searchBounds.bottom - searchBounds.top - SEARCH_GAP;
 let searchScroll = 0;
 
-// For the UI + Search menu !!
-const sfxPagerIn = new Audio(rootDirectory + '/sfx/snd_select.wav');
-const sfxPagerOut = new Audio(rootDirectory + '/sfx/snd_smallswing.wav');
-const sfxNope = new Audio(rootDirectory + '/sfx/snd_cantselect.wav');
-const sfxFocus = new Audio(rootDirectory + '/sfx/snd_menumove.wav');
-const sfxExit = new Audio(rootDirectory + '/sfx/snd_cantselect.wav');
-const sfxToggle = new Audio(rootDirectory + '/sfx/snd_equip.wav');
-
 sfxPagerOut.volume = 0.75;
 sfxNope.volume = 0.5;
 sfxExit.volume = 0.5;
@@ -32,10 +24,10 @@ function searchDraw() {
     // Draw balls in search menu
     searchCamera.refresh();
     searchLayer.style.height = `${searchResults.length * SEARCH_GAP}px`
+
     Object.entries(searchResults).forEach(([index, ball]) => {
         ball.searchBall.draw(32, index * SEARCH_GAP + NODE_HUD_HEIGHT);
     });
-
     // searchraf = window.requestAnimationFrame(searchDraw);
 }
 
@@ -75,6 +67,7 @@ function setBallFocus(ball, sound = true) {
 
             updateBall(ballInFocus);
         }
+
         if (sound) {
             sfxPagerIn.currentTime = 0;
             sfxPagerIn.play();
@@ -133,6 +126,14 @@ search.addEventListener("keydown", ({key}) => {
     else if (key === "ArrowDown") changeSelect(1);
 })
 
+function loadInitialSearch() {
+    searchResults.push(...Object.values(balls));
+    searchDraw();
+    document.fonts.ready.then(() => {
+        searchDraw();
+    })
+}
+
 search.addEventListener("input", () => {
     if (ballInFocus) unfocusBall();
 
@@ -161,7 +162,6 @@ search.addEventListener("input", () => {
     }
 
     searchDraw();
-
     searchDraw();
 })
 
@@ -171,6 +171,7 @@ toggle.addEventListener("click", () => {
         sfxToggle.currentTime = 0;
         sfxToggle.play();
         ballInFocus.isEnabled = !ballInFocus.isEnabled;
+        updateBall(ballInFocus);
     } else {
         sfxNope.currentTime = 0;
         sfxNope.play();
@@ -221,6 +222,6 @@ window.addEventListener("resize", (e) => {
     searchDraw();
 })
 
-searchDraw();
+// searchDraw();
 
 // searchraf = window.requestAnimationFrame(searchDraw);

@@ -1,5 +1,13 @@
 const NODE_HUD_HEIGHT = 36;
 
+// For the UI + Search menu !!
+const sfxPagerIn = new Audio(rootDirectory + '/sfx/snd_select.wav');
+const sfxPagerOut = new Audio(rootDirectory + '/sfx/snd_smallswing.wav');
+const sfxNope = new Audio(rootDirectory + '/sfx/snd_cantselect.wav');
+const sfxFocus = new Audio(rootDirectory + '/sfx/snd_menumove.wav');
+const sfxExit = new Audio(rootDirectory + '/sfx/snd_cantselect.wav');
+const sfxToggle = new Audio(rootDirectory + '/sfx/snd_equip.wav');
+
 const hud = document.getElementById("hud");
 const hudslide = document.getElementById("hudslide");
 const hudbuttons = document.getElementById("uiselector");
@@ -19,7 +27,6 @@ let hudFocused = false;
 function isHudFocused() {
     return hudFocused > 0;
 }
-
 
 function updateHUD(inc) {
     hudFocused += inc;
@@ -47,7 +54,7 @@ hudslide.addEventListener("focusout", (e) => updateHUD(-1));
 
 function registerButtonPage(button, page) {
     button.addEventListener("click", (e) => {
-        changePage(page);
+        changePage(page, button);
     })
 }
 
@@ -56,17 +63,23 @@ registerButtonPage(guidebutton, guideui);
 registerButtonPage(searchbutton, searchui);
 
 let currentPage;
-function changePage(element) {
+let currentButton;
+function changePage(element, button) {
+    sfxPagerIn.currentTime = 0;
+    sfxPagerIn.play();
 
     if (currentPage) {
         currentPage.setAttribute("uivisible", false);
+        currentButton.setAttribute("selected", false);
     }
 
     element.setAttribute("uivisible", true);
+    button.setAttribute("selected", true);
     currentPage = element;
+    currentButton = button;
 }
 
-changePage(searchui);
+changePage(searchui, searchbutton);
 
 class uinode {
     sx; sy;

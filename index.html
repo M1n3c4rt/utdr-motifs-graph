@@ -25,17 +25,27 @@
 		<div class="t2">drag to pan, scroll to zoom, drag nodes to move them around. double-click to select</div>
 		<div id="hudslide">
 			<div id="uiselector">
-				<input value="INFO" class="uiselector" id="uiselector-info" type="button" tabindex="3">
-				<input value="GUIDE" class="uiselector" id="uiselector-guide" type="button" tabindex="3">
-				<input value="SEARCH" class="uiselector" id="uiselector-search" type="button" tabindex="3">
+				<button class="uiselector" id="uiselector-info" type="button" tabindex="3">
+					<img src="menuinfo.png" class="uibuttonimg">
+				</button>
+				<button class="uiselector" id="uiselector-guide" type="button" tabindex="3">
+					<img src="menuguide.png" class="uibuttonimg">
+				</button>
+				<button class="uiselector" id="uiselector-search" type="button" tabindex="3">
+					<img src="menusearch.png" class="uibuttonimg">
+				</button>
 			</div>
 			<div id="hud">
 				<div id="infoui" class="uipage" uivisible="false">
 					<div id="guideview" class="uiview" tabindex="2">
 						Credits:
+						<br/>
 						- M1n3c4rt, project founder
+						<br/>
 						- CyanAqua, "i'm the data guy"
+						<br/>
 						- catwoofer_, hyperfixating fuck
+						<br/>
 						- hydrogencitrus, motif midis
 					</div>
 				</div>
@@ -57,7 +67,7 @@
 				</div>
 				<div id="bandcampbox" class="uibox">
 					<iframe id="bandcampintegration" title="Bandcamp Integration"
-						src="https://bandcamp.com/EmbeddedPlayer/artwork=none/size=small/bgcol=ffffff/linkcol=0687f5/transparent=true/track=3768286999"
+						src="dummysong.html"
 						seamless><a/></iframe>
 					<br/>
 				</div>

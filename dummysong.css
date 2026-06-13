@@ -1,0 +1,12 @@
+:root {
+    background-color: white;
+    font-family: 'profontwindowsregular';
+}
+
+@font-face {
+    font-family: 'profontwindowsregular';
+    src: url('./fonts/pfw-webfont.woff2') format('woff2'),
+         url('./fonts/pfw-webfont.woff') format('woff');
+    font-weight: normal;
+    font-style: normal;
+}

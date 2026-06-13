@@ -68,7 +68,6 @@ class node {
         this.spawnX = this.x = x ?? node.randomPosition();
         this.spawnY = this.y = y ?? node.randomPosition();
         this.trackID = this.data.trackID ?? bandcampData[this.id]?.trackID ?? null;
-        console.log(this.trackID);
         this.reloadSearchTerms();
     }
 
