@@ -47,37 +47,21 @@ body {
 #bandcampintegration {
     /* position: absolute; */
     /* width: calc(100% - 256em); */
-    width: 100%;
+    width: 27em;
     height: 42px;
     top: 0px; left: 0px;
 }
 
-#searchbox {
-    position: absolute;
-    backdrop-filter: blur(10px);
-    background-color: var(--BACKGROUND_COLOR);
-    pointer-events: all;
-    right: 0px;
-    bottom: 0px;
-}
-
-#searchview {
-    position: absolute;
-    overflow-y: scroll;
-    pointer-events: all;
-    touch-action: all;
-    backdrop-filter: blur(10px);
-    background-color: var(--BACKGROUND_COLOR);
-    height: 100%;
-    width: 100%;
-    right: -100%;
-    bottom: 3em;
-    padding-right: 3em;
+#hudslide {
+    display: flex;
+    position: fixed;
+    z-index: 1000;
+    bottom: 4em;
+    height: 50%;
+    width: 36em;
+    right: -32em;
     transition: right ease-in-out 1s;
-}
-
-.hud:focus-within #searchview, #searchview:focus {
-    right: 0px;
+    transition-delay: 0.01s;
 }
 
 /*
@@ -87,18 +71,74 @@ Source - https://stackoverflow.com/questions/23885255/how-to-remove-ignore-hover
 Posted by Hải Bùi, modified by community. See post 'Timeline' for change history
 Retrieved 2025-12-30, License - CC BY-SA 4.0
 */
-@media (hover: hover) and (pointer: fine) {
-  #searchview:hover { right: 0px; }
+/* @media (hover: hover) and (pointer: fine) {
+    #hudslide:hover {
+        right: 10px;
+        transition-delay: 0s;
+    }
+} */
+
+#hud {
+    direction: rtl
 }
 
-.hud {
-    position: fixed;
-    pointer-events: none;
-    z-index: 1000;
-    bottom: 3em;
-    right: 10px;
-    height: 50%;
+#hudslide:has(#hud:hover), #hudslide[isfocused="true"] {
+    right: 4em;
+    transition-delay: 0s;
+}
+
+#uiselector {
+    display: flex;
+    pointer-events: all;
+    flex-direction: column;
+    position: relative;
+    right: 0px;
+}
+
+.uipage {
+    display: flex;
+    flex-direction: column;
+    direction: rtl;
+    justify-content: right;
+    align-content: right;
+    align-items: right;
+    height: 100%;
     width: 36em;
+}
+
+.uipage[uivisible="false"] {
+    display: none;
+}
+
+.uiview {
+    direction: ltr;
+    position: relative;
+    overflow-y: auto;
+    pointer-events: all;
+    touch-action: all;
+    backdrop-filter: blur(10px);
+    background-color: var(--BACKGROUND_COLOR);
+    height: 100%;
+    width: 100%;
+}
+
+.uibox {
+    direction: ltr;
+    position: relative;
+    backdrop-filter: blur(10px);
+    background-color: var(--BACKGROUND_COLOR);
+    pointer-events: all;
+    width: fit-content;
+}
+
+.uiselector {
+    color: #ff7f27;
+    width: 4em;
+    height: 4em;
+}
+
+.uiselector:focus {
+    color: #ffff00
 }
 
 @font-face {
