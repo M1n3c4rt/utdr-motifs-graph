@@ -17,6 +17,10 @@
             "outline": "#880A47",
             "radius": 20
         },
+        "deltarune-default": {
+            "color": "#00ffff",
+            "outline": "#12b8ff"
+        },
         "isolate": {
             "color": "#434E61",
             "outline": "#0d1517"
@@ -29,19 +33,23 @@
         },
         "B-": {
             "name": "Deltarune Chapter 1",
-            "prefix": "DR-1"
+            "prefix": "DR-1",
+            "style": "deltarune"
         },
         "C-": {
             "name": "Deltarune Chapter 2",
-            "prefix": "DR-2"
+            "prefix": "DR-2",
+            "style": "deltarune"
         },
         "D-": {
             "name": "Deltarune Chapters 3&4",
-            "prefix": "DR-3&4"
+            "prefix": "DR-3&4",
+            "style": "deltarune"
         },
         "AV-": {
             "name": "UNDERTALE 10th Anniversary",
-            "prefix": "UT-10"
+            "prefix": "UT-10",
+            "style": "deltarune"
         }
     },
     "tracks": {
@@ -324,9 +332,15 @@
         "D-78": "Concert for you",
         "AV-1": "Abandoned Town",
         "AV-2": "Doghole",
-        "AV-3": "Memory (10 Years Later)",
-        "AV-4": "Pseudo Legendary Tree",
-        "AV-5":{
+        "AV-3": {
+            "name": "Memory (10 Years Later)",
+            "trackID": 3768286999
+        },
+        "AV-4": {
+            "name": "Pseudo Legendary Tree",
+            "trackID": 3477177026
+        },
+        "AV-5": {
             "name": "School"
         },
         "AV-6": "Snowdrift",
@@ -468,10 +482,18 @@
                 "D-22"
             ]
         },
+        "anticipation": {
+            "name": "Anticipation",
+            "subtitle": "Enemy Approaching (Bassline)",
+            "associations": [
+                "A-7",
+                "A-9",
+                "A-95"
+            ]
+        },
         "enemy_approaching": {
             "name": "Enemy Approaching",
             "associations": [
-                "A-7",
                 "A-9",
                 "A-14",
                 "A-95"
@@ -480,6 +502,7 @@
         "dogsong": {
             "name": "Dogsong",
             "associations": [
+                "enemy_approaching",
                 "A-21",
                 "A-43",
                 "A-44"

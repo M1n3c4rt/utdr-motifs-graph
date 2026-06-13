@@ -23,19 +23,44 @@
 		</div>
 		<div class="t1">the undertale/deltarune leitmotif graph is unofficial and unaffiliated with Toby Fox, UNDERTALE and DELTARUNE.</div>
 		<div class="t2">drag to pan, scroll to zoom, drag nodes to move them around. double-click to select</div>
-		<div class="hud">
-			<div id="searchview" tabindex="2">
-				<canvas id="searchlayer"></canvas>
+		<div id="hudslide">
+			<div id="uiselector">
+				<input value="INFO" class="uiselector" id="uiselector-info" type="button" tabindex="3">
+				<input value="GUIDE" class="uiselector" id="uiselector-guide" type="button" tabindex="3">
+				<input value="SEARCH" class="uiselector" id="uiselector-search" type="button" tabindex="3">
 			</div>
-			<div id="searchbox">
-				<!-- <iframe id="bandcampintegration" title="Bandcamp Integration"
-					src="https://bandcamp.com/EmbeddedPlayer/artwork=none/size=small/bgcol=ffffff/linkcol=0687f5/transparent=true/track=3768286999"
-					seamless><a/></iframe>
-				<br/> -->
-				awa <label for="search">search for node:</label> <input id="search" tabindex="1">
-				<br/>
-				<input value="toggle selected node" id="toggle" type="button" tabindex="3">
-				<label for="speed">graph speed:</label> <input id="speed" type="number" value="1" min="0", max="5", step="0.25" tabindex="4">
+			<div id="hud">
+				<div id="infoui" class="uipage" uivisible="false">
+					<div id="guideview" class="uiview" tabindex="2">
+						Credits:
+						- M1n3c4rt, project founder
+						- CyanAqua, 
+						- catwoofer_, 
+						- hydrogencitrus, motif midis
+					</div>
+				</div>
+				<div id="guideui" class="uipage" uivisible="false">
+					<div id="guideview" class="uiview" tabindex="2">
+						Hello! Welcome to the UT/DR Motifs site!
+					</div>
+				</div>
+				<div id="searchui" class="uipage" uivisible="false">
+					<div id="searchview" class="uiview" tabindex="2">
+						<canvas id="searchlayer"></canvas>
+					</div>
+					<div id="searchbox" class="uibox">
+						awa <label for="search">search for node:</label> <input id="search" tabindex="1">
+						<br/>
+						<input value="toggle selected node" id="toggle" type="button" tabindex="3">
+						<label for="speed">graph speed:</label> <input id="speed" type="number" value="1" min="0", max="5", step="0.25" tabindex="4">
+					</div>
+				</div>
+				<div id="bandcampbox" class="uibox">
+					<iframe id="bandcampintegration" title="Bandcamp Integration"
+						src="https://bandcamp.com/EmbeddedPlayer/artwork=none/size=small/bgcol=ffffff/linkcol=0687f5/transparent=true/track=3768286999"
+						seamless><a/></iframe>
+					<br/>
+				</div>
 			</div>
 		</div>
 		<!-- <div id="t3">debugtext</div> -->
@@ -43,5 +68,7 @@
 	<!-- would have loved to use `type="module"` here but goodness is it annoying to work with -->
 	<script src="ball.js"></script>
 	<script src="camera.js"></script>
+	<script src="hud.js"></script>
+	<script src="search.js"></script>
 	<script src="index.js"></script>
 </html>
