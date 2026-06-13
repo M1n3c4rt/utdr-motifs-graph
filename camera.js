@@ -50,6 +50,18 @@ class Camera {
         }
     }
 
+    // Alternative to `refresh`. Use for simpler applications or when things break.
+    clear() {
+        const fontSize = Math.max(this.fontSize * 0.5, this.fontSize / this.zoom);
+
+        for (let i in this.layers) {
+            this.layers[i].clearRect(0, 0, this.width, this.height);
+            this.scenes[i].width  = this.scenes[i].clientWidth;
+            this.scenes[i].height = this.scenes[i].clientHeight;
+            this.layers[i].font = `${fontSize}px ${this.font}`;
+        }
+    }
+
     clearArea(x, y, width, height) {
         for (let i in this.layers) {
             this.layers[i].clearRect(x, y, width, height);

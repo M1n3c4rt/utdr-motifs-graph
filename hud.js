@@ -31,11 +31,10 @@ function isHudFocused() {
 function updateHUD(inc) {
     hudFocused += inc;
     const isFocused = isHudFocused();
+    const wasFocused = hudslide.getAttribute("isfocused");
     hudslide.setAttribute("isfocused", isFocused);
+    return isFocused != wasFocused;
 }
-
-hudslide.addEventListener("focusin", (e) => updateHUD(1));
-hudslide.addEventListener("focusout", (e) => updateHUD(-1));
 
 // Give up, focus on bandcamp is broken
 // var wasBandcamp = false;
@@ -52,8 +51,9 @@ hudslide.addEventListener("focusout", (e) => updateHUD(-1));
 //     updateHUD(-1);
 // })
 
+// Would love to use click here, but it messes with focusin
 function registerButtonPage(button, page) {
-    button.addEventListener("click", (e) => {
+    button.addEventListener("mousedown", (e) => {
         changePage(page, button);
     })
 }
@@ -61,6 +61,16 @@ function registerButtonPage(button, page) {
 registerButtonPage(infobutton, infoui);
 registerButtonPage(guidebutton, guideui);
 registerButtonPage(searchbutton, searchui);
+
+searchbutton.addEventListener("mousedown", (e) => {
+    searchDraw();
+})
+
+hudslide.addEventListener("focusin", (e) => {
+    // if (updateHUD(1)) e.target.click();
+    updateHUD(1);
+});
+hudslide.addEventListener("focusout", (e) => updateHUD(-1));
 
 let currentPage;
 let currentButton;
@@ -70,16 +80,17 @@ function changePage(element, button) {
 
     if (currentPage) {
         currentPage.setAttribute("uivisible", false);
-        currentButton.setAttribute("selected", false);
+        if (currentButton) currentButton.setAttribute("selected", false);
     }
 
     element.setAttribute("uivisible", true);
-    button.setAttribute("selected", true);
+    if (button) button.setAttribute("selected", true);
+
     currentPage = element;
     currentButton = button;
 }
 
-// changePage(searchui, searchbutton);
+changePage(searchui);
 
 class uinode {
     sx; sy;

@@ -1,3 +1,4 @@
+const SEARCH_X = 27;
 const SEARCH_LOAD = 160;
 const SEARCH_GAP = 69;
 
@@ -22,11 +23,11 @@ var searchraf; // I'm not sure why this is being kept track of, but... ok!
 
 function searchDraw() {
     // Draw balls in search menu
-    searchCamera.refresh();
+    searchCamera.clear();
     searchLayer.style.height = `${searchResults.length * SEARCH_GAP}px`
 
     Object.entries(searchResults).forEach(([index, ball]) => {
-        ball.searchBall.draw(32, index * SEARCH_GAP + NODE_HUD_HEIGHT);
+        ball.searchBall.draw(SEARCH_X, index * SEARCH_GAP + NODE_HUD_HEIGHT);
     });
     // searchraf = window.requestAnimationFrame(searchDraw);
 }
@@ -36,7 +37,7 @@ function updateBall(ball) {
     const newScroll = index * SEARCH_GAP;
 
     searchCamera.clearArea(0, index * SEARCH_GAP, searchCamera.width, SEARCH_GAP)
-    ball.searchBall.draw(32, index * SEARCH_GAP + NODE_HUD_HEIGHT);
+    ball.searchBall.draw(SEARCH_X, index * SEARCH_GAP + NODE_HUD_HEIGHT);
 }
 
 var ballInFocus;
@@ -221,7 +222,5 @@ searchView.addEventListener("scroll", (e) => {
 window.addEventListener("resize", (e) => {
     searchDraw();
 })
-
-// searchDraw();
 
 // searchraf = window.requestAnimationFrame(searchDraw);

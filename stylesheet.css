@@ -50,6 +50,8 @@ body {
     background-color: black;
     color: white;
     font-family: determinationmono;
+    border-bottom: 1px solid gray;
+    width: 90%;
     font-size: 20px;
     margin-left: 10px;
 }
@@ -75,7 +77,7 @@ body {
     bottom: 64px;
     height: calc(50% + 1em);
     width: 576px;
-    right: -558px;
+    right: -490px;
     transition: right ease-out 0.5s;
     transition-delay: 0.01s;
 }
@@ -94,12 +96,8 @@ Retrieved 2025-12-30, License - CC BY-SA 4.0
     }
 } */
 
-#hud {
-    direction: rtl
-}
-
 #hudslide:has(#hud:hover), #hudslide[isfocused="true"] {
-    right: 64px;
+    right: 100px;
     transition-delay: 0s;
 }
 
@@ -108,18 +106,17 @@ Retrieved 2025-12-30, License - CC BY-SA 4.0
     pointer-events: all;
     flex-direction: column;
     position: relative;
-    right: 42.24px;
+    right: 0px;
 }
 
 .uipage {
     display: flex;
     flex-direction: column;
-    direction: rtl;
-    justify-content: right;
-    align-content: right;
-    align-items: right;
     height: 100%;
     width: 576px;
+    background-color: black;
+    border: 5px solid white;
+    padding: 16px;
 }
 
 .uipage[uivisible="false"] {
@@ -127,26 +124,21 @@ Retrieved 2025-12-30, License - CC BY-SA 4.0
 }
 
 .uiview {
-    direction: ltr;
     position: relative;
     overflow-y: auto;
     pointer-events: all;
     touch-action: all;
-    background-color: black;
     height: 100%;
     width: 100%;
-    border: 5px solid white;
-    padding: 16px;
     font-size: 20px;
     color: white;
 }
 
 .uibox {
-    direction: ltr;
     position: relative;
+    width: 100%;
     background-color: var(--BACKGROUND_COLOR);
     pointer-events: all;
-    width: fit-content;
 }
 
 /* https://codepen.io/sosuke/pen/Pjoqqp */
@@ -167,6 +159,7 @@ Retrieved 2025-12-30, License - CC BY-SA 4.0
     filter: none;
     width: 56px;
     height: 56px;
+    pointer-events: none;
 }
 
 .uiselector[selected="true"] {
