@@ -13,7 +13,7 @@ class Camera {
 
     // Enforces screen limits.
     bounds = {
-        x: 2000, y: 2000
+        x: 7500, y: 5000
     };
 
     zoom = 1;
