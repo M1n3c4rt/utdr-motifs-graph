@@ -99,11 +99,12 @@ function refreshTree(newData) {
         if (track.style) balls[id].applyStyle(track.style)
         else if (track.isMinor) balls[id].applyStyle("minor")
 
-        if (allNames[balls[id].name]) {
+        const lowerName = balls[id].name.toLowerCase;
+        if (allNames[lowerName]) {
             balls[id].shouldDisambiguate = true;
-            allNames[balls[id].name].shouldDisambiguate = true;
+            allNames[lowerName].shouldDisambiguate = true;
         }
-        allNames[balls[id].name] = balls[id];
+        allNames[lowerName] = balls[id];
 
         Object.entries(newData.groups).forEach(([gID, group]) => {
             if (id.startsWith(gID)) balls[id].applyGroup(group, gID);

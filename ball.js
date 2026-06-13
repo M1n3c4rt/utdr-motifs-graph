@@ -63,6 +63,7 @@ class node {
         this.data = jsonDefinition;
         this.color = this.data.color ?? "#00000000";
         this.outline = this.data.outline ?? "#00000000";
+        this.shouldDisambiguate = this.data.disambiguate ?? false;
         this.thin = this.data.thin ?? false;
         this.spawnX = this.x = x ?? node.randomPosition();
         this.spawnY = this.y = y ?? node.randomPosition();
@@ -490,63 +491,5 @@ class node {
     // Text stroke.
     static getStrokeZoomed(size, zoom) {
         return Math.max(size, size / zoom);
-    }
-}
-
-class uinode {
-    sx; sy;
-    camera; bodyLayer;
-    constructor(ball, camera) {
-        this.ball = ball;
-        this.camera = camera;
-        this.bodyLayer = camera.layers[0];
-    }
-
-    get ctx() { return this.bodyLayer; }
-    get color() { return this.ball.color; }
-    get outline() { return this.ball.outline; }
-    get inFocus() { return this.ball.inFocus; }
-    get radius() { return this.ball.radius; }
-    get angle() { return this.ball.angle; }
-    get sides() { return this.ball.sides; }
-
-    draw(x, y) {
-        this.sx = x; this.sy = y;
-        if (!this.ball.isEnabled) this.ctx.globalAlpha = 0.25;
-
-        node.drawGeneric(this);
-        this.ctx.globalAlpha = 1;
-
-        const xpos = this.sx + 36;
-        const ypos = this.ball.subtitle ? this.sy : this.sy + 8;
-
-        this.ctx.textAlign = "left"
-        this.ctx.strokeStyle = "#000000";
-        this.ctx.fillStyle = "#ffffff";
-        this.ctx.lineWidth = node.getStrokeZoomed(4, this.camera.zoom);
-
-        if (!this.ball.prefix) {
-            node.drawText(this.ctx, this.ball.name, xpos, ypos);
-        } else {
-            const width = this.ctx.measureText(this.ball.prefix + " ").width;
-
-            node.drawText(this.ctx, this.ball.name, xpos + width, ypos);
-            this.ctx.fillStyle = "#ccff22";
-            node.drawText(this.ctx, this.ball.prefix, xpos, ypos);
-        }
-
-        if (this.ball.subtitle) {
-            this.ctx.fillStyle = "#7f7f7f";
-            node.drawText(this.ctx, this.ball.subtitle, xpos, ypos + this.camera.fontSize + 2);
-        }
-    }
-}
-
-
-class searchnode extends uinode {
-    draw(x, y) {
-        const testY = y - searchScroll;
-        if (testY > (searchHeight + SEARCH_LOAD) || testY < -SEARCH_LOAD) return;
-        super.draw(x, y);
     }
 }
