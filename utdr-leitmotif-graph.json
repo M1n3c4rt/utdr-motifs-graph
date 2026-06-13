@@ -332,12 +332,10 @@
         "AV-1": "Abandoned Town",
         "AV-2": "Doghole",
         "AV-3": {
-            "name": "Memory (10 Years Later)",
-            "trackID": 3768286999
+            "name": "Memory (10 Years Later)"
         },
         "AV-4": {
-            "name": "Pseudo Legendary Tree",
-            "trackID": 3477177026
+            "name": "Pseudo Legendary Tree"
         },
         "AV-5": {
             "name": "School"
