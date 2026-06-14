@@ -53,7 +53,7 @@ function updateHUD(inc) {
 
 // Would love to use click here, but it messes with focusin
 function registerButtonPage(button, page) {
-    button.addEventListener("mousedown", (e) => {
+    button.addEventListener("click", (e) => {
         changePage(page, button);
     })
 }
@@ -62,7 +62,7 @@ registerButtonPage(infobutton, infoui);
 registerButtonPage(guidebutton, guideui);
 registerButtonPage(searchbutton, searchui);
 
-searchbutton.addEventListener("mousedown", (e) => {
+searchbutton.addEventListener("click", (e) => {
     searchDraw();
 })
 
