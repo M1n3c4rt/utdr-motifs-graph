@@ -1164,6 +1164,8 @@
             "associations": [
                 "B-35",
                 "D-33",
+                "D-48",
+                "D-55",
                 "AV-1"
             ]
         },
@@ -1171,7 +1173,6 @@
             "name": "The Holy (B)",
             "associations": [
                 "B-35",
-                "D-1",
                 "D-32"
             ]
         },
@@ -1179,8 +1180,7 @@
             "name": "The Holy (C)",
             "associations": [
                 "B-35",
-                "D-55",
-                "D-48"
+                "D-1"
             ]
         },
         "cyber_world": {
