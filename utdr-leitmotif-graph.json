@@ -21,6 +21,10 @@
             "color": "#00ffff",
             "outline": "#12b8ff"
         },
+        "deltarune-isolate": {
+            "color": "#38705e",
+            "outline": "#224c3e"
+        },
         "isolate": {
             "color": "#434E61",
             "outline": "#0d1517"

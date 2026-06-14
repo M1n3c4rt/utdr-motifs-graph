@@ -13,7 +13,7 @@ class Camera {
 
     // Enforces screen limits.
     bounds = {
-        x: 7500, y: 5000
+        x: 5000, y: 4500
     };
 
     zoom = 1;
@@ -69,7 +69,9 @@ class Camera {
     }
 
     getTrueBounds() {
-        return [this.bounds.x, this.bounds.y];
+        const result = [this.bounds.x + (this.width * 0.5 / this.zoom), this.bounds.y + (this.height * 0.5 / this.zoom)];
+        console.log(result);
+        return result;
     }
 
     checkBoundsHit() {
