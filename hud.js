@@ -72,22 +72,31 @@ hudslide.addEventListener("focusin", (e) => {
 });
 hudslide.addEventListener("focusout", (e) => updateHUD(-1));
 
-let currentPage;
-let currentButton;
+let currentPage = null;
+let currentButton = null;
 function changePage(element, button) {
     sfxPagerIn.currentTime = 0;
     sfxPagerIn.play();
 
+    if (currentButton == button) {
+        if (button) updateHUD(-1);
+        button = null;
+    } else if (!currentButton) updateHUD(1);
+
     if (currentPage) {
-        currentPage.setAttribute("uivisible", false);
         if (currentButton) currentButton.setAttribute("selected", false);
+        if (element) currentPage.setAttribute("uivisible", false);
     }
 
-    element.setAttribute("uivisible", true);
-    if (button) button.setAttribute("selected", true);
+    if (element) {
+        element.setAttribute("uivisible", true);
+        if (button) button.setAttribute("selected", true);
+    }
 
     currentPage = element;
     currentButton = button;
+
+    console.log(hudFocused);
 }
 
 changePage(searchui);

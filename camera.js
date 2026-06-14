@@ -29,8 +29,6 @@ class Camera {
 
     // Should be called at the beginning of every `draw()` call.
     refresh(deltaTime) {
-        this.enforceBoundaries();
-
         this.width = this.scenes[0].width;
         this.height = this.scenes[0].height;
         const fontSize = Math.max(this.fontSize * 0.5, this.fontSize / this.zoom);
@@ -48,6 +46,8 @@ class Camera {
             if (this.focus.auto && this.x == this.focus.x && this.y == this.focus.y)
                 this.focus.enabled = false;
         }
+
+        this.enforceBoundaries();
     }
 
     // Alternative to `refresh`. Use for simpler applications or when things break.
@@ -68,15 +68,23 @@ class Camera {
         }
     }
 
+    getTrueBounds() {
+        return [this.bounds.x, this.bounds.y];
+    }
+
     checkBoundsHit() {
-        if (this.x < -this.bounds.x || this.x > this.bounds.x ||
-            this.y < -this.bounds.y || this.y > this.bounds.y) return true;
+        const [width, height] = this.getTrueBounds();
+        if (this.x < -width || this.x > width ||
+            this.y < -height || this.y > height) return true;
         return false;
     }
 
     enforceBoundaries() {
-        this.x = Math.min(this.bounds.x, Math.max(this.x, -this.bounds.x));
-        this.y = Math.min(this.bounds.y, Math.max(this.y, -this.bounds.y));
+        const [width, height] = this.getTrueBounds();
+        this.x = Math.min(width, Math.max(this.x, -width));
+        this.y = Math.min(height, Math.max(this.y, -height));
+        // this.x = Math.min(this.bounds.x, Math.max(this.x, -this.bounds.x));
+        // this.y = Math.min(this.bounds.y, Math.max(this.y, -this.bounds.y));
     }
 
     // Legacy function. Keeping it here to keep my sanity sane
