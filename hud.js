@@ -66,11 +66,11 @@ searchbutton.addEventListener("mousedown", (e) => {
     searchDraw();
 })
 
-hudslide.addEventListener("focusin", (e) => {
-    // if (updateHUD(1)) e.target.click();
-    updateHUD(1);
-});
-hudslide.addEventListener("focusout", (e) => updateHUD(-1));
+// hudslide.addEventListener("focusin", (e) => {
+//     // if (updateHUD(1)) e.target.click();
+//     updateHUD(1);
+// });
+// hudslide.addEventListener("focusout", (e) => updateHUD(-1));
 
 let currentPage = null;
 let currentButton = null;
