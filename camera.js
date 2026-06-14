@@ -70,7 +70,6 @@ class Camera {
 
     getTrueBounds() {
         const result = [this.bounds.x + (this.width * 0.5 / this.zoom), this.bounds.y + (this.height * 0.5 / this.zoom)];
-        console.log(result);
         return result;
     }
 
