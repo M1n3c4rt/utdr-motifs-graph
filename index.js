@@ -25,13 +25,18 @@ var bounds = {
 }
 
 let youtubeData = {}
-async function loadJson(path, youtubePath) {
-    let rawJson = await fetch(path);
+let tracksData = {}
+async function loadJson(path, youtubePath, tracksPath) {
+    let rawJson = await fetch(rootDirectory + path);
     if (!rawJson.ok) throw new Error(`FATAL: Couldn't retrieve Leitmotifs JSON! ${rawJson.status} - ${rawJson.statusText}`);
 
-    let rawBand = await fetch(youtubePath);
+    let rawBand = await fetch(rootDirectory + youtubePath);
     if (!rawBand.ok) console.warn(`Couldn't retrieve YouTube JSON! ${rawBand.status} - ${rawBand.statusText}`);
     else youtubeData = (await rawBand.json()).tracks;
+
+    let rawTracks = await fetch(rootDirectory + tracksPath);
+    if (!rawTracks.ok) console.warn(`Couldn't retrieve Motif Tracks JSON! ${rawBand.status} - ${rawBand.statusText}`);
+    else tracksData = (await rawTracks.json()).tracks;
 
     rawJson.json().then(refreshTree);
 }
@@ -430,4 +435,4 @@ document.addEventListener("keyup", ({key}) => {
 })
 
 window.onload = (e) => raf = window.requestAnimationFrame(draw);
-loadJson(rootDirectory + "/utdr-leitmotif-graph.json", rootDirectory + "/utdr-youtube.json");
+loadJson("/utdr-leitmotif-graph.json", "/utdr-youtube.json", "/utdr-tracks.json");

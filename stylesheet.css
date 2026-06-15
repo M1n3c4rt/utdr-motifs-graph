@@ -157,6 +157,11 @@ Retrieved 2025-12-30, License - CC BY-SA 4.0
     pointer-events: none;
 }
 
+#musiccontainer {
+    width: 0px;
+    height: 0px;
+}
+
 #youtubeintegration {
     position: absolute;
     top: -201px;
@@ -164,6 +169,22 @@ Retrieved 2025-12-30, License - CC BY-SA 4.0
     left: calc(var(--SELECTOR_WIDTH) + 2px);
     width: calc(var(--HUD_WIDTH) + var(--SELECTOR_WIDTH) - 14px);
     height: 200px;
+}
+
+#trackcontainer {
+    position: absolute;
+    top: -56px;
+    opacity: 90%;
+    left: calc(var(--SELECTOR_WIDTH) + 2px);
+    width: calc(var(--HUD_WIDTH) + var(--SELECTOR_WIDTH) - 14px);
+}
+
+#trackcontainer:has(#trackintegration[src=""]) {
+    display: none;
+}
+
+#youtubeintegration[src=""] {
+    display: none;
 }
 
 .uiselector[selected="true"] {

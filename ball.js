@@ -13,7 +13,6 @@ PERMITTIVITY = 1000 //250
 
 class node {
     data; // This is the raw JSON definition of this node, used to display names, subtitles, etc.
-    trackID; // Used in Bandcamp integration.
     isIsolate = true; // Used ONLY on tree refresh, to apply the isolate color style.
 
     group; // What group the ball is in.
@@ -23,6 +22,10 @@ class node {
     isEnabled = true; // Handles if the node should be processed in drawing and physics calculations
     inFocus = false; // Tracks if this node is in the camera's focus. Handled by index.js.
     skippedFrames = 1;
+
+    // Used in music track integration.
+    youtubeID; // Used in YouTube integration.
+    trackID; // Used in track integration.
 
     // Used in searching only; used for sorting searches.
     matchString;
@@ -61,13 +64,17 @@ class node {
     constructor(id, jsonDefinition, x, y) {
         this.id = id;
         this.data = jsonDefinition;
+
         this.color = this.data.color ?? "#00000000";
         this.outline = this.data.outline ?? "#00000000";
         this.shouldDisambiguate = this.data.disambiguate ?? false;
+
         this.thin = this.data.thin ?? false;
         this.spawnX = this.x = x ?? node.randomPosition();
         this.spawnY = this.y = y ?? node.randomPosition();
-        this.trackID = this.data.trackID ?? youtubeData[this.id]?.trackID ?? null;
+
+        this.youtubeID = this.data.youtubeID ?? youtubeData[this.id]?.trackID ?? youtubeData[this.id] ?? null;
+        this.trackID = this.data.trackID ?? tracksData[this.id]?.trackID ?? tracksData[this.id] ?? null;
         this.reloadSearchTerms();
     }
 

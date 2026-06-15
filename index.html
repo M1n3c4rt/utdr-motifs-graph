@@ -36,13 +36,18 @@
 				</button>
 			</div>
 			<div id="hud">
-				<iframe id="youtubeintegration" title="YouTube Integration"
-					src="dummysong.html"
-					title="YouTube video player" frameborder="0"
-					allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share"
-					referrerpolicy="strict-origin-when-cross-origin" autoplay
-					seamless><a/></iframe>
-				<br/>
+				<div id="musiccontainer">
+					<audio controls autoplay id="trackcontainer">
+						<source id="trackintegration" src="" type="audio/ogg">
+					</audio>
+					<iframe id="youtubeintegration" title="YouTube Integration"
+						src="dummysong.html"
+						title="YouTube video player" frameborder="0"
+						allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share"
+						referrerpolicy="strict-origin-when-cross-origin" autoplay
+						seamless><a/></iframe>
+					<br/>
+				</div>
 				<div id="infoui" class="uipage" uivisible="false">
 					<div id="infoview" class="uiview" tabindex="2">
 						Hello! Welcome to the UT/DR Motifs site!<br/>
