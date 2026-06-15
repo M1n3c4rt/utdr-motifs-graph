@@ -1,5 +1,7 @@
 :root {
     --BACKGROUND_COLOR: #0000007f;
+    --HUD_WIDTH: 576px;
+    --SELECTOR_WIDTH: 56px;
     background-color: #000000;
 
     font-family: 'determinationmono';
@@ -61,22 +63,13 @@ body {
     border-bottom: 1px solid white;
 }
 
-#bandcampintegration {
-    /* position: absolute; */
-    /* width: calc(100% - 256em); */
-    display: none;
-    width: 432px;
-    height: 42px;
-    top: 0px; left: 0px;
-}
-
 #hudslide {
     display: flex;
     position: fixed;
     z-index: 1000;
-    bottom: 64px;
+    bottom: 96px;
     height: calc(50% + 1em);
-    width: 576px;
+    width: var(--HUD_WIDTH);
     right: -490px;
     transition: right ease-out 0.5s;
     transition-delay: 0.01s;
@@ -110,13 +103,15 @@ Retrieved 2025-12-30, License - CC BY-SA 4.0
 }
 
 .uipage {
+    position: absolute;
     display: flex;
     flex-direction: column;
     height: 100%;
-    width: 576px;
+    width: var(--HUD_WIDTH);
     background-color: black;
     border: 5px solid white;
     padding: 16px;
+    top: 0px;
 }
 
 .uipage[uivisible="false"] {
@@ -147,9 +142,9 @@ Retrieved 2025-12-30, License - CC BY-SA 4.0
     background-color: #ff7f27;
     /* background-image: url('./menubase.png'); */
     /* background-size: contain; */
-    width: 60px;
-    height: 56px;
-    margin: 0px;
+    width: var(--SELECTOR_WIDTH);
+    height: var(--SELECTOR_WIDTH);
+    margin: 1px;
     padding: 0px;
 
     border: none;
@@ -157,9 +152,18 @@ Retrieved 2025-12-30, License - CC BY-SA 4.0
 
 .uibuttonimg {
     filter: none;
-    width: 56px;
-    height: 56px;
+    width: var(--SELECTOR_WIDTH);
+    height: var(--SELECTOR_WIDTH);
     pointer-events: none;
+}
+
+#youtubeintegration {
+    position: absolute;
+    top: -201px;
+    opacity: 90%;
+    left: calc(var(--SELECTOR_WIDTH) + 2px);
+    width: calc(var(--HUD_WIDTH) + var(--SELECTOR_WIDTH) - 14px);
+    height: 200px;
 }
 
 .uiselector[selected="true"] {

@@ -10,6 +10,8 @@ let searchBounds = searchView.getBoundingClientRect();
 let searchHeight = searchBounds.bottom - searchBounds.top - SEARCH_GAP;
 let searchScroll = 0;
 
+const youtube = document.getElementById("youtubeintegration");
+
 sfxPagerOut.volume = 0.75;
 sfxNope.volume = 0.5;
 sfxExit.volume = 0.5;
@@ -75,7 +77,8 @@ function setBallFocus(ball, sound = true) {
         }
 
         if (ballInFocus.trackID) {
-            bandcamp.setAttribute("src", src="https://bandcamp.com/EmbeddedPlayer/artwork=none/size=small/bgcol=ffffff/linkcol=0687f5/transparent=true/track=" + ballInFocus.trackID);
+            youtube.setAttribute("src", src="https://www.youtube.com/embed/" + ballInFocus.trackID);
+            youtube.play();
             // regex: item_id=([0-9]+)
             // fetch("https://tobyfox.bandcamp.com/track/" + ballInFocus.trackID)
             //     .then((response) => {

@@ -1,6 +1,7 @@
 :root {
-    background-color: white;
-    font-family: 'profontwindowsregular';
+    background-color: #000000;
+    color: white;
+    font-family: 'determinationmono';
 }
 
 @font-face {
@@ -9,4 +10,14 @@
          url('./fonts/pfw-webfont.woff') format('woff');
     font-weight: normal;
     font-style: normal;
+}
+
+@font-face {
+  font-family: determinationmono;
+  src: url('./fonts/dtm-fonts/DeterminationMonoWeb.woff');
+}
+
+@font-face {
+  font-family: determinationsans;
+  src: url('./fonts/dtm-fonts/DeterminationSansWeb.woff');
 }

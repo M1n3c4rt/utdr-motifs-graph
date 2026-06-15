@@ -67,7 +67,7 @@ class node {
         this.thin = this.data.thin ?? false;
         this.spawnX = this.x = x ?? node.randomPosition();
         this.spawnY = this.y = y ?? node.randomPosition();
-        this.trackID = this.data.trackID ?? bandcampData[this.id]?.trackID ?? null;
+        this.trackID = this.data.trackID ?? youtubeData[this.id]?.trackID ?? null;
         this.reloadSearchTerms();
     }
 

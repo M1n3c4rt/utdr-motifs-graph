@@ -11,7 +11,6 @@ const sfxToggle = new Audio(rootDirectory + '/sfx/snd_equip.wav');
 const hud = document.getElementById("hud");
 const hudslide = document.getElementById("hudslide");
 const hudbuttons = document.getElementById("uiselector");
-const bandcamp = document.getElementById("bandcampintegration");
 
 const infoui = document.getElementById("infoui");
 const guideui = document.getElementById("guideui");

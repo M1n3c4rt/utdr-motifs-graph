@@ -4,7 +4,7 @@
 - (X) change bg and node style
 - add ch5 songs
 - (X) preview image
-- bandcamp/soundcloud integration
+- (X) bandcamp/soundcloud integration (edit: now using youtube)
 - motif midis
 - (X) fix lag w/ search bar
 - minor fixes

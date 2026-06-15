@@ -24,14 +24,14 @@ var bounds = {
     x: 0, y: 0
 }
 
-let bandcampData = {}
-async function loadJson(path, bandcampPath) {
+let youtubeData = {}
+async function loadJson(path, youtubePath) {
     let rawJson = await fetch(path);
     if (!rawJson.ok) throw new Error(`FATAL: Couldn't retrieve Leitmotifs JSON! ${rawJson.status} - ${rawJson.statusText}`);
 
-    let rawBand = await fetch(bandcampPath);
-    if (!rawBand.ok) console.warn(`Couldn't retrieve Bandcamp JSON! ${rawBand.status} - ${rawBand.statusText}`);
-    else bandcampData = (await rawBand.json()).bandcamp;
+    let rawBand = await fetch(youtubePath);
+    if (!rawBand.ok) console.warn(`Couldn't retrieve YouTube JSON! ${rawBand.status} - ${rawBand.statusText}`);
+    else youtubeData = (await rawBand.json()).tracks;
 
     rawJson.json().then(refreshTree);
 }
@@ -56,7 +56,7 @@ function refreshTree(newData) {
         if (track.leitmotifs) medleys[id] = track.leitmotifs
     });
 
-    // Handle leitmotif connections.
+    // Handle leitmotif creation.
     Object.entries(newData.leitmotifs).forEach(([motif, subdata]) => {
         // Here we handle motif coalescing -
         // if a motif is primarily found in one track, then we consider the motif to be the track itself.
@@ -66,7 +66,13 @@ function refreshTree(newData) {
         if (subdata.subtitle) balls[motifID].subtitle = subdata.subtitle
         removeFrom(isolates, motifID);
         balls[motifID].isIsolate = false;
+    });
 
+    // Handle leitmotif connections.
+    Object.entries(newData.leitmotifs).forEach(([motif, subdata]) => {
+        // We do this in seperate iterations to allow
+        // leitmotifs to connect to each other without issue.
+        const motifID = subdata.id ??= motif;
         const curBall = balls[motifID];
         ballsMotifs[motif] = curBall;
         curBall.applyStyle("leitmotif");
@@ -424,4 +430,4 @@ document.addEventListener("keyup", ({key}) => {
 })
 
 window.onload = (e) => raf = window.requestAnimationFrame(draw);
-loadJson(rootDirectory + "/utdr-leitmotif-graph.json");//, rootDirectory + "/utdr-bandcamp.json");
+loadJson(rootDirectory + "/utdr-leitmotif-graph.json", rootDirectory + "/utdr-youtube.json");
