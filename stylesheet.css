@@ -150,6 +150,10 @@ Retrieved 2025-12-30, License - CC BY-SA 4.0
     border: none;
 }
 
+.uiselector[selected="true"] {
+    background-color: #ffff00;
+}
+
 .uibuttonimg {
     filter: none;
     width: var(--SELECTOR_WIDTH);
@@ -185,10 +189,6 @@ Retrieved 2025-12-30, License - CC BY-SA 4.0
 
 #youtubeintegration[src=""] {
     display: none;
-}
-
-.uiselector[selected="true"] {
-    background-color: #ffff00;
 }
 
 @font-face {

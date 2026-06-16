@@ -25,6 +25,10 @@
             "color": "#38705e",
             "outline": "#224c3e"
         },
+        "10th-default": {
+            "color": "#ff7f27",
+            "outline": "#873e0e"
+        },
         "isolate": {
             "color": "#434E61",
             "outline": "#0d1517"
@@ -56,7 +60,8 @@
         },
         "AV-": {
             "name": "UNDERTALE 10th Anniversary",
-            "prefix": "UT-10"
+            "prefix": "UT-10",
+            "style": "10th"
         }
     },
     "tracks": {

@@ -137,7 +137,7 @@ function changeSelect(change) {
     setBallFocus(searchResults[index]);
 }
 
-searchView.addEventListener("keydown", (e) => {
+function searchNavigate(e) {
     if (e.key === "Enter") {
         if (searchResults.length > 0) {
             setBallFocus(searchResults[searchIndex]);
@@ -154,7 +154,10 @@ searchView.addEventListener("keydown", (e) => {
         changeSelect(1);
         e.preventDefault();
     }
-})
+}
+
+search.addEventListener("keydown", searchNavigate);
+searchView.addEventListener("keydown", searchNavigate);
 
 function loadInitialSearch() {
     searchResults.push(...Object.values(balls));
