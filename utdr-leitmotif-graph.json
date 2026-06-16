@@ -208,6 +208,7 @@
         },
         "B-39": "Don't Forget",
         "B-40": "Before the Story",
+        "B-man": "man.ogg",
         "C-1": "Faint Glow",
         "C-2": "Girl Next Door",
         "C-3": "My Castle Town",
@@ -338,6 +339,8 @@
         "D-76": "Catswing",
         "D-77": "Air Waves",
         "D-78": "Concert for you",
+        "D-man_nes": "man_nes.ogg",
+        "D-man_2": "man_2.ogg",
         "D-kris_sevenfour": "kris_piano_sevenfour.ogg",
         "D-kris_quiz": {
             "name": "kris_piano_quiz.ogg",
@@ -968,6 +971,14 @@
                 "C-41"
             ]
         },
+        "man": {
+            "name": "Forgotten Man",
+            "associations": [
+                "B-man",
+                "D-man_nes",
+                "D-man_2"
+            ]
+        },
         "lost_girl_A": {
             "name": "Lost Girl (A)",
             "associations": [
@@ -1114,7 +1125,8 @@
                 "D-26",
                 "D-27",
                 "D-33",
-                "D-76"
+                "D-76",
+                "D-kris_quiz"
             ]
         },
         "dark_sanctuary": {
