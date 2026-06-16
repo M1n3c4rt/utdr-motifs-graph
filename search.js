@@ -196,7 +196,8 @@ search.addEventListener("input", () => {
 
     // hehe
     if (search.value.toLowerCase() == 'gaster') {
-        window.location.reload()
+        search.value = search.value.substring(0, -2);
+        window.location.reload();
     }
 
     searchDraw();
