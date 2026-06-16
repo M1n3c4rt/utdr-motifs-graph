@@ -28,7 +28,7 @@ class Camera {
     }
 
     // Should be called at the beginning of every `draw()` call.
-    refresh(deltaTime) {
+    refresh() {
         this.width = this.scenes[0].width;
         this.height = this.scenes[0].height;
         const fontSize = Math.max(this.fontSize * 0.5, this.fontSize / this.zoom);
@@ -39,7 +39,9 @@ class Camera {
             this.scenes[i].height = this.scenes[i].clientHeight;
             this.layers[i].font = `${fontSize}px ${this.font}`;
         }
+    }
 
+    updatePosition(deltaTime) {
         if (this.focus.enabled && !this.focus.blocked) {
             this.x = freyalerp(this.x, this.focus.x, 10, deltaTime);
             this.y = freyalerp(this.y, this.focus.y, 10, deltaTime);

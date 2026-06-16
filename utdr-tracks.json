@@ -1,7 +1,15 @@
 {
     "tracks": {
-        "once_upon_a_time_A": "once_upon_a_time_A",
-        "once_upon_a_time_B": "once_upon_a_time_B",
-        "once_upon_a_time_C": "once_upon_a_time_C"
+        "once_upon_a_time_A": "motifs/once_upon_a_time_A",
+        "once_upon_a_time_B": "motifs/once_upon_a_time_B",
+        "once_upon_a_time_C": "motifs/once_upon_a_time_C",
+        "C-honksong": "unlisted/Honksong",
+        "D-kris_sevenfour": "unlisted/krispiano/sevenfour",
+        "D-kris_quiz": "unlisted/krispiano/quiz",
+        "D-kris_lancer_waltz": "unlisted/krispiano/lancer_waltz",
+        "D-kris_lancer_rouxls": "unlisted/krispiano/rouxls",
+        "D-kris_waitingroom": "unlisted/krispiano/waitingroom",
+        "D-kris_shop": "unlisted/krispiano/shop",
+        "D-kris_last_prophecy": "unlisted/krispiano/last_prophecy"
     }
 }

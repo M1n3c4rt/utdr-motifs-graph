@@ -57,6 +57,18 @@ function registerButtonPage(button, page) {
     })
 }
 
+document.addEventListener("keydown", ({key}) => {
+    if (key === "Escape") {
+        if (ballInFocus) unfocusBall();
+        else {
+            changePage(currentPage, currentButton);
+            if (hudbuttons.contains(document.activeElement)) document.activeElement.blur();
+        }
+    }
+    // If you're seeing this... no, no you're not :3c
+    // (was lazy, didn't feel like making this elegant)
+});
+
 registerButtonPage(infobutton, infoui);
 registerButtonPage(guidebutton, guideui);
 registerButtonPage(searchbutton, searchui);
@@ -74,13 +86,17 @@ searchbutton.addEventListener("click", (e) => {
 let currentPage = null;
 let currentButton = null;
 function changePage(element, button) {
-    sfxPagerIn.currentTime = 0;
-    sfxPagerIn.play();
 
     if (currentButton == button) {
         if (button) updateHUD(-1);
         button = null;
-    } else if (!currentButton) updateHUD(1);
+        sfxPagerOut.currentTime = 0;
+        sfxPagerOut.play();
+    } else {
+        if (!currentButton) updateHUD(1);
+        sfxPagerIn.currentTime = 0;
+        sfxPagerIn.play();
+    }
 
     if (currentPage) {
         if (currentButton) currentButton.setAttribute("selected", false);
@@ -94,8 +110,6 @@ function changePage(element, button) {
 
     currentPage = element;
     currentButton = button;
-
-    console.log(hudFocused);
 }
 
 changePage(searchui);

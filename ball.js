@@ -70,6 +70,7 @@ class node {
         this.shouldDisambiguate = this.data.disambiguate ?? false;
 
         this.thin = this.data.thin ?? false;
+        if (this.data.group) this.applyGroup(this.data.group);
         this.spawnX = this.x = x ?? node.randomPosition();
         this.spawnY = this.y = y ?? node.randomPosition();
 

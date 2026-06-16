@@ -16,5 +16,5 @@
     - (X) should grid squares scale with camera zoom? (verdict. no)
     - (X) decrease bounds?
     - (X) opacity unfocus bug (hell)
-    - sounds for closing/opening hud?
-    - make it so that clicking off the hud doesn't close it
+    - (X) sounds for closing/opening hud?
+    - (X) make it so that clicking off the hud doesn't close it

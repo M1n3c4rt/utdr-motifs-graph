@@ -28,6 +28,10 @@
         "isolate": {
             "color": "#434E61",
             "outline": "#0d1517"
+        },
+        "rendition": {
+            "color": "#ffffff",
+            "outline": "#b5d2dd"
         }
     },
     "groups": {
@@ -255,6 +259,7 @@
         "C-45": "Until Next Time",
         "C-46": "Before The Story",
         "C-47": "Berdly (Rejected Concept)",
+        "C-honksong": "honksong.ogg",
         "D-1": "Flashback (Excerpt)",
         "D-2": "Feature Presentation",
         "D-3": "And Now For Today's Sponsors…!",
@@ -333,6 +338,40 @@
         "D-76": "Catswing",
         "D-77": "Air Waves",
         "D-78": "Concert for you",
+        "D-kris_sevenfour": "kris_piano_sevenfour.ogg",
+        "D-kris_quiz": {
+            "name": "kris_piano_quiz.ogg",
+            "style": "rendition",
+            "leitmotifs": [
+                "D-7"
+            ]
+        },
+        "D-kris_lancer_waltz": {
+            "name": "kris_piano_lancer_waltz.ogg",
+            "style": "rendition",
+            "leitmotifs": [
+                "C-28"
+            ]
+        },
+        "D-kris_lancer_rouxls": {
+            "name": "kris_piano_rouxls.ogg",
+            "style": "rendition",
+            "leitmotifs": [
+                "C-29"
+            ]
+        },
+        "D-kris_waitingroom": {
+            "name": "kris_piano_waitingroom.ogg",
+            "style": "rendition",
+            "leitmotifs": [
+                "D-26"
+            ]
+        },
+        "D-kris_shop": {
+            "name": "kris_piano_shop.ogg",
+            "style": "rendition"
+        },
+        "D-kris_last_prophecy": "kris_piano_last_prophecy.ogg",
         "AV-1": "Abandoned Town",
         "AV-2": "Doghole",
         "AV-3": {
@@ -438,7 +477,8 @@
                 "A-80",
                 "A-87",
                 "A-89",
-                "A-96"
+                "A-96",
+                "C-honksong"
             ]
         },
         "toriel": {
@@ -506,7 +546,8 @@
                 "enemy_approaching",
                 "A-21",
                 "A-43",
-                "A-44"
+                "A-44",
+                "C-honksong"
             ]
         },
         "ghost_fight_A": {
@@ -591,7 +632,8 @@
                 "A-30",
                 "A-32",
                 "D-51",
-                "D-52"
+                "D-52",
+                "C-honksong"
             ]
         },
         "undyne_variation": {
@@ -655,7 +697,8 @@
             "associations": [
                 "A-50",
                 "A-66",
-                "A-68"
+                "A-68",
+                "C-honksong"
             ]
         },
         "hotel": {
@@ -883,7 +926,8 @@
                 "B-25",
                 "B-30",
                 "C-28",
-                "D-9"
+                "D-9",
+                "D-kris_lancer_waltz"
             ]
         },
         "lancer_B": {
@@ -893,7 +937,8 @@
                 "B-20",
                 "B-21",
                 "C-28",
-                "C-29"
+                "C-29",
+                "D-kris_lancer_waltz"
             ]
         },
         "hip_shop": {
@@ -902,7 +947,8 @@
                 "B-28",
                 "D-14",
                 "D-26",
-                "D-32"
+                "D-32",
+                "D-kris_waitingroom"
             ]
         },
         "the_world_revolving_A": {
@@ -1144,7 +1190,8 @@
             "name": "Rouxls Kaard",
             "associations": [
                 "B-26",
-                "C-29"
+                "C-29",
+                "D-kris_lancer_rouxls"
             ]
         },
         "darkness_falls": {
