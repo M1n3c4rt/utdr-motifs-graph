@@ -173,6 +173,11 @@ search.addEventListener("input", () => {
         searchResults.sort((a, b) => b.matchPercent - a.matchPercent);
     }
 
+    // hehe
+    if (search.value.toLowerCase() == 'gaster') {
+        window.location.reload()
+    }
+
     searchDraw();
     searchDraw();
 })
