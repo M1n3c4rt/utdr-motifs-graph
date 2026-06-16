@@ -11,6 +11,16 @@ function mergeData(base, data) {
     }
 }
 
+// Standardize shorthand definitions into the full ones.
+function resolveShorthand(data, field) {
+    try {
+        if (data[field]) return data;
+    } catch (error) {
+        return data;
+    }
+    return { [field]: data };
+}
+
 function removeFrom(table, value) {
     const index = table.indexOf(value);
     if (index >= 0) table.splice(index, 1);

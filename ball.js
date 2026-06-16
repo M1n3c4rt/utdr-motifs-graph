@@ -24,8 +24,8 @@ class node {
     skippedFrames = 1;
 
     // Used in music track integration.
-    youtubeID; // Used in YouTube integration.
-    trackID; // Used in track integration.
+    trackEmbed;
+    youtubeEmbed;
 
     // Used in searching only; used for sorting searches.
     matchString;
@@ -34,9 +34,11 @@ class node {
     searchTerms;
 
     id; // Must be present.
-    get name() { return this.data.name || this.data; }
+    name; // Name displayed on the node.
     get subtitle() { return this.data.subtitle || this.group?.name; } // May be null!
     get prefix() { return this.data.prefix || this.group?.prefix; }
+
+    // get name() { return this.data.name || this.data; }
 
     // Relationships!
     motifs = [];
@@ -63,7 +65,9 @@ class node {
     // Creates the node. Note that the returned node isn't ready - camera and styles still need to be set.
     constructor(id, jsonDefinition, x, y) {
         this.id = id;
-        this.data = jsonDefinition;
+        this.data = resolveShorthand(jsonDefinition, 'name');
+
+        this.name = this.data.name;
 
         this.color = this.data.color ?? "#00000000";
         this.outline = this.data.outline ?? "#00000000";
@@ -74,8 +78,14 @@ class node {
         this.spawnX = this.x = x ?? node.randomPosition();
         this.spawnY = this.y = y ?? node.randomPosition();
 
-        this.youtubeID = this.data.youtubeID ?? youtubeData[this.id]?.trackID ?? youtubeData[this.id] ?? null;
-        this.trackID = this.data.trackID ?? tracksData[this.id]?.trackID ?? tracksData[this.id] ?? null;
+        if (this.data.embed) {
+            this.trackEmbed = this.data.embed.file;
+            this.youtubeEmbed = this.data.embed.youtube;
+        } else {
+            this.trackEmbed = resolveShorthand(tracksData[this.id], 'id');
+            this.youtubeEmbed = resolveShorthand(youtubeData[this.id], 'id');
+        }
+
         this.reloadSearchTerms();
     }
 

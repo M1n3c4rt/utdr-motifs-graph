@@ -233,21 +233,6 @@ const lastPinchPos = {
     x2: 0, y2: 0
 }
 
-function select(event, radius = 1.5) {
-    if (!Object.entries(balls).some(([id,ball]) => {
-        if (!ball.isEnabled) return;
-        let [screenx,screeny] = camera.toScreenCoords(ball.x, ball.y);
-        const dist = pythagoras(event.pageX - screenx, event.pageY - screeny - camera.getCanvasOffset());
-        if (dist <= ball.radius / camera.zoom * radius + Math.max(0, camera.zoom * 4 - 4)) {
-            setBallFocus(ball);
-            return true;
-        }
-    }) && ballInFocus) {
-        unfocusBall();
-    }
-}
-canvas.ondblclick = select
-
 function setCursorPos(x, y) {
     if (x) cursor.x = x;
     if (y) cursor.y = y;

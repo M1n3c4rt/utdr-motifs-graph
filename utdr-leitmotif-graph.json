@@ -163,7 +163,14 @@
         "A-99": "Power of \"NEO\"",
         "A-100": "MEGALOVANIA",
         "A-101": "Good Night",
-        "A-102": "Mad Mew Mew",
+        "A-104": "Mad Mew Mew",
+        "A-107": {
+            "name": "Bonetrousle (Trailer)",
+            "style": "rendition",
+            "leitmotifs": [
+                "A-24"
+            ]
+        },
         "B-1": "ANOTHER HIM",
         "B-2": "Beginning",
         "B-3": {
@@ -304,7 +311,13 @@
         "D-41": "Another day in hometown",
         "D-42": "Friends",
         "D-43": "Castle Funk",
-        "D-44": "Knock You Down!! (Rhythm Ver.)",
+        "D-44": {
+            "name": "Knock You Down!! (Rhythm Ver.)",
+            "style": "rendition",
+            "leitmotifs": [
+                "C-35"
+            ]
+        },
         "D-45": "Gingerbread House",
         "D-46": "The distance between two",
         "D-47": "C",
@@ -569,7 +582,7 @@
                 "A-36",
                 "A-37",
                 "A-59",
-                "A-102",
+                "A-104",
                 "C-43"
             ]
         },
@@ -595,6 +608,7 @@
             "associations": [
                 "A-16",
                 "A-24",
+                "A-107",
                 "A-72",
                 "A-95"
             ]
@@ -858,7 +872,6 @@
                 "C-36",
                 "C-44",
                 "C-45",
-                "D-20",
                 "D-40",
                 "D-41",
                 "D-43",
@@ -1150,13 +1163,12 @@
                 "D-69"
             ]
         },
-        "titan": {
-            "name": "Titan",
+        "heavy_footsteps": {
+            "name": "Heavy Footsteps",
             "associations": [
                 "D-65",
                 "D-66",
-                "D-67",
-                "D-68"
+                "D-67"
             ]
         },
         "the_dark_truth": {
@@ -1301,6 +1313,7 @@
         "mike": {
             "name": "Mike",
             "associations": [
+                "D-20",
                 "D-75",
                 "D-76"
             ]

@@ -57,6 +57,22 @@ function registerButtonPage(button, page) {
     })
 }
 
+function select(event, radius = 1.5) {
+    if (!Object.entries(balls).some(([id,ball]) => {
+        if (!ball.isEnabled) return;
+        let [screenx,screeny] = camera.toScreenCoords(ball.x, ball.y);
+        const dist = pythagoras(event.pageX - screenx, event.pageY - screeny - camera.getCanvasOffset());
+        if (dist <= ball.radius / camera.zoom * radius + Math.max(0, camera.zoom * 4 - 4)) {
+            setBallFocus(ball);
+            return true;
+        }
+    })) {
+        if (ballInFocus) unfocusBall();
+        else changePage(currentPage, currentButton);
+    }
+}
+canvas.ondblclick = select
+
 document.addEventListener("keydown", ({key}) => {
     if (key === "Escape") {
         if (ballInFocus) unfocusBall();
@@ -88,10 +104,12 @@ let currentButton = null;
 function changePage(element, button) {
 
     if (currentButton == button) {
-        if (button) updateHUD(-1);
+        if (button) {
+            updateHUD(-1);
+            sfxPagerOut.currentTime = 0;
+            sfxPagerOut.play();
+        }
         button = null;
-        sfxPagerOut.currentTime = 0;
-        sfxPagerOut.play();
     } else {
         if (!currentButton) updateHUD(1);
         sfxPagerIn.currentTime = 0;

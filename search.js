@@ -77,12 +77,30 @@ function setBallFocus(ball, sound = true) {
             sfxPagerIn.play();
         }
 
-        if (ballInFocus.youtubeID) {
-            youtube.setAttribute("src", "https://www.youtube-nocookie.com/embed/" + ballInFocus.youtubeID + "?&autoplay=1");
+        if (ballInFocus.youtubeEmbed) {
+            let src = "https://www.youtube-nocookie.com/embed/" + ballInFocus.youtubeEmbed.id + "?&autoplay=1";
+
+            if (ballInFocus.youtubeEmbed.start) {
+                src += "&start=" + ballInFocus.youtubeEmbed.start;
+                if (ballInFocus.youtubeEmbed.end)
+                    src += "&end=" + ballInFocus.youtubeEmbed.end;
+            }
+
+            // if (ballInFocus.youtubeEmbed.start) {
+            //     // src += "&t=" + ballInFocus.youtubeEmbed.start
+            //     youtube.setAttribute("start", ballInFocus.youtubeEmbed.start);
+            // } else youtube.removeAttribute("start");
+
+            // if (ballInFocus.youtubeEmbed.end) {
+            //     // src += "&end=" + ballInFocus.youtubeEmbed.end;
+            //     youtube.setAttribute("end", ballInFocus.youtubeEmbed.end);
+            // } else youtube.removeAttribute("end");
+
+            youtube.setAttribute("src", src);
             trackIntegration.setAttribute("src", "");
             trackContainer.pause();
-        } else if (ballInFocus.trackID) {
-            trackIntegration.setAttribute("src", "assets/tracks/" + ballInFocus.trackID + ".ogg");
+        } else if (ballInFocus.trackEmbed) {
+            trackIntegration.setAttribute("src", "assets/tracks/" + ballInFocus.trackEmbed.id + ".ogg");
             youtube.setAttribute("src", "");
 
             trackContainer.load();
