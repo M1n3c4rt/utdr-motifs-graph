@@ -21,3 +21,6 @@
 - data stuff
     - (X) Raise Up Your Bat does not have Don't Forget B, but it does have Mike
     - (X) rename "Titan" to "Heavy Footsteps" and remove its edge with GUARDIAN
+    - Another Medium should connect to Ruins (motif) and not Ruins (song)
+    - Undyne and Ruins (variations) should connect to their respective original motifs
+    - An Ending should connect to Ruins as well as Ruins (variation)
