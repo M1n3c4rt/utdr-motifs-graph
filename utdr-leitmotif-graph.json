@@ -520,6 +520,8 @@
                 "A-33",
                 "A-45",
                 "A-46",
+                "A-51",
+                "A-81",
                 "D-51",
                 "D-52",
                 "D-58",
@@ -529,6 +531,7 @@
         "ruins_variation": {
             "name": "Ruins (Variation)",
             "associations": [
+                "ruins",
                 "A-81",
                 "A-86",
                 "A-94",
@@ -663,6 +666,7 @@
         "undyne_variation": {
             "name": "Undyne (Variation)",
             "associations": [
+                "undyne",
                 "A-45",
                 "A-46",
                 "A-77",
@@ -675,7 +679,6 @@
         "another_medium": {
             "name": "Another Medium",
             "associations": [
-                "A-5",
                 "A-31",
                 "A-51",
                 "A-65",
