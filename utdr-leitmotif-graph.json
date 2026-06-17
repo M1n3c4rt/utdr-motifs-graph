@@ -520,7 +520,6 @@
                 "A-33",
                 "A-45",
                 "A-46",
-                "A-51",
                 "A-81",
                 "D-51",
                 "D-52",
@@ -679,6 +678,7 @@
         "another_medium": {
             "name": "Another Medium",
             "associations": [
+                "ruins",
                 "A-31",
                 "A-51",
                 "A-65",
