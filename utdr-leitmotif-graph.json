@@ -1308,8 +1308,17 @@
                 "D-34"
             ]
         },
-        "doom_board": {
-            "name": "Doom Board",
+        "doom_board_melody": {
+            "name": "Doom Board (Melody)",
+            "associations": [
+                "tenna",
+                "D-24",
+                "D-25",
+                "D-27"
+            ]
+        },
+        "doom_board_bassline": {
+            "name": "Doom Board (Bassline)",
             "associations": [
                 "D-24",
                 "D-25",
