@@ -54,6 +54,45 @@ function trackExists(url)
     return http.status == 200;
 }
 
+async function playBallTrack(ball) {
+    if (ball.youtubeEmbed) {
+        let src = "https://www.youtube-nocookie.com/embed/" + ball.youtubeEmbed.id + "?&autoplay=1";
+
+        if (ball.youtubeEmbed.start) {
+            src += "&start=" + ball.youtubeEmbed.start;
+            if (ball.youtubeEmbed.end)
+                src += "&end=" + ball.youtubeEmbed.end;
+        }
+
+        youtube.setAttribute("src", src);
+        trackIntegration.setAttribute("src", "");
+        trackContainer.pause();
+    } else if (ball.trackEmbed) {
+        trackIntegration.setAttribute("src", "assets/tracks/" + ball.trackEmbed.id + ".ogg");
+        youtube.setAttribute("src", "");
+
+        trackContainer.load();
+        if (trackContainer.volume == 1) trackContainer.volume = 0.3;
+        trackContainer.currentTime = 0;
+        trackContainer.play();
+    } else {
+        for (i in loadAttempt) {
+            const trackURL = "assets/tracks/" + loadAttempt[i] + "/" + ball.id + ".ogg";
+            if (trackExists(trackURL)) {
+                trackIntegration.setAttribute("src", trackURL);
+
+                trackContainer.load();
+                youtube.setAttribute("src", "");
+
+                if (trackContainer.volume == 1) trackContainer.volume = 0.3;
+                trackContainer.currentTime = 0;
+                trackContainer.play();
+                break;
+            }
+        }
+    }
+}
+
 var ballInFocus;
 function setBallFocus(ball, sound = true) {
     if (ballInFocus) {
@@ -87,52 +126,7 @@ function setBallFocus(ball, sound = true) {
             sfxPagerIn.play();
         }
 
-        if (ballInFocus.youtubeEmbed) {
-            let src = "https://www.youtube-nocookie.com/embed/" + ballInFocus.youtubeEmbed.id + "?&autoplay=1";
-
-            if (ballInFocus.youtubeEmbed.start) {
-                src += "&start=" + ballInFocus.youtubeEmbed.start;
-                if (ballInFocus.youtubeEmbed.end)
-                    src += "&end=" + ballInFocus.youtubeEmbed.end;
-            }
-
-            // if (ballInFocus.youtubeEmbed.start) {
-            //     // src += "&t=" + ballInFocus.youtubeEmbed.start
-            //     youtube.setAttribute("start", ballInFocus.youtubeEmbed.start);
-            // } else youtube.removeAttribute("start");
-
-            // if (ballInFocus.youtubeEmbed.end) {
-            //     // src += "&end=" + ballInFocus.youtubeEmbed.end;
-            //     youtube.setAttribute("end", ballInFocus.youtubeEmbed.end);
-            // } else youtube.removeAttribute("end");
-
-            youtube.setAttribute("src", src);
-            trackIntegration.setAttribute("src", "");
-            trackContainer.pause();
-        } else if (ballInFocus.trackEmbed) {
-            trackIntegration.setAttribute("src", "assets/tracks/" + ballInFocus.trackEmbed.id + ".ogg");
-            youtube.setAttribute("src", "");
-
-            trackContainer.load();
-            if (trackContainer.volume == 1) trackContainer.volume = 0.3;
-            trackContainer.currentTime = 0;
-            trackContainer.play();
-        } else {
-            for (i in loadAttempt) {
-                const trackURL = "assets/tracks/" + loadAttempt[i] + "/" + ballInFocus.id + ".ogg";
-                if (trackExists(trackURL)) {
-                    trackIntegration.setAttribute("src", trackURL);
-
-                    trackContainer.load();
-                    youtube.setAttribute("src", "");
-
-                    if (trackContainer.volume == 1) trackContainer.volume = 0.3;
-                    trackContainer.currentTime = 0;
-                    trackContainer.play();
-                    break;
-                }
-            }
-        }
+        playBallTrack(ballInFocus);
     } else {
         camera.focus.enabled = false;
         if (sound) {
