@@ -1232,12 +1232,19 @@
                 "D-kris_lancer_rouxls"
             ]
         },
-        "darkness_falls": {
-            "name": "Darkness Falls",
+        "darkness_falls_A": {
+            "name": "Darkness Falls (A)",
             "associations": [
                 "B-31",
                 "C-16",
                 "AV-1"
+            ]
+        },
+        "darkness_falls_B": {
+            "name": "Darkness Falls (B)",
+            "associations": [
+                "B-31",
+                "C-16"
             ]
         },
         "card_castle": {

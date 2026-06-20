@@ -14,6 +14,8 @@ const youtube = document.getElementById("youtubeintegration");
 const trackContainer = document.getElementById("trackcontainer");
 const trackIntegration = document.getElementById("trackintegration");
 
+const loadAttempt = [ "motifs" /*, "unlisted"*/ ];
+
 sfxPagerOut.volume = 0.75;
 sfxNope.volume = 0.5;
 sfxExit.volume = 0.5;
@@ -42,6 +44,14 @@ function updateBall(ball) {
 
     searchCamera.clearArea(0, index * SEARCH_GAP, searchCamera.width, SEARCH_GAP)
     ball.searchBall.draw(SEARCH_X, index * SEARCH_GAP + NODE_HUD_HEIGHT);
+}
+
+function trackExists(url)
+{
+    var http = new XMLHttpRequest();
+    http.open('HEAD', url, false);
+    http.send();
+    return http.status == 200;
 }
 
 var ballInFocus;
@@ -107,6 +117,21 @@ function setBallFocus(ball, sound = true) {
             if (trackContainer.volume == 1) trackContainer.volume = 0.3;
             trackContainer.currentTime = 0;
             trackContainer.play();
+        } else {
+            for (i in loadAttempt) {
+                const trackURL = "assets/tracks/" + loadAttempt[i] + "/" + ballInFocus.id + ".ogg";
+                if (trackExists(trackURL)) {
+                    trackIntegration.setAttribute("src", trackURL);
+
+                    trackContainer.load();
+                    youtube.setAttribute("src", "");
+
+                    if (trackContainer.volume == 1) trackContainer.volume = 0.3;
+                    trackContainer.currentTime = 0;
+                    trackContainer.play();
+                    break;
+                }
+            }
         }
     } else {
         camera.focus.enabled = false;
