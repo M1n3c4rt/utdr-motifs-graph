@@ -122,6 +122,24 @@
         "A-104": { "id": "kn4vBLkrhro", "name": "Mad Mew Mew" },
         "A-107": { "id": "q0Kxangw3-w", "name": "Bonetrousle (Trailer)" },
         "A-108": { "id": "r9shwL1h-qA", "name": "Before the Story" },
+        "megalovania": {
+            "id": "KK3KXAECte4",
+            "name": "MEGALOVANIA",
+            "start": 0,
+            "end": 4
+        },
+        "spooktune": {
+            "id": "lV65zxK61cI",
+            "name": "Spooktune",
+            "start": 0,
+            "end": 8
+        },
+        "your_best_nightmare": {
+            "id": "DxxLzJDARbo",
+            "name": "Your Best Nightmare",
+            "start": 0,
+            "end": 16
+        },
         "mewmew": {
             "id": "ycsnBIX8wTU",
             "name": "Undertale - Release Trailer - Nintendo Switch",

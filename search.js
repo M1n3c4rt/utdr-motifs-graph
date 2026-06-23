@@ -48,9 +48,9 @@ async function playBallTrack(ball) {
     if (ball.youtubeEmbed) {
         let src = "https://www.youtube-nocookie.com/embed/" + ball.youtubeEmbed.id + "?&autoplay=1";
 
-        if (ball.youtubeEmbed.start) {
+        if (ball.youtubeEmbed.start != undefined) {
             src += "&start=" + ball.youtubeEmbed.start;
-            if (ball.youtubeEmbed.end)
+            if (ball.youtubeEmbed.end != undefined)
                 src += "&end=" + ball.youtubeEmbed.end;
         }
 
