@@ -222,6 +222,33 @@ function draw(timestamp) {
     raf = window.requestAnimationFrame(draw);
 }
 
+function getEmbedStatus() {
+    if (shouldDisableDebug()) return null;
+    let ballData = {};
+    Object.entries(balls).forEach(([id, ball]) => {
+        ballData[id] = ball.hasEmbed(); 
+    });
+    return ballData;
+}
+
+function getWithEmbed() {
+    if (shouldDisableDebug()) return null;
+    let ballData = [];
+    Object.entries(balls).forEach(([id, ball]) => {
+        if (ball.hasEmbed()) ballData.push(id); 
+    });
+    return ballData;
+}
+
+function getWithoutEmbed() {
+    if (shouldDisableDebug()) return null;
+    let ballData = [];
+    Object.entries(balls).forEach(([id, ball]) => {
+        if (!ball.hasEmbed()) ballData.push(id); 
+    });
+    return ballData;
+}
+
 var isDragging = false
 var draggedNode = null
 

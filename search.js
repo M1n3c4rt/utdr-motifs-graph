@@ -14,8 +14,6 @@ const youtube = document.getElementById("youtubeintegration");
 const trackContainer = document.getElementById("trackcontainer");
 const trackIntegration = document.getElementById("trackintegration");
 
-const loadAttempt = [ "motifs" /*, "unlisted"*/ ];
-
 sfxPagerOut.volume = 0.75;
 sfxNope.volume = 0.5;
 sfxExit.volume = 0.5;
@@ -46,14 +44,6 @@ function updateBall(ball) {
     ball.searchBall.draw(SEARCH_X, index * SEARCH_GAP + NODE_HUD_HEIGHT);
 }
 
-function trackExists(url)
-{
-    var http = new XMLHttpRequest();
-    http.open('HEAD', url, false);
-    http.send();
-    return http.status == 200;
-}
-
 async function playBallTrack(ball) {
     if (ball.youtubeEmbed) {
         let src = "https://www.youtube-nocookie.com/embed/" + ball.youtubeEmbed.id + "?&autoplay=1";
@@ -76,9 +66,9 @@ async function playBallTrack(ball) {
         trackContainer.currentTime = 0;
         trackContainer.play();
     } else {
-        for (i in loadAttempt) {
-            const trackURL = "assets/tracks/" + loadAttempt[i] + "/" + ball.id + ".ogg";
-            if (trackExists(trackURL)) {
+        for (i in trackLoadAttempt) {
+            const trackURL = "assets/tracks/" + trackLoadAttempt[i] + "/" + ball.id + ".ogg";
+            if (fileExists(trackURL)) {
                 trackIntegration.setAttribute("src", trackURL);
 
                 trackContainer.load();

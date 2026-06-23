@@ -1,6 +1,11 @@
 // some extra utility stuff that don't really make sense to put anywhere else.js
 const rootDirectory = window.location.href.replace("/index.html", "");
 
+// Don't want GitHub getting spammed, here
+function shouldDisableDebug() {
+    return window.location.href.includes('github');
+}
+
 function mergeData(base, data) {
     for (const [key, value] of Object.entries(data)) {
         if (key in base && typeof(base[key]) == 'object') {
@@ -38,4 +43,13 @@ function lerp(from, to, i) {
 // frame independent lerp - https://x.com/FreyaHolmer/status/1757836988495847568?lang=en :D
 function freyalerp(from, to, halftime, deltaTime) {
     return lerp(from, to, 1 - Math.pow(2, -deltaTime / halftime))
+}
+
+const trackLoadAttempt = [ "motifs" /*, "unlisted"*/ ];
+function fileExists(url)
+{
+    var http = new XMLHttpRequest();
+    http.open('HEAD', url, false);
+    http.send();
+    return http.status == 200;
 }

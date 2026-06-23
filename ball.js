@@ -89,6 +89,15 @@ class node {
         this.reloadSearchTerms();
     }
 
+    hasEmbed() {
+        if (this.youtubeEmbed || this.trackEmbed) return true;
+        for (let i in trackLoadAttempt) {
+            const trackURL = "assets/tracks/" + trackLoadAttempt[i] + "/" + this.id + ".ogg";
+            if (fileExists(trackURL)) return true;
+        }
+        return false;
+    }
+
     reloadSearchTerms() {
         this.searchTerms = [
             {
