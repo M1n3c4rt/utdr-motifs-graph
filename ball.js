@@ -14,6 +14,7 @@ PERMITTIVITY = 1000 //250
 class node {
     data; // This is the raw JSON definition of this node, used to display names, subtitles, etc.
     isIsolate = true; // Used ONLY on tree refresh, to apply the isolate color style.
+    isRendition = false; // Currently ONLY used by track nodes, and not motif nodes.
 
     group; // What group the ball is in.
     groupID; // ID of the ball group.
@@ -362,11 +363,12 @@ class node {
         const dist = Math.max(0.0001, pythagoras(dx, dy))
 
         if (isChild || this.children.includes(ball)) {
-            let spring = Math.max(-2000, Math.min(2000, -SPRING_CONSTANT * (dist - IDEAL)))
+            const ideal = IDEAL * ((ball.isRendition || this.isRendition) ? 7 : 1);
+            const spring = Math.max(-2000, Math.min(2000, -SPRING_CONSTANT * (dist - ideal)))
             this.ax += spring * dx / dist;
             this.ay += spring * dy / dist;
         } else if (dist < REPULSE_DISTANCE_MAX) {
-            let repulsion = Math.min(1000, PERMITTIVITY / Math.max(REPULSE_DISTANCE_MIN, dist**1.5))
+            const repulsion = Math.min(1000, PERMITTIVITY / Math.max(REPULSE_DISTANCE_MIN, dist**1.5)) * ((ball.isRendition || this.isRendition) ? 2 : 1);
             this.ax += repulsion * dx / dist;
             this.ay += repulsion * dy / dist;
         }
@@ -482,6 +484,7 @@ class node {
 
     // Apply the specified style (or the current style) to this node.
     applyStyle(id, fallbacks) {
+        if (id.includes("rendition")) this.isRendition = true;
         if (id) this.style = id;
         const style = data.styles[this.style];
         if (style) this.forceStyle(style);

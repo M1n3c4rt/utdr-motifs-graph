@@ -58,6 +58,11 @@
             "prefix": "DR-3&4",
             "style": "deltarune"
         },
+        "E-": {
+            "name": "Deltarune Chapter 5",
+            "prefix": "DR-5",
+            "style": "deltarune"
+        },
         "AV-": {
             "name": "UNDERTALE 10th Anniversary",
             "prefix": "UT-10",
@@ -394,6 +399,61 @@
             "style": "rendition"
         },
         "D-kris_last_prophecy": "kris_piano_last_prophecy.ogg",
+        "E-1": "Chapter 5 Logo",
+        "E-2": "Inappropriate Recycling",
+        "E-3": "Pirate Dojo",
+        "E-4": {
+            "name": "4rd Sanctuary",
+            "style": "rendition",
+            "leitmotifs": [
+                "D-63"
+            ]
+        },
+        "E-5": "Festival",
+        "E-6": "Catfession...?",
+        "E-7": "Bratfession...?",
+        "E-8": "I guess I'm in love",
+        "E-9": "Weirder Birds",
+        "E-10": "Your Dad's Best Friend",
+        "E-11": "Garden of Hopes and Dreams",
+        "E-12": "Rakuichi Buster",
+        "E-13": {
+            "name": "The Diner Song of Best Friends",
+            "style": "rendition",
+            "leitmotifs": [
+                "D-42"
+            ]
+        },
+        "E-14": "Ride the Board",
+        "E-15": "Quiet Glade",
+        "E-16": "Who might you be?",
+        "E-17": "Petal Dance",
+        "E-18": "Flying Feather",
+        "E-19": "Sunset of Seven Suns",
+        "E-20": "Shop 3",
+        "E-21": "Violet Tactics",
+        "E-22": "Flower King",
+        "E-23": "Flower Foyer",
+        "E-24": "Flower Castle",
+        "E-25": "Thousand Cafe Zukan",
+        "E-26": "I'm Telling!",
+        "E-27": "Stop, Criminell!",
+        "E-28": "Loving Steps",
+        "E-29": "Onsen",
+        "E-30": "Beautiful Bathtime",
+        "E-31": "Pink",
+        "E-32": "Cutie Mew Mew Magic",
+        "E-33": "Running Sky",
+        "E-34": "Flower Man",
+        "E-35": "That Day",
+        "E-36": "Dreamwatchers",
+        "E-37": "Weak Flowers",
+        "E-38": "Walking Home",
+        "E-39": {
+            "name": "Field of Hopes and Dreams",
+            "subtitle": "DELTARUNE Chapter 5 + Piano Collections, Vol. 1"
+        },
+        "E-40": "Goodnight, Sweet Prince",
         "AV-1": "Abandoned Town",
         "AV-2": "Doghole",
         "AV-3": {
@@ -896,13 +956,15 @@
                 "C-45",
                 "D-40",
                 "D-41",
+                "D-42",
                 "D-43",
                 "D-49",
                 "D-50",
                 "D-57",
                 "D-64",
                 "D-68",
-                "D-74"
+                "D-74",
+                "E-13"
             ]
         },
         "hometown": {
@@ -943,7 +1005,8 @@
                 "D-49",
                 "D-60",
                 "D-63",
-                "D-kris_last_prophecy"
+                "D-kris_last_prophecy",
+                "E-4"
             ]
         },
         "the_legend_C": {
@@ -980,6 +1043,13 @@
                 "D-kris_lancer_waltz"
             ]
         },
+        "checker_dance": {
+            "name": "Checker Dance",
+            "associations": [
+                "B-17",
+                "E-2"
+            ]
+        },
         "hip_shop": {
             "name": "Hip Shop",
             "associations": [
@@ -996,7 +1066,8 @@
                 "B-33",
                 "C-39",
                 "D-58",
-                "D-77"
+                "D-77",
+                "E-2"
             ]
         },
         "the_world_revolving_B": {
@@ -1210,7 +1281,8 @@
             "associations": [
                 "B-4",
                 "B-24",
-                "D-42"
+                "D-42",
+                "E-13"
             ]
         },
         "field_of_hopes_and_dreams": {
@@ -1347,7 +1419,8 @@
             "name": "Second Sanctuary",
             "associations": [
                 "D-60",
-                "D-63"
+                "D-63",
+                "E-4"
             ]
         },
         "mike": {
@@ -1363,7 +1436,8 @@
             "associations": [
                 "C-2",
                 "D-42",
-                "D-45"
+                "D-45",
+                "E-13"
             ]
         },
         "rude_buster": {
