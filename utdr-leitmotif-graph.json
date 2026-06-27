@@ -1280,9 +1280,7 @@
             "name": "Susie",
             "associations": [
                 "B-4",
-                "B-24",
-                "D-42",
-                "E-13"
+                "B-24"
             ]
         },
         "field_of_hopes_and_dreams": {
@@ -1431,13 +1429,26 @@
                 "D-76"
             ]
         },
+        "friends": {
+            "name": "Friends",
+            "associations": [
+                "D-42",
+                "E-5",
+                "E-8",
+                "E-13",
+                "E-38"
+            ]
+        },
         "girl_next_door_bassline": {
             "name": "Girl Next Door (Bassline)",
             "associations": [
                 "C-2",
                 "D-42",
                 "D-45",
-                "E-13"
+                "E-5",
+                "E-8",
+                "E-13",
+                "E-38"
             ]
         },
         "rude_buster": {
