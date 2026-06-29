@@ -6,10 +6,10 @@ const SLOW_DISTANCE = 250;
 const OFFSCREEN_SKIP = 8;
 
 SPRING_CONSTANT = 0.0025
-IDEAL = 100
-REPULSE_DISTANCE_MIN = 256
-REPULSE_DISTANCE_MAX = 1000;
-PERMITTIVITY = 1000 //250
+IDEAL = 50
+REPULSE_DISTANCE_MIN = 500
+REPULSE_DISTANCE_MAX = 2000;
+PERMITTIVITY = 2000 //250
 
 class node {
     data; // This is the raw JSON definition of this node, used to display names, subtitles, etc.
@@ -44,6 +44,7 @@ class node {
     // Relationships!
     motifs = [];
     children = [];
+    get connections() { return this.motifs.length + this.children.length; }
 
     // Rendering information
     x = 0; y = 0;
@@ -363,7 +364,7 @@ class node {
         const dist = Math.max(0.0001, pythagoras(dx, dy))
 
         if (isChild || this.children.includes(ball)) {
-            const ideal = IDEAL * ((ball.isRendition || this.isRendition) ? 7 : 1);
+            const ideal = IDEAL * ((ball.isRendition || this.isRendition) ? 1.5 : 1) * (Math.max(this.connections, ball.connections) * 0.1 + 0.9);
             const spring = Math.max(-2000, Math.min(2000, -SPRING_CONSTANT * (dist - ideal)))
             this.ax += spring * dx / dist;
             this.ay += spring * dy / dist;

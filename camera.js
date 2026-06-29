@@ -13,7 +13,8 @@ class Camera {
 
     // Enforces screen limits.
     bounds = {
-        x: 5000, y: 4500
+        x: 5000, y: 4500,
+        maxZoom: 20, minZoom: 0.1
     };
 
     zoom = 1;
@@ -80,6 +81,10 @@ class Camera {
         if (this.x < -width || this.x > width ||
             this.y < -height || this.y > height) return true;
         return false;
+    }
+
+    setZoom(zoomies) {
+        this.zoom = Math.min(this.bounds.maxZoom, Math.max(zoomies, this.bounds.minZoom));
     }
 
     enforceBoundaries() {

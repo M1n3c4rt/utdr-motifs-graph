@@ -327,6 +327,7 @@ function dragMove(event) {
             camera.x = dragAnchor.x + (dragOffset.x - cursor.x) * camera.zoom
             camera.y = dragAnchor.y + (dragOffset.y - cursor.y) * camera.zoom
             if (camera.checkBoundsHit()) {
+                camera.enforceBoundaries();
                 [dragOffset.x, dragOffset.y] = [cursor.x, cursor.y];
                 [dragAnchor.x, dragAnchor.y] = [camera.x, camera.y];
             }
@@ -366,8 +367,8 @@ function touchMove(event) {
         const centerY = (drag.pageY + pinch.pageY) * 0.5;
 
         const scale = distLast / dist;
-        let [x, y] = camera.fromScreenCoords(centerX, centerY)
-        camera.zoom = Math.min(10, Math.max(0.1, camera.zoom * scale))
+        let [x, y] = camera.fromScreenCoords(centerX, centerY);
+        camera.setZoom(camera.zoom * scale);
         let [newx, newy] = camera.fromScreenCoords(centerX, centerY)
         camera.x += -newx + x
         camera.y += -newy + y
@@ -414,10 +415,11 @@ document.body.ontouchcancel = touchEnd
 document.onwheel = event => {
     let oldzoom = camera.zoom
     let [x, y] = camera.fromScreenCoords(event.pageX, event.pageY)
-    camera.zoom = Math.min(10, Math.max(0.1, camera.zoom*2 ** (event.deltaY/1000)))
+    camera.setZoom(camera.zoom*2 ** (event.deltaY/1000));
     let [newx, newy] = camera.fromScreenCoords(event.pageX, event.pageY)
-    camera.x += -newx+x
-    camera.y += -newy+y
+    camera.x += -newx + x
+    camera.y += -newy + y
+    camera.enforceBoundaries();
 }
 
 document.addEventListener("keydown", ({key}) => {
