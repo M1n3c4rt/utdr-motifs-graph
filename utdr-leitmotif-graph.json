@@ -396,7 +396,10 @@
         },
         "D-kris_shop": {
             "name": "kris_piano_shop.ogg",
-            "style": "rendition"
+            "style": "rendition",
+            "leitmotifs": [
+                "E-20"
+            ]
         },
         "D-kris_last_prophecy": "kris_piano_last_prophecy.ogg",
         "E-1": "Chapter 5 Logo",
@@ -507,7 +510,8 @@
                 "B-40",
                 "C-44",
                 "C-46",
-                "AV-5"
+                "AV-5",
+                "E-11"
             ]
         },
         "once_upon_a_time_B": {
@@ -561,7 +565,8 @@
                 "A-87",
                 "A-89",
                 "A-96",
-                "C-honksong"
+                "C-honksong",
+                "E-34"
             ]
         },
         "toriel": {
@@ -710,7 +715,9 @@
                 "B-3",
                 "B-37",
                 "D-41",
-                "AV-6"
+                "AV-6",
+                "E-6",
+                "E-7"
             ]
         },
         "undyne": {
@@ -832,7 +839,9 @@
             "associations": [
                 "A-76",
                 "A-77",
-                "A-95"
+                "A-95",
+                "E-22",
+                "E-35"
             ]
         },
         "your_best_nightmare": {
@@ -864,7 +873,8 @@
             "associations": [
                 "A-38",
                 "A-39",
-                "D-53"
+                "D-53",
+                "E-32"
             ]
         },
         "jingle_bells": {
@@ -934,7 +944,10 @@
                 "D-50",
                 "D-57",
                 "D-64",
-                "D-74"
+                "D-74",
+                "E-8",
+                "E-11",
+                "E-39"
             ]
         },
         "don_t_forget_B": {
@@ -965,7 +978,13 @@
                 "D-68",
                 "D-74",
                 "E-5",
-                "E-13"
+                "E-8",
+                "E-11",
+                "E-13",
+                "E-32",
+                "E-33",
+                "E-34",
+                "E-39"
             ]
         },
         "hometown": {
@@ -981,7 +1000,8 @@
             "associations": [
                 "B-5",
                 "B-7",
-                "D-30"
+                "D-30",
+                "E-35"
             ]
         },
         "the_legend_A": {
@@ -1068,7 +1088,8 @@
                 "C-39",
                 "D-58",
                 "D-77",
-                "E-2"
+                "E-2",
+                "E-32"
             ]
         },
         "the_world_revolving_B": {
@@ -1288,7 +1309,9 @@
             "name": "Field of Hopes and Dreams",
             "associations": [
                 "B-13",
-                "B-19"
+                "B-19",
+                "E-11",
+                "E-39"
             ]
         },
         "fanfare": {
@@ -1458,7 +1481,79 @@
                 "B-10",
                 "B-15",
                 "D-11",
-                "D-15"
+                "D-15",
+                "E-12"
+            ]
+        },
+        "flowery": {
+            "name": "Flowery",
+            "associations": [
+                "E-10",
+                "E-17",
+                "E-19",
+                "E-30",
+                "E-34",
+                "E-36",
+                "E-37",
+                "E-40"
+            ]
+        },
+        "six_flowers_A": {
+            "name": "Six Flowers (A)",
+            "associations": [
+                "E-16",
+                "E-17",
+                "E-19",
+                "E-24",
+                "E-26",
+                "E-27",
+                "E-28",
+                "E-34"
+            ]
+        },
+        "six_flowers_B": {
+            "name": "Six Flowers (B)",
+            "associations": [
+                "E-16",
+                "E-26",
+                "E-27",
+                "E-28"
+            ]
+        },
+        "shop_3": {
+            "name": "Shop 3",
+            "associations": [
+                "D-kris_shop",
+                "E-20"
+            ]
+        },
+        "violet_tactics": {
+            "name": "Violet Tactics",
+            "associations": [
+                "E-21",
+                "E-23"
+            ]
+        },
+        "pink_A": {
+            "name": "Pink (A)",
+            "associations": [
+                "E-26",
+                "E-31",
+                "E-32"
+            ]
+        },
+        "pink_B": {
+            "name": "Pink (B)",
+            "associations": [
+                "E-31",
+                "E-32"
+            ]
+        },
+        "mad_mew_mew": {
+            "name": "Mad Mew Mew",
+            "associations": [
+                "A-104",
+                "E-32"
             ]
         }
     }
