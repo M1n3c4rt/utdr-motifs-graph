@@ -13,8 +13,9 @@ class Camera {
 
     // Enforces screen limits.
     bounds = {
-        x: 5000, y: 4500,
-        maxZoom: 20, minZoom: 0.1
+        x: 0, y: 0,
+        maxZoom: 20, minZoom: 0.1,
+        size: 10.5
     };
 
     zoom = 1;
@@ -30,6 +31,9 @@ class Camera {
 
     // Should be called at the beginning of every `draw()` call.
     refresh() {
+        this.bounds.x = this.width * this.bounds.size;
+        this.bounds.y = this.height * this.bounds.size;
+
         this.width = this.scenes[0].width;
         this.height = this.scenes[0].height;
         const fontSize = Math.max(this.fontSize * 0.5, this.fontSize / this.zoom);
@@ -72,7 +76,7 @@ class Camera {
     }
 
     getTrueBounds() {
-        const result = [this.bounds.x + (this.width * 0.5 / this.zoom), this.bounds.y + (this.height * 0.5 / this.zoom)];
+        const result = [this.bounds.x - (this.width * 0.5 * this.zoom), this.bounds.y - (this.height * 0.5 * this.zoom)];
         return result;
     }
 

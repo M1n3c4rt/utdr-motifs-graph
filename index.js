@@ -369,9 +369,10 @@ function touchMove(event) {
         const scale = distLast / dist;
         let [x, y] = camera.fromScreenCoords(centerX, centerY);
         camera.setZoom(camera.zoom * scale);
-        let [newx, newy] = camera.fromScreenCoords(centerX, centerY)
-        camera.x += -newx + x
-        camera.y += -newy + y
+        let [newx, newy] = camera.fromScreenCoords(centerX, centerY);
+        camera.x += -newx + x;
+        camera.y += -newy + y;
+        camera.enforceBoundaries();
 
         lastPinchPos.x1 = drag.pageX
         lastPinchPos.y1 = drag.pageY
@@ -413,12 +414,12 @@ document.body.ontouchend = touchEnd
 document.body.ontouchcancel = touchEnd
 
 document.onwheel = event => {
-    let oldzoom = camera.zoom
-    let [x, y] = camera.fromScreenCoords(event.pageX, event.pageY)
+    let oldzoom = camera.zoom;
+    let [x, y] = camera.fromScreenCoords(event.pageX, event.pageY);
     camera.setZoom(camera.zoom*2 ** (event.deltaY/1000));
-    let [newx, newy] = camera.fromScreenCoords(event.pageX, event.pageY)
-    camera.x += -newx + x
-    camera.y += -newy + y
+    let [newx, newy] = camera.fromScreenCoords(event.pageX, event.pageY);
+    camera.x += -newx + x;
+    camera.y += -newy + y;
     camera.enforceBoundaries();
 }
 

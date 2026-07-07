@@ -369,7 +369,7 @@ class node {
             this.ax += spring * dx / dist;
             this.ay += spring * dy / dist;
         } else if (dist < REPULSE_DISTANCE_MAX) {
-            const repulsion = Math.min(1000, PERMITTIVITY / Math.max(REPULSE_DISTANCE_MIN, dist**1.5)) * ((ball.isRendition || this.isRendition) ? 2 : 1);
+            const repulsion = Math.min(1000, PERMITTIVITY / Math.max(REPULSE_DISTANCE_MIN, dist**1.5)) * ((ball.isRendition || this.isRendition) ? 1.5 : 1);
             this.ax += repulsion * dx / dist;
             this.ay += repulsion * dy / dist;
         }
