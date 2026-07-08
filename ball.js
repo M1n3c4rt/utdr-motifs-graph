@@ -32,7 +32,9 @@ class node {
     matchString;
     matchPercent = 0;
     searchBall;
+
     searchTerms;
+    rawSearchTerms = [];
 
     id; // Must be present.
     name; // Name displayed on the node.
@@ -70,13 +72,14 @@ class node {
         this.data = resolveShorthand(jsonDefinition, 'name');
 
         this.name = this.data.name;
+        this.rawSearchTerms = this.data.searchTerms ?? [];
 
         this.color = this.data.color ?? "#00000000";
         this.outline = this.data.outline ?? "#00000000";
         this.shouldDisambiguate = this.data.disambiguate ?? false;
 
         this.thin = this.data.thin ?? false;
-        if (this.data.group) this.applyGroup(this.data.group);
+        if (this.data.group) this.applyGroup(data.groups[this.data.group], this.data.group);
         this.spawnX = this.x = x ?? node.randomPosition();
         this.spawnY = this.y = y ?? node.randomPosition();
 
@@ -87,8 +90,6 @@ class node {
             this.trackEmbed = resolveShorthand(tracksData[this.id], 'id');
             this.youtubeEmbed = resolveShorthand(youtubeData[this.id], 'id');
         }
-
-        this.reloadSearchTerms();
     }
 
     hasEmbed() {
@@ -101,15 +102,38 @@ class node {
     }
 
     reloadSearchTerms() {
+        // console.log('hi reloading search terms for ' + this.id);
+        // const childSearchTerms = [];
+        // this.children.forEach(ball => {
+        //     if (ball.searchTerms) {
+        //         ball.searchTerms.forEach(group => {
+        //             childSearchTerms.push(group.terms);
+        //         });
+        //     }
+        // });
+
+        // console.log(childSearchTerms, childSearchTerms.flat());
         this.searchTerms = [
             {
                 weight: 1,
                 terms: [this.id, this.name, this.prefix]
             },
             {
+                weight: 0.75,
+                terms: [this.group?.name ?? this.name, this.group?.style ?? this.name]
+            },
+            {
+                weight: 0.75,
+                terms: this.rawSearchTerms
+            },
+            {
                 weight: 0.5,
                 terms: [this.subtitle]
             },
+            // {
+            //     weight: 0.1,
+            //     terms: childSearchTerms.flat()
+            // },
         ];
     }
 
@@ -470,6 +494,7 @@ class node {
 
     // Force-applies the specified style to this node.
     forceStyle(style) {
+        if (style.searchTerms) this.rawSearchTerms.push(...style.searchTerms);
         if (style) Object.entries(style).forEach(([property, value]) => {
             this[property] = value;
         });
@@ -498,7 +523,7 @@ class node {
         this.group = group;
         this.groupID = id;
         if (this.group.style) this.applyStyle(this.group.style + "-" + this.style, [this.style]);
-        this.reloadSearchTerms();
+        if (this.group.searchTerms) this.rawSearchTerms.push(...this.group.searchTerms);
         return this;
     }
 

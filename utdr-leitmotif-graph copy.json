@@ -1,0 +1,1604 @@
+{
+    "name": "UNDERTALE / DELTARUNE",
+    "description": "A leitmotif graph for UNDERTALE & DELTARUNE Chapters 1-4",
+    "id": "utdr",
+    "dependencies": [
+        ""
+    ],
+    "priority": 0,
+    "styles": {
+        "default": {
+            "color": "#F5E253",
+            "outline": "#E78320",
+            "radius": 15
+        },
+        "leitmotif": {
+            "color": "#ff58ad",
+            "outline": "#880A47",
+            "radius": 20
+        },
+        "deltarune-default": {
+            "color": "#00ffff",
+            "outline": "#12b8ff"
+        },
+        "deltarune-isolate": {
+            "color": "#38705e",
+            "outline": "#224c3e"
+        },
+        "10th-default": {
+            "color": "#ff7f27",
+            "outline": "#873e0e"
+        },
+        "isolate": {
+            "color": "#434E61",
+            "outline": "#0d1517"
+        },
+        "rendition": {
+            "color": "#ffffff",
+            "outline": "#b5d2dd"
+        }
+    },
+    "groups": {
+        "A-": {
+            "name": "UNDERTALE",
+            "prefix": "UT",
+            "searchTerms": [
+                "undertale"
+            ]
+        },
+        "B-": {
+            "name": "Deltarune Chapter 1",
+            "prefix": "DR-1",
+            "style": "deltarune",
+            "searchTerms": [
+                "dr",
+                "deltarune chapter 1",
+                "chapter 1",
+                "ch1"
+            ]
+        },
+        "C-": {
+            "name": "Deltarune Chapter 2",
+            "prefix": "DR-2",
+            "style": "deltarune",
+            "searchTerms": [
+                "dr",
+                "deltarune",
+                "deltarune chapter 2",
+                "chapter 2",
+                "ch2"
+            ]
+        },
+        "D-": {
+            "name": "Deltarune Chapters 3&4",
+            "prefix": "DR-3&4",
+            "style": "deltarune",
+            "searchTerms": [
+                "dr",
+                "deltarune",
+                "deltarune chapter 3",
+                "deltarune chapter 4",
+                "deltarune chapter 3&4",
+                "chapter 3",
+                "chapter 4",
+                "chapter 3&4",
+                "ch3",
+                "ch4",
+                "ch3&4"
+            ]
+        },
+        "E-": {
+            "name": "Deltarune Chapter 5",
+            "prefix": "DR-5",
+            "style": "deltarune",
+            "searchTerms": [
+                "dr",
+                "deltarune",
+                "deltarune chapter 5",
+                "chapter 5",
+                "ch5"
+            ]
+        },
+        "AV-": {
+            "name": "UNDERTALE 10th Anniversary",
+            "prefix": "UT-10",
+            "style": "10th",
+            "searchTerms": [
+                "ut-10",
+                "10th anniversary",
+                "10th"
+            ]
+        }
+    },
+    "tracks": {
+        "A-1": "Once Upon a Time",
+        "A-2": "Start Menu",
+        "A-3": "Your Best Friend",
+        "A-4": "Fallen Down",
+        "A-5": "Ruins",
+        "A-6": "Uwa!! So Temperate♫",
+        "A-7": "Anticipation",
+        "A-8": "Unnecessary Tension",
+        "A-9": "Enemy Approaching",
+        "A-10": "Ghost Fight",
+        "A-11": "Determination",
+        "A-12": "Home",
+        "A-13": "Home (Music Box)",
+        "A-14": "Heartache",
+        "A-15": {
+            "name": "sans."
+        },
+        "A-16": "Nyeh Heh Heh!",
+        "A-17": "Snowy",
+        "A-18": "Uwa!! So Holiday♫",
+        "A-19": "Dogbass",
+        "A-20": "Mysterious Place",
+        "A-21": "Dogsong",
+        "A-22": "Snowdin Town",
+        "A-23": "Shop",
+        "A-24": "Bonetrousle",
+        "A-25": "Dating Start!",
+        "A-26": "Dating Tense!",
+        "A-27": "Dating Fight!",
+        "A-28": "Premonition",
+        "A-29": "Danger Mystery",
+        "A-30": "Undyne",
+        "A-31": "Waterfall",
+        "A-32": "Run!",
+        "A-33": "Quiet Water",
+        "A-34": "Memory",
+        "A-35": "Bird That Carries You Over A Disproportionately Small Gap",
+        "A-36": "Dummy!",
+        "A-37": "Pathetic House",
+        "A-38": "Spooktune",
+        "A-39": "Spookwave",
+        "A-40": "Ghouliday",
+        "A-41": "Chill",
+        "A-42": "Thundersnail",
+        "A-43": "Temmie Village",
+        "A-44": "Tem Shop",
+        "A-45": "NGAHHH!!",
+        "A-46": "Spear of Justice",
+        "A-47": "Ooo",
+        "A-48": "Alphys",
+        "A-49": "It's Showtime!",
+        "A-50": "Metal Crusher",
+        "A-51": "Another Medium",
+        "A-52": "Uwa!! So HEATS!!♫",
+        "A-53": "Stronger Monsters",
+        "A-54": "Hotel",
+        "A-55": "Can You Really Call This A Hotel,\nI Didn't Receive A Mint On My Pillow Or Anything",
+        "A-56": "Confession",
+        "A-57": "Live Report",
+        "A-58": "Death Report",
+        "A-59": "Spider Dance",
+        "A-60": "Wrong Enemy !?",
+        "A-61": "Oh! One True Love",
+        "A-62": "Oh! Dungeon",
+        "A-63": "It's Raining Somewhere Else",
+        "A-64": "CORE Approach",
+        "A-65": "CORE",
+        "A-66": "Last Episode!",
+        "A-67": "Oh My...",
+        "A-68": "Death by Glamour",
+        "A-69": "For the Fans",
+        "A-70": "Long Elevator",
+        "A-71": "Undertale",
+        "A-72": "Song That Might Play When You Fight Sans",
+        "A-73": "The Choice",
+        "A-74": "Small Shock",
+        "A-75": "Barrier",
+        "A-76": "Bergentrückung",
+        "A-77": "ASGORE",
+        "A-78": "You Idiot",
+        "A-79": "Your Best Nightmare",
+        "A-80": "Finale",
+        "A-81": "An Ending",
+        "A-82": "She's Playing Piano",
+        "A-83": "Here We Are",
+        "A-84": "Amalgam",
+        "A-85": "Fallen Down (Reprise)",
+        "A-86": "Don't Give Up",
+        "A-87": "Hopes and Dreams",
+        "A-88": "Burn in Despair!",
+        "A-89": "SAVE the World",
+        "A-90": "His Theme",
+        "A-91": "Final Power",
+        "A-92": "Reunited",
+        "A-93": "Menu (Full)",
+        "A-94": "Respite",
+        "A-95": "Bring It In, Guys!",
+        "A-96": "Last Goodbye",
+        "A-97": "But the Earth Refused to Die",
+        "A-98": "Battle Against a True Hero",
+        "A-99": "Power of \"NEO\"",
+        "A-100": "MEGALOVANIA",
+        "A-101": "Good Night",
+        "A-104": "Mad Mew Mew",
+        "A-107": {
+            "name": "Bonetrousle (Trailer)",
+            "style": "rendition",
+            "leitmotifs": [
+                "A-24"
+            ]
+        },
+        "A-108": "Before the Story",
+        "B-1": "ANOTHER HIM",
+        "B-2": "Beginning",
+        "B-3": {
+            "name": "School"
+        },
+        "B-4": "Susie",
+        "B-5": "The Door",
+        "B-6": "Cliffs",
+        "B-7": "The Chase",
+        "B-8": "The Legend",
+        "B-9": "Lancer",
+        "B-10": "Rude Buster",
+        "B-11": "Empty Town",
+        "B-12": "Weird Birds",
+        "B-13": "Field of Hopes and Dreams",
+        "B-14": "Fanfare (from Rose of Winter)",
+        "B-15": "Lantern",
+        "B-16": "I'm Very Bad",
+        "B-17": "Checker Dance",
+        "B-18": "Quiet Autumn",
+        "B-19": "Scarlet Forest",
+        "B-20": "Thrash Machine",
+        "B-21": "Vs. Lancer",
+        "B-22": "Basement",
+        "B-23": "Imminent Death",
+        "B-24": "Vs. Susie",
+        "B-25": "Card Castle",
+        "B-26": "Rouxls Kaard",
+        "B-27": "April 2012",
+        "B-28": "Hip Shop",
+        "B-29": "Gallery",
+        "B-30": "Chaos King",
+        "B-31": "Darkness Falls",
+        "B-32": "The Circus",
+        "B-33": "THE WORLD REVOLVING",
+        "B-34": "Friendship",
+        "B-35": "THE HOLY",
+        "B-36": "Your Power",
+        "B-37": "A Town Called Hometown",
+        "B-38": {
+            "name": "You Can Always Come Home"
+        },
+        "B-39": "Don't Forget",
+        "B-40": "Before the Story",
+        "B-man": "man.ogg",
+        "C-1": "Faint Glow",
+        "C-2": "Girl Next Door",
+        "C-3": "My Castle Town",
+        "C-4": "Ohhhhohohoho!",
+        "C-5": "Queen",
+        "C-6": "A CYBER'S WORLD?",
+        "C-7": "A Simple Diversion",
+        "C-8": "Almost To The Guys!",
+        "C-9": "Cool Beat",
+        "C-10": "When I Get Mad I Dance Like This",
+        "C-11": "Cyber Battle (Solo)",
+        "C-12": "When I Get Happy I Dance Like This",
+        "C-13": "Sound Studio",
+        "C-14": "Berdly",
+        "C-15": "Smart Race",
+        "C-16": "Faint Courage (Game Over)",
+        "C-17": "WELCOME TO THE CITY",
+        "C-18": "Mini Studio",
+        "C-19": "Holiday Studio",
+        "C-20": "Cool Mixtape",
+        "C-21": "HEY EVERY !",
+        "C-22": "Spamton",
+        "C-23": "NOW'S YOUR CHANCE TO BE A",
+        "C-24": "Elegant Entrance",
+        "C-25": "Bluebird of Misfortune",
+        "C-26": "Pandora Palace",
+        "C-27": "KEYGEN",
+        "C-28": "Acid Tunnel of Love",
+        "C-29": "It's Pronounced \"Rules\"",
+        "C-30": "Lost Girl",
+        "C-31": "Ferris Wheel",
+        "C-32": "Attack of the Killer Queen",
+        "C-33": "Giga Size",
+        "C-34": "Powers Combined",
+        "C-35": "Knock You Down !!",
+        "C-36": "The Dark Truth",
+        "C-37": "Digital Roots",
+        "C-38": "Deal Gone Wrong",
+        "C-39": "BIG SHOT",
+        "C-40": "A Real Boy!",
+        "C-41": "Dialtone",
+        "C-42": {
+            "name": "sans."
+        },
+        "C-43": "Chill Jailbreak Alarm To Study And Relax To",
+        "C-44": {
+            "name": "You Can Always Come Home"
+        },
+        "C-45": "Until Next Time",
+        "C-46": "Before The Story",
+        "C-47": "Berdly (Rejected Concept)",
+        "C-honksong": "honksong.ogg",
+        "D-1": "Flashback (Excerpt)",
+        "D-2": "Feature Presentation",
+        "D-3": "And Now For Today's Sponsors…!",
+        "D-4": "MIKE, the BOARD, please!",
+        "D-5": "Sandy Board",
+        "D-6": "Adventure Board",
+        "D-7": "Query?",
+        "D-8": "Quiz!",
+        "D-9": "Dig! Dig! To The Center of the Earth!",
+        "D-10": "Pushing Buddies",
+        "D-11": "Ruder Buster",
+        "D-12": "Physical Challenge",
+        "D-13": "Board Clear!",
+        "D-14": "Welcome to the Green Room",
+        "D-15": "Vapor Buster",
+        "D-16": "Paradise, Paradise",
+        "D-17": "Raft Ride",
+        "D-18": "SOUTH OF THE BORDER!!",
+        "D-19": "Sound Check",
+        "D-20": "Raise Up Your Bat",
+        "D-21": "KING OF ROLYPOLY",
+        "D-22": "Glowing Snow",
+        "D-23": "Big City Board",
+        "D-24": "Doom Board",
+        "D-25": "Metaphysical Challenge",
+        "D-26": "TV WORLD",
+        "D-27": "It's TV Time!",
+        "D-28": "Hall of Fame",
+        "D-29": "Breath",
+        "D-30": "Black Knife",
+        "D-31": "Crickets",
+        "D-32": "Dump",
+        "D-33": "SWORD",
+        "D-34": "NORTHERNLIGHT",
+        "D-35": "GLACEIR",
+        "D-36": "BIT ROOTS",
+        "D-37": "ERAM",
+        "D-38": "BURNING EYES",
+        "D-39": "Old wooden rafters",
+        "D-40": "Hymn",
+        "D-41": "Another day in hometown",
+        "D-42": "Friends",
+        "D-43": "Castle Funk",
+        "D-44": {
+            "name": "Knock You Down!! (Rhythm Ver.)",
+            "style": "rendition",
+            "leitmotifs": [
+                "C-35"
+            ]
+        },
+        "D-45": "Gingerbread House",
+        "D-46": "The distance between two",
+        "D-47": "C",
+        "D-48": "ATRIUM",
+        "D-49": "Dark Sanctuary",
+        "D-50": "From Now On (Battle 2)",
+        "D-51": "Gyaa Ha ha!",
+        "D-52": "Fireplace",
+        "D-53": "A DARK ZONE",
+        "D-54": "Mysterious Ringing",
+        "D-55": "Ever Higher",
+        "D-56": "Wise words",
+        "D-57": "Piano that may not be played that well",
+        "D-58": "Hammer of Justice",
+        "D-59": "12am",
+        "D-60": "The Second Sanctuary",
+        "D-61": "Ripple",
+        "D-62": "13am",
+        "D-63": "The Third Sanctuary",
+        "D-64": "Dark Place",
+        "D-65": "Heavy Footsteps",
+        "D-66": "Crumbling Tower",
+        "D-67": "SPAWN",
+        "D-68": "GUARDIAN",
+        "D-69": "Need a hand!?",
+        "D-70": "The place where it rained",
+        "D-71": "The Ol' Jitterbug",
+        "D-72": "Neverending Night",
+        "D-73": "The LEGEND...?",
+        "D-74": "With Hope Crossed On Our Hearts",
+        "D-75": "Volume Adjustment",
+        "D-76": "Catswing",
+        "D-77": "Air Waves",
+        "D-78": "Concert for you",
+        "D-man_nes": "man_nes.ogg",
+        "D-man_2": "man_2.ogg",
+        "D-kris_sevenfour": "kris_piano_sevenfour.ogg",
+        "D-kris_quiz": {
+            "name": "kris_piano_quiz.ogg",
+            "style": "rendition",
+            "leitmotifs": [
+                "D-7"
+            ]
+        },
+        "D-kris_lancer_waltz": {
+            "name": "kris_piano_lancer_waltz.ogg",
+            "style": "rendition",
+            "leitmotifs": [
+                "C-28"
+            ]
+        },
+        "D-kris_lancer_rouxls": {
+            "name": "kris_piano_rouxls.ogg",
+            "style": "rendition",
+            "leitmotifs": [
+                "C-29"
+            ]
+        },
+        "D-kris_waitingroom": {
+            "name": "kris_piano_waitingroom.ogg",
+            "style": "rendition",
+            "leitmotifs": [
+                "D-26"
+            ]
+        },
+        "D-kris_shop": {
+            "name": "kris_piano_shop.ogg",
+            "style": "rendition",
+            "leitmotifs": [
+                "E-20"
+            ]
+        },
+        "D-kris_last_prophecy": "kris_piano_last_prophecy.ogg",
+        "E-1": "Chapter 5 Logo",
+        "E-2": "Inappropriate Recycling",
+        "E-3": "Pirate Dojo",
+        "E-4": {
+            "name": "4rd Sanctuary",
+            "style": "rendition",
+            "leitmotifs": [
+                "D-63"
+            ]
+        },
+        "E-5": "Festival",
+        "E-6": {
+            "name": "Catfession...?",
+            "style": "rendition",
+            "leitmotifs": [
+                "A-56"
+            ]
+        },
+        "E-7": {
+            "name": "Bratfession...?",
+            "style": "rendition",
+            "leitmotifs": [
+                "A-56"
+            ]
+        },
+        "E-8": "I guess I'm in love",
+        "E-9": "Weirder Birds",
+        "E-10": "Your Dad's Best Friend",
+        "E-11": "Garden of Hopes and Dreams",
+        "E-12": "Rakuichi Buster",
+        "E-13": {
+            "name": "The Diner Song of Best Friends",
+            "style": "rendition",
+            "leitmotifs": [
+                "D-42"
+            ]
+        },
+        "E-14": "Ride the Board",
+        "E-15": "Quiet Glade",
+        "E-16": "Who might you be?",
+        "E-17": "Petal Dance",
+        "E-18": "Flying Feather",
+        "E-19": "Sunset of Seven Suns",
+        "E-20": "Shop 3",
+        "E-21": "Violet Tactics",
+        "E-22": "Flower King",
+        "E-23": "Flower Foyer",
+        "E-24": "Flower Castle",
+        "E-25": "Thousand Cafe Zukan",
+        "E-26": "I'm Telling!",
+        "E-27": "Stop, Criminell!",
+        "E-28": "Loving Steps",
+        "E-29": "Onsen",
+        "E-30": "Beautiful Bathtime",
+        "E-31": "Pink",
+        "E-32": "Cutie Mew Mew Magic",
+        "E-33": "Running Sky",
+        "E-34": "Flower Man",
+        "E-35": "That Day",
+        "E-36": "Dreamwatchers",
+        "E-37": "Weak Flowers",
+        "E-38": "Walking Home",
+        "E-39": {
+            "name": "Field of Hopes and Dreams",
+            "subtitle": "DELTARUNE Chapter 5 + Piano Collections, Vol. 1"
+        },
+        "E-40": "Goodnight, Sweet Prince",
+        "AV-1": "Abandoned Town",
+        "AV-2": "Doghole",
+        "AV-3": {
+            "name": "Memory (10 Years Later)"
+        },
+        "AV-4": {
+            "name": "Pseudo Legendary Tree"
+        },
+        "AV-5": {
+            "name": "School"
+        },
+        "AV-6": "Snowdrift",
+        "AV-7": {
+            "name": "Snowed Inn Jazz",
+            "subtitle": "by insaneintherainmusic"
+        },
+        "AV-8": "Song that Plays when Somebody Verses sans.",
+        "AV-9": "Strongerer Monsters",
+        "AV-10": "Ultranap",
+        "AV-11": "Underwater Town",
+        "AV-12": {
+            "name": "what's up?",
+            "subtitle": "by insaneintherainmusic"
+        },
+        "AV-13": {
+            "name": "Wrong Number (Camellia Remix)"
+        }
+    },
+    "leitmotifs": {
+        "A-": {
+            "once_upon_a_time_A": {
+                "name": "Once Upon A Time (A)",
+                "associations": [
+                    "A-1",
+                    "A-2",
+                    "A-12",
+                    "A-13",
+                    "A-54",
+                    "A-55",
+                    "A-71",
+                    "A-73",
+                    "A-85",
+                    "A-87",
+                    "A-89",
+                    "A-92",
+                    "A-93",
+                    "A-95",
+                    "A-96",
+                    "A-101",
+                    "A-108",
+                    "B-38",
+                    "B-40",
+                    "C-44",
+                    "C-46",
+                    "AV-5",
+                    "E-11"
+                ]
+            },
+            "once_upon_a_time_B": {
+                "name": "Once Upon A Time (B)",
+                "associations": [
+                    "A-1",
+                    "A-12",
+                    "A-13",
+                    "A-54",
+                    "A-55",
+                    "A-71",
+                    "A-85",
+                    "A-92",
+                    "A-96",
+                    "AV-5"
+                ]
+            },
+            "once_upon_a_time_C": {
+                "name": "Once Upon A Time (C)",
+                "associations": [
+                    "A-1",
+                    "A-85",
+                    "A-87",
+                    "A-89",
+                    "A-91",
+                    "A-92",
+                    "A-93",
+                    "A-96",
+                    "B-2",
+                    "B-38",
+                    "C-44"
+                ]
+            },
+            "once_upon_a_time_embellishment": {
+                "name": "Once Upon A Time (Embellishment)",
+                "associations": [
+                    "A-54",
+                    "A-55",
+                    "A-71",
+                    "A-87",
+                    "A-89",
+                    "A-96"
+                ]
+            },
+            "flowey": {
+                "name": "Flowey",
+                "associations": [
+                    "A-3",
+                    "A-79",
+                    "A-80",
+                    "A-87",
+                    "A-89",
+                    "A-96",
+                    "C-honksong",
+                    "E-34"
+                ]
+            },
+            "toriel": {
+                "name": "Toriel",
+                "associations": [
+                    "A-4",
+                    "A-85",
+                    "A-95"
+                ]
+            },
+            "ruins": {
+                "name": "Ruins",
+                "associations": [
+                    "A-5",
+                    "A-31",
+                    "A-33",
+                    "A-45",
+                    "A-46",
+                    "A-81",
+                    "D-51",
+                    "D-52",
+                    "D-58",
+                    "D-69",
+                    "AV-1"
+                ]
+            },
+            "ruins_variation": {
+                "name": "Ruins (Variation)",
+                "associations": [
+                    "ruins",
+                    "A-81",
+                    "A-86",
+                    "A-94",
+                    "A-95",
+                    "A-97",
+                    "A-98"
+                ]
+            },
+            "uwa___so": {
+                "name": "Uwa!!! So",
+                "associations": [
+                    "A-6",
+                    "A-18",
+                    "A-52",
+                    "D-22"
+                ]
+            },
+            "anticipation": {
+                "name": "Anticipation",
+                "subtitle": "Enemy Approaching (Bassline)",
+                "associations": [
+                    "A-7",
+                    "A-9",
+                    "A-95"
+                ]
+            },
+            "enemy_approaching": {
+                "name": "Enemy Approaching",
+                "associations": [
+                    "A-9",
+                    "A-14",
+                    "A-95"
+                ]
+            },
+            "dogsong": {
+                "name": "Dogsong",
+                "associations": [
+                    "enemy_approaching",
+                    "A-21",
+                    "A-43",
+                    "A-44",
+                    "C-honksong"
+                ]
+            },
+            "ghost_fight_A": {
+                "name": "Ghost Fight (A)",
+                "associations": [
+                    "A-10",
+                    "A-19",
+                    "A-36",
+                    "D-71"
+                ]
+            },
+            "ghost_fight_B": {
+                "name": "Ghost Fight (B)",
+                "associations": [
+                    "A-10",
+                    "A-36",
+                    "A-37",
+                    "A-59",
+                    "A-104",
+                    "C-43"
+                ]
+            },
+            "determination": {
+                "name": "Determination",
+                "associations": [
+                    "A-11",
+                    "A-77",
+                    "AV-7"
+                ]
+            },
+            "sans": {
+                "name": "Sans",
+                "associations": [
+                    "A-15",
+                    "A-63",
+                    "A-72",
+                    "A-95",
+                    "C-42"
+                ]
+            },
+            "papyrus": {
+                "name": "Papyrus",
+                "associations": [
+                    "A-16",
+                    "A-24",
+                    "A-107",
+                    "A-72",
+                    "A-95"
+                ]
+            },
+            "snowdin_A": {
+                "name": "Snowdin (A)",
+                "associations": [
+                    "A-17",
+                    "A-22",
+                    "A-23",
+                    "A-25",
+                    "A-27",
+                    "A-95",
+                    "AV-6"
+                ]
+            },
+            "snowdin_B": {
+                "name": "Snowdin (B)",
+                "associations": [
+                    "A-22",
+                    "A-23",
+                    "A-25",
+                    "A-27",
+                    "A-56",
+                    "A-87",
+                    "A-92",
+                    "A-95",
+                    "B-3",
+                    "B-37",
+                    "D-41",
+                    "AV-6"
+                ]
+            },
+            "undyne": {
+                "name": "Undyne",
+                "associations": [
+                    "A-26",
+                    "A-30",
+                    "A-32",
+                    "D-51",
+                    "D-52",
+                    "C-honksong"
+                ]
+            },
+            "undyne_variation": {
+                "name": "Undyne (Variation)",
+                "associations": [
+                    "undyne",
+                    "A-45",
+                    "A-46",
+                    "A-77",
+                    "A-95",
+                    "D-56",
+                    "D-58",
+                    "D-69"
+                ]
+            },
+            "waterfall": {
+                "name": "Waterfall",
+                "associations": [
+                    "ruins",
+                    "A-31",
+                    "A-51",
+                    "A-65",
+                    "A-68",
+                    "A-95"
+                ]
+            },
+            "another_medium": {
+                "name": "Another Medium",
+                "associations": [
+                    "A-51",
+                    "A-65",
+                    "A-68",
+                    "A-95"
+                ]
+            },
+            "alphys_A": {
+                "name": "Alphys (A)",
+                "associations": [
+                    "A-35",
+                    "A-48",
+                    "A-83"
+                ]
+            },
+            "alphys_B": {
+                "name": "Alphys (B)",
+                "associations": [
+                    "A-48",
+                    "A-83"
+                ]
+            },
+            "alphys_C": {
+                "name": "Alphys (C)",
+                "associations": [
+                    "A-48",
+                    "A-82",
+                    "A-83"
+                ]
+            },
+            "it_s_showtime_": {
+                "name": "Showtime",
+                "associations": [
+                    "A-49",
+                    "A-50",
+                    "A-57",
+                    "A-58",
+                    "A-68"
+                ]
+            },
+            "metal_crusher": {
+                "name": "Metal Crusher",
+                "associations": [
+                    "A-50",
+                    "A-66",
+                    "A-68",
+                    "C-honksong"
+                ]
+            },
+            "hotel": {
+                "name": "Hotel",
+                "associations": [
+                    "A-49",
+                    "A-54",
+                    "A-55",
+                    "A-64"
+                ]
+            },
+            "oh_": {
+                "name": "Oh!",
+                "associations": [
+                    "A-61",
+                    "A-62",
+                    "A-69"
+                ]
+            },
+            "asriel": {
+                "name": "Asriel",
+                "associations": [
+                    "A-34",
+                    "A-71",
+                    "A-73",
+                    "A-80",
+                    "A-90",
+                    "AV-3"
+                ]
+            },
+            "asgore": {
+                "name": "Asgore",
+                "associations": [
+                    "A-76",
+                    "A-77",
+                    "A-95",
+                    "E-22",
+                    "E-35"
+                ]
+            },
+            "your_best_nightmare": {
+                "name": "Your Best Nightmare",
+                "associations": [
+                    "A-78",
+                    "A-79",
+                    "A-88"
+                ]
+            },
+            "home": {
+                "name": "Home",
+                "associations": [
+                    "A-12",
+                    "A-13",
+                    "B-38",
+                    "C-44"
+                ]
+            },
+            "heartache": {
+                "name": "Heartache",
+                "associations": [
+                    "A-14",
+                    "A-77"
+                ]
+            },
+            "spooktune": {
+                "name": "Napstablook",
+                "associations": [
+                    "A-38",
+                    "A-39",
+                    "D-53",
+                    "E-32"
+                ]
+            },
+            "battle_against_a_true_hero": {
+                "name": "Battle Against a True Hero",
+                "associations": [
+                    "A-98",
+                    "A-99",
+                    "C-39"
+                ]
+            },
+            "dummy": {
+                "name": "Dummy",
+                "associations": [
+                    "A-36",
+                    "C-39"
+                ]
+            },
+            "mewmew": {
+                "name": "Mew Mew Kissy Cutie",
+                "subtitle": "Undertale - Nintendo Switch Trailer",
+                "associations": [
+                    "AV-4",
+                    "AV-5"
+                ]
+            },
+            "snowdin_town": {
+                "name": "Snowdin Town",
+                "associations": [
+                    "A-22",
+                    "D-41"
+                ]
+            },
+            "it_s_raining_somewhere_else": {
+                "name": "It's Raining Somewhere Else",
+                "associations": [
+                    "A-63",
+                    "D-70"
+                ]
+            },
+            "megalovania": {
+                "name": "Megalovania",
+                "associations": [
+                    "A-100",
+                    "AV-8",
+                    "AV-12"
+                ]
+            },
+            "mad_mew_mew": {
+                "name": "Mad Mew Mew",
+                "associations": [
+                    "A-104",
+                    "E-32"
+                ]
+            }
+        },
+        "deltarune": {
+            "don_t_forget_A": {
+                "name": "Don't Forget (A)",
+                "associations": [
+                    "B-2",
+                    "B-13",
+                    "B-19",
+                    "B-34",
+                    "B-39",
+                    "C-1",
+                    "C-36",
+                    "C-45",
+                    "D-40",
+                    "D-50",
+                    "D-57",
+                    "D-64",
+                    "D-74",
+                    "E-8",
+                    "E-11",
+                    "E-39"
+                ]
+            },
+            "don_t_forget_B": {
+                "name": "Don't Forget (B)",
+                "associations": [
+                    "B-2",
+                    "B-3",
+                    "B-13",
+                    "B-19",
+                    "B-33",
+                    "B-34",
+                    "B-36",
+                    "B-37",
+                    "B-38",
+                    "B-39",
+                    "C-1",
+                    "C-36",
+                    "C-44",
+                    "C-45",
+                    "D-40",
+                    "D-41",
+                    "D-42",
+                    "D-43",
+                    "D-49",
+                    "D-50",
+                    "D-57",
+                    "D-64",
+                    "D-68",
+                    "D-74",
+                    "E-5",
+                    "E-8",
+                    "E-11",
+                    "E-32",
+                    "E-33",
+                    "E-34",
+                    "E-39"
+                ]
+            },
+            "hometown": {
+                "name": "Hometown",
+                "associations": [
+                    "B-3",
+                    "B-37",
+                    "D-41"
+                ]
+            },
+            "the_door": {
+                "name": "The Door",
+                "associations": [
+                    "B-5",
+                    "B-7",
+                    "D-30",
+                    "E-35"
+                ]
+            },
+            "the_legend_A": {
+                "name": "The Legend (A)",
+                "associations": [
+                    "B-8",
+                    "C-3",
+                    "D-39",
+                    "D-49",
+                    "D-60",
+                    "D-73"
+                ]
+            },
+            "the_legend_B": {
+                "name": "The Legend (B)",
+                "associations": [
+                    "B-8",
+                    "B-11",
+                    "C-3",
+                    "D-39",
+                    "D-43",
+                    "D-49",
+                    "D-60",
+                    "D-63",
+                    "E-4"
+                ]
+            },
+            "the_legend_C": {
+                "name": "The Legend (C)",
+                "associations": [
+                    "B-8",
+                    "B-11",
+                    "B-30",
+                    "C-3"
+                ]
+            },
+            "lancer_A": {
+                "name": "Lancer (A)",
+                "associations": [
+                    "B-9",
+                    "B-16",
+                    "B-20",
+                    "B-21",
+                    "B-25",
+                    "B-30",
+                    "C-28",
+                    "D-9"
+                ]
+            },
+            "lancer_B": {
+                "name": "Lancer (B)",
+                "associations": [
+                    "B-9",
+                    "B-20",
+                    "B-21",
+                    "C-28",
+                    "C-29"
+                ]
+            },
+            "checker_dance": {
+                "name": "Checker Dance",
+                "associations": [
+                    "B-17",
+                    "E-2"
+                ]
+            },
+            "hip_shop": {
+                "name": "Hip Shop",
+                "associations": [
+                    "B-28",
+                    "D-14",
+                    "D-26",
+                    "D-32"
+                ]
+            },
+            "the_world_revolving_A": {
+                "name": "THE WORLD REVOLVING (A)",
+                "associations": [
+                    "B-33",
+                    "C-39",
+                    "D-58",
+                    "D-77",
+                    "E-2",
+                    "E-32"
+                ]
+            },
+            "the_world_revolving_B": {
+                "name": "THE WORLD REVOLVING (B) ",
+                "associations": [
+                    "B-32",
+                    "B-33",
+                    "C-41"
+                ]
+            },
+            "man": {
+                "name": "Forgotten Man",
+                "associations": [
+                    "B-man",
+                    "D-man_nes",
+                    "D-man_2"
+                ]
+            },
+            "lost_girl_A": {
+                "name": "Lost Girl (A)",
+                "associations": [
+                    "C-2",
+                    "C-30",
+                    "C-31",
+                    "D-20",
+                    "D-46"
+                ]
+            },
+            "lost_girl_B": {
+                "name": "Lost Girl (B)",
+                "associations": [
+                    "C-2",
+                    "C-30",
+                    "C-31"
+                ]
+            },
+            "queen_A": {
+                "name": "Queen (A)",
+                "associations": [
+                    "C-5",
+                    "C-7",
+                    "C-15",
+                    "C-20",
+                    "C-24",
+                    "C-26",
+                    "C-32",
+                    "C-33",
+                    "C-35"
+                ]
+            },
+            "queen_B": {
+                "name": "Queen (B)",
+                "associations": [
+                    "C-5",
+                    "C-24",
+                    "C-26"
+                ]
+            },
+            "queen_C": {
+                "name": "Queen (C)",
+                "associations": [
+                    "C-7",
+                    "C-20",
+                    "C-32",
+                    "C-33"
+                ]
+            },
+            "queen_D": {
+                "name": "Queen (D)",
+                "associations": [
+                    "C-20",
+                    "C-32"
+                ]
+            },
+            "sweet_cap_n_cakes_A": {
+                "name": "Sweet Cap'n Cakes (A)",
+                "associations": [
+                    "C-6",
+                    "C-8",
+                    "C-11",
+                    "C-12",
+                    "C-13",
+                    "C-17",
+                    "C-18"
+                ]
+            },
+            "sweet_cap_n_cakes_B": {
+                "name": "Sweet Cap'n Cakes (B)",
+                "associations": [
+                    "C-11",
+                    "C-13",
+                    "C-18",
+                    "C-19"
+                ]
+            },
+            "berdly_A": {
+                "name": "Berdly (A)",
+                "associations": [
+                    "C-14",
+                    "C-15",
+                    "C-25",
+                    "C-32",
+                    "C-35"
+                ]
+            },
+            "berdly_B": {
+                "name": "Berdly (B)",
+                "associations": [
+                    "C-14",
+                    "C-15",
+                    "C-25",
+                    "C-32"
+                ]
+            },
+            "hey_every_": {
+                "name": "HEY EVERY !",
+                "associations": [
+                    "C-21",
+                    "C-40",
+                    "D-2",
+                    "D-28",
+                    "D-32",
+                    "D-76"
+                ]
+            },
+            "spamton_A": {
+                "name": "Spamton (A)",
+                "associations": [
+                    "C-22",
+                    "C-23",
+                    "C-38",
+                    "C-39",
+                    "D-76",
+                    "D-77"
+                ]
+            },
+            "spamton_B": {
+                "name": "Spamton (B)",
+                "associations": [
+                    "C-23",
+                    "C-39",
+                    "D-76"
+                ]
+            },
+            "tenna": {
+                "name": "Tenna",
+                "associations": [
+                    "D-2",
+                    "D-3",
+                    "D-4",
+                    "D-5",
+                    "D-6",
+                    "D-7",
+                    "D-8",
+                    "D-12",
+                    "D-13",
+                    "D-16",
+                    "D-23",
+                    "D-24",
+                    "D-25",
+                    "D-26",
+                    "D-27",
+                    "D-33",
+                    "D-76"
+                ]
+            },
+            "dark_sanctuary": {
+                "name": "Dark Sanctuary",
+                "associations": [
+                    "D-49",
+                    "D-50",
+                    "D-55",
+                    "D-66",
+                    "D-67",
+                    "D-68",
+                    "D-72"
+                ]
+            },
+            "gerson": {
+                "name": "Gerson",
+                "associations": [
+                    "D-51",
+                    "D-56",
+                    "D-58",
+                    "D-69"
+                ]
+            },
+            "heavy_footsteps": {
+                "name": "Heavy Footsteps",
+                "associations": [
+                    "D-65",
+                    "D-66",
+                    "D-67"
+                ]
+            },
+            "the_dark_truth": {
+                "name": "Dark Truth",
+                "associations": [
+                    "B-23",
+                    "B-24",
+                    "C-36",
+                    "D-64",
+                    "D-72"
+                ]
+            },
+            "susie": {
+                "name": "Susie",
+                "associations": [
+                    "B-4",
+                    "B-24"
+                ]
+            },
+            "field_of_hopes_and_dreams": {
+                "name": "Field of Hopes and Dreams",
+                "associations": [
+                    "B-13",
+                    "B-19",
+                    "E-11",
+                    "E-39"
+                ]
+            },
+            "fanfare": {
+                "name": "Fanfare",
+                "associations": [
+                    "B-14",
+                    "D-28"
+                ]
+            },
+            "quiet_autumn": {
+                "name": "Quiet Autumn",
+                "associations": [
+                    "B-18",
+                    "B-19"
+                ]
+            },
+            "rouxls_kaard": {
+                "name": "Rouxls Kaard",
+                "associations": [
+                    "B-26",
+                    "C-29"
+                ]
+            },
+            "darkness_falls_A": {
+                "name": "Darkness Falls (A)",
+                "associations": [
+                    "B-31",
+                    "C-16",
+                    "AV-1"
+                ]
+            },
+            "darkness_falls_B": {
+                "name": "Darkness Falls (B)",
+                "associations": [
+                    "B-31",
+                    "C-16"
+                ]
+            },
+            "card_castle": {
+                "name": "Card Castle",
+                "associations": [
+                    "B-22",
+                    "B-25",
+                    "B-30"
+                ]
+            },
+            "the_holy_A": {
+                "name": "The Holy (A)",
+                "associations": [
+                    "B-35",
+                    "D-33",
+                    "D-48",
+                    "D-55",
+                    "AV-1"
+                ]
+            },
+            "the_holy_B": {
+                "name": "The Holy (B)",
+                "associations": [
+                    "B-35",
+                    "D-32"
+                ]
+            },
+            "the_holy_C": {
+                "name": "The Holy (C)",
+                "associations": [
+                    "B-35",
+                    "D-1"
+                ]
+            },
+            "cyber_world": {
+                "name": "Cyber World",
+                "associations": [
+                    "C-6",
+                    "C-17"
+                ]
+            },
+            "powers_combined": {
+                "name": "Powers Combined",
+                "associations": [
+                    "C-34",
+                    "C-35"
+                ]
+            },
+            "roots": {
+                "name": "Roots",
+                "associations": [
+                    "C-37",
+                    "D-36"
+                ]
+            },
+            "flashback": {
+                "name": "Flashback",
+                "associations": [
+                    "D-1",
+                    "D-34"
+                ]
+            },
+            "doom_board_melody": {
+                "name": "Doom Board (Melody)",
+                "associations": [
+                    "tenna",
+                    "D-24",
+                    "D-25",
+                    "D-27"
+                ]
+            },
+            "doom_board_bassline": {
+                "name": "Doom Board (Bassline)",
+                "associations": [
+                    "D-24",
+                    "D-25",
+                    "D-27"
+                ]
+            },
+            "king_of_rolypoly": {
+                "name": "KING OF ROLYPOLY",
+                "associations": [
+                    "D-21",
+                    "D-26",
+                    "D-27"
+                ]
+            },
+            "the_second_sanctuary": {
+                "name": "Second Sanctuary",
+                "associations": [
+                    "D-60",
+                    "D-63",
+                    "E-4"
+                ]
+            },
+            "mike": {
+                "name": "Mike",
+                "associations": [
+                    "D-20",
+                    "D-75",
+                    "D-76"
+                ]
+            },
+            "friends_A": {
+                "name": "Friends (A)",
+                "associations": [
+                    "D-42",
+                    "E-5",
+                    "E-8",
+                    "E-38"
+                ]
+            },
+            "friends_B": {
+                "name": "Friends (B)",
+                "associations": [
+                    "C-2",
+                    "D-42",
+                    "D-45",
+                    "E-5",
+                    "E-8",
+                    "E-38"
+                ]
+            },
+            "rude_buster": {
+                "name": "Rude Buster",
+                "associations": [
+                    "B-10",
+                    "B-15",
+                    "D-11",
+                    "D-15",
+                    "E-12"
+                ]
+            },
+            "flowery": {
+                "name": "Flowery",
+                "associations": [
+                    "E-10",
+                    "E-17",
+                    "E-19",
+                    "E-30",
+                    "E-34",
+                    "E-36",
+                    "E-37",
+                    "E-40"
+                ]
+            },
+            "six_flowers_A": {
+                "name": "Six Flowers (A)",
+                "associations": [
+                    "E-16",
+                    "E-17",
+                    "E-19",
+                    "E-24",
+                    "E-26",
+                    "E-27",
+                    "E-28",
+                    "E-34"
+                ]
+            },
+            "six_flowers_B": {
+                "name": "Six Flowers (B)",
+                "associations": [
+                    "E-16",
+                    "E-26",
+                    "E-27",
+                    "E-28"
+                ]
+            },
+            "shop_3": {
+                "name": "Shop 3",
+                "associations": [
+                    "E-20"
+                ]
+            },
+            "violet_tactics": {
+                "name": "Violet Tactics",
+                "associations": [
+                    "E-21",
+                    "E-23"
+                ]
+            },
+            "pink_A": {
+                "name": "Pink (A)",
+                "associations": [
+                    "E-26",
+                    "E-31",
+                    "E-32"
+                ]
+            },
+            "pink_B": {
+                "name": "Pink (B)",
+                "associations": [
+                    "E-31",
+                    "E-32"
+                ]
+            }
+        },
+        "external": {
+            "jingle_bells": {
+                "name": "Jingle Bells",
+                "associations": [
+                    "A-40",
+                    "C-19"
+                ]
+            }
+        }
+    }
+}

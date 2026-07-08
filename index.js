@@ -54,10 +54,12 @@ function refreshTree(newData) {
     // Handle ball creation.
     Object.entries(newData.tracks).forEach(([id, track]) => {
         balls[id] = new node(id, track).setRenderInfo(camera, searchCamera);
-        balls[id].resetStyle();
 
-        if (track.prefix) balls[id].prefix = track.prefix
-        if (track.subtitle) balls[id].subtitle = track.subtitle
+        const curBall = balls[id];
+        curBall.resetStyle();
+
+        if (track.prefix) curBall.prefix = track.prefix
+        if (track.subtitle) curBall.subtitle = track.subtitle
         if (track.leitmotifs) medleys[id] = track.leitmotifs
     });
 
@@ -67,10 +69,16 @@ function refreshTree(newData) {
         // if a motif is primarily found in one track, then we consider the motif to be the track itself.
         const motifID = subdata.id ??= motif;
         if (motifID == motif) balls[motifID] = new node(motifID, subdata).setRenderInfo(camera, searchCamera).resetStyle();
-        if (subdata.prefix) balls[motifID].prefix = subdata.prefix
-        if (subdata.subtitle) balls[motifID].subtitle = subdata.subtitle
+        const curBall = balls[motifID];
+
+        if (subdata.prefix) curBall.prefix = subdata.prefix
+        if (subdata.subtitle) curBall.subtitle = subdata.subtitle
+
         removeFrom(isolates, motifID);
-        balls[motifID].isIsolate = false;
+        curBall.isIsolate = false;
+
+        curBall.applyStyle("leitmotif");
+        if (subdata.style) curBall.applyStyle(subdata.style);
     });
 
     // Handle leitmotif connections.
@@ -79,15 +87,14 @@ function refreshTree(newData) {
         // leitmotifs to connect to each other without issue.
         const motifID = subdata.id ??= motif;
         const curBall = balls[motifID];
-        ballsMotifs[motif] = curBall;
-        curBall.applyStyle("leitmotif");
-        if (subdata.style) curBall.applyStyle(subdata.style);
 
         subdata.associations.forEach(id => {
             curBall.addChild(balls[id]);
             removeFrom(isolates, id);
             balls[id].isIsolate = false;
         });
+
+        curBall.reloadSearchTerms();
     });
 
     // Handle medley styles and connections.
@@ -106,20 +113,23 @@ function refreshTree(newData) {
 
     let allNames = {}
     Object.entries(newData.tracks).forEach(([id, track]) => {
-        if (balls[id].isIsolate) balls[id].applyStyle("isolate");
-        if (track.style) balls[id].applyStyle(track.style)
-        else if (track.isMinor) balls[id].applyStyle("minor")
+        const curBall = balls[id];
+        if (curBall.isIsolate) curBall.applyStyle("isolate");
+        if (track.style) curBall.applyStyle(track.style)
+        else if (track.isMinor) curBall.applyStyle("minor")
 
-        const lowerName = balls[id].name.toLowerCase();
+        const lowerName = curBall.name.toLowerCase();
         if (allNames[lowerName]) {
-            balls[id].shouldDisambiguate = true;
+            curBall.shouldDisambiguate = true;
             allNames[lowerName].shouldDisambiguate = true;
         }
-        allNames[lowerName] = balls[id];
+        allNames[lowerName] = curBall;
 
         Object.entries(newData.groups).forEach(([gID, group]) => {
-            if (id.startsWith(gID)) balls[id].applyGroup(group, gID);
+            if (id.startsWith(gID)) curBall.applyGroup(group, gID);
         });
+
+        curBall.reloadSearchTerms();
     });
 
     loadInitialSearch();
