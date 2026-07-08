@@ -3,7 +3,6 @@
     "description": "A leitmotif graph for UNDERTALE & DELTARUNE Chapters 1-4",
     "id": "utdr",
     "dependencies": [
-        ""
     ],
     "priority": 0,
     "styles": {

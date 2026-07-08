@@ -455,4 +455,6 @@ document.addEventListener("keyup", ({key}) => {
 });
 
 window.onload = (e) => raf = window.requestAnimationFrame(draw);
-loadJson("/utdr-leitmotif-graph.json", "/utdr-youtube.json", "/utdr-tracks.json");
+// loadJson("/utdr-leitmotif-graph.json", "/utdr-youtube.json", "/utdr-tracks.json");
+const UNDERTALE = new Namespace('undertale');
+UNDERTALE.loadJson("/utdr-leitmotif-graph.json", "/utdr-youtube.json", "/utdr-tracks.json");
