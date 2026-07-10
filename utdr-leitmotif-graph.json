@@ -1675,13 +1675,6 @@
                 "E-28"
             ]
         },
-        "shop_3": {
-            "name": "Shop 3",
-            "group": "deltarune",
-            "associations": [
-                "E-20"
-            ]
-        },
         "violet_tactics": {
             "name": "Violet Tactics",
             "group": "deltarune",
@@ -1704,14 +1697,6 @@
             "group": "deltarune",
             "associations": [
                 "E-31",
-                "E-32"
-            ]
-        },
-        "mad_mew_mew": {
-            "name": "Mad Mew Mew",
-            "group": "undertale",
-            "associations": [
-                "A-104",
                 "E-32"
             ]
         }
