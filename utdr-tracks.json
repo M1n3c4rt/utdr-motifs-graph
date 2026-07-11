@@ -5,10 +5,19 @@
         "doom_board_bassline": "motifs/doom_board_bass",
         "gerson": "motifs/gerson_placeholder",
         "roots": "motifs/roots",
-        "B-man": "unlisted/man",
+
         "C-honksong": "unlisted/honksong",
+
+        "B-dogcheck": "unlisted/dogcheck/dogcheck",
+        "C-dogcheck": "unlisted/dogcheck/alarm_titlescreen",
+        "D-dogcheck": "unlisted/dogcheck/annoying_prophecy",
+        "E-dogcheck": "unlisted/dogcheck/inukuma_wip",
+
+        "B-man": "unlisted/man",
         "D-man_nes": "unlisted/man_nes",
         "D-man_2": "unlisted/man_2",
+        "E-man": "unlisted/deltarune_piano_collections_by_trevor_alan_gomes",
+
         "D-kris_sevenfour": "unlisted/krispiano/sevenfour",
         "D-kris_quiz": "unlisted/krispiano/quiz",
         "D-kris_lancer_waltz": "unlisted/krispiano/lancer_waltz",

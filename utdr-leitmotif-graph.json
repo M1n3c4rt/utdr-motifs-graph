@@ -47,7 +47,7 @@
             ]
         },
         "B-": {
-            "name": "Deltarune Chapter 1",
+            "name": "DELTARUNE Chapter 1",
             "prefix": "DR-1",
             "style": "deltarune",
             "searchTerms": [
@@ -58,7 +58,7 @@
             ]
         },
         "C-": {
-            "name": "Deltarune Chapter 2",
+            "name": "DELTARUNE Chapter 2",
             "prefix": "DR-2",
             "style": "deltarune",
             "searchTerms": [
@@ -70,7 +70,7 @@
             ]
         },
         "D-": {
-            "name": "Deltarune Chapters 3&4",
+            "name": "DELTARUNE Chapters 3&4",
             "prefix": "DR-3&4",
             "style": "deltarune",
             "searchTerms": [
@@ -88,7 +88,7 @@
             ]
         },
         "E-": {
-            "name": "Deltarune Chapter 5",
+            "name": "DELTARUNE Chapter 5",
             "prefix": "DR-5",
             "style": "deltarune",
             "searchTerms": [
@@ -117,7 +117,7 @@
             ]
         },
         "deltarune": {
-            "name": "Deltarune",
+            "name": "DELTARUNE",
             "prefix": "DR",
             "searchTerms": [
                 "dr",
@@ -284,7 +284,15 @@
         },
         "B-39": "Don't Forget",
         "B-40": "Before the Story",
-        "B-man": "man.ogg",
+        "B-man": {
+            "name": "man.ogg",
+            "searchTerms": [ "man" ]
+        },
+        "B-dogcheck": {
+            "name": "Dogcheck",
+            "prefix": "DR-1 Dogcheck",
+            "subtitle": "DELTARUNE Chapter 1 Dogcheck"
+        },
         "C-1": "Faint Glow",
         "C-2": "Girl Next Door",
         "C-3": "My Castle Town",
@@ -337,6 +345,11 @@
         "C-46": "Before The Story",
         "C-47": "Berdly (Rejected Concept)",
         "C-honksong": "honksong.ogg",
+        "C-dogcheck": {
+            "name": "alarm_titlescreen.ogg",
+            "prefix": "DR-2 Dogcheck",
+            "subtitle": "DELTARUNE Chapter 2 Dogcheck"
+        },
         "D-1": "Flashback (Excerpt)",
         "D-2": "Feature Presentation",
         "D-3": "And Now For Today's Sponsors…!",
@@ -359,7 +372,10 @@
         "D-20": "Raise Up Your Bat",
         "D-21": "KING OF ROLYPOLY",
         "D-22": "Glowing Snow",
-        "D-23": "Big City Board",
+        "D-23": {
+            "name": "Big City Board",
+            "prefix": "DR-3 Dogcheck"
+        },
         "D-24": "Doom Board",
         "D-25": "Metaphysical Challenge",
         "D-26": "TV WORLD",
@@ -421,8 +437,18 @@
         "D-76": "Catswing",
         "D-77": "Air Waves",
         "D-78": "Concert for you",
-        "D-man_nes": "man_nes.ogg",
-        "D-man_2": "man_2.ogg",
+        "D-man_nes": {
+            "name": "man_nes.ogg",
+            "prefix": "DR-3",
+            "subtitle": "DELTARUNE Chapter 3",
+            "searchTerms": [ "man" ]
+        },
+        "D-man_2": {
+            "name": "man_2.ogg",
+            "prefix": "DR-4",
+            "subtitle": "DELTARUNE Chapter 4",
+            "searchTerms": [ "man" ]
+        },
         "D-kris_sevenfour": "kris_piano_sevenfour.ogg",
         "D-kris_quiz": {
             "name": "kris_piano_quiz.ogg",
@@ -460,6 +486,11 @@
             ]
         },
         "D-kris_last_prophecy": "kris_piano_last_prophecy.ogg",
+        "D-dogcheck": {
+            "name": "annoying_prophecy.ogg",
+            "prefix": "DR-4 Dogcheck",
+            "subtitle": "DELTARUNE Chapter 4 Dogcheck"
+        },
         "E-1": "Chapter 5 Logo",
         "E-2": "Inappropriate Recycling",
         "E-3": "Pirate Dojo",
@@ -527,6 +558,16 @@
             "subtitle": "DELTARUNE Chapter 5 + Piano Collections, Vol. 1"
         },
         "E-40": "Goodnight, Sweet Prince",
+        "E-man": {
+            "name": "deltarune_piano_collections_by_trevor_alan_gomes.ogg",
+            "subtitle": "Scarlet Forest - DELTARUNE Chapter 5 + Piano Collections, Vol. 1",
+            "searchTerms": [ "man" ]
+        },
+        "E-dogcheck": {
+            "name": "inukuma_wip.ogg",
+            "prefix": "DR-5 Dogcheck",
+            "subtitle": "DELTARUNE Chapter 5 Dogcheck"
+        },
         "AV-1": "Abandoned Town",
         "AV-2": "Doghole",
         "AV-3": {
@@ -598,7 +639,8 @@
                 "A-85",
                 "A-92",
                 "A-96",
-                "AV-5"
+                "AV-5",
+                "B-dogcheck"
             ]
         },
         "once_upon_a_time_C": {
@@ -720,7 +762,9 @@
                 "A-21",
                 "A-43",
                 "A-44",
-                "C-honksong"
+                "B-dogcheck",
+                "C-honksong",
+                "E-dogcheck"
             ]
         },
         "ghost_fight_A": {
@@ -1075,6 +1119,7 @@
                 "B-37",
                 "B-38",
                 "B-39",
+                "B-dogcheck",
                 "C-1",
                 "C-36",
                 "C-44",
@@ -1398,7 +1443,8 @@
                 "D-66",
                 "D-67",
                 "D-68",
-                "D-72"
+                "D-72",
+                "D-dogcheck"
             ]
         },
         "gerson": {
@@ -1462,7 +1508,8 @@
             "group": "deltarune",
             "associations": [
                 "B-18",
-                "B-19"
+                "B-19",
+                "E-man"
             ]
         },
         "rouxls_kaard": {

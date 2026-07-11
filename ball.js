@@ -116,11 +116,11 @@ class node {
         this.searchTerms = [
             {
                 weight: 1,
-                terms: [this.id, this.name, this.prefix]
+                terms: [this.name, this.prefix]
             },
             {
                 weight: 0.75,
-                terms: [this.group?.name ?? this.name, this.group?.style ?? this.name]
+                terms: [this.id, this.group?.name ?? this.name, this.group?.style ?? this.name]
             },
             {
                 weight: 0.75,
