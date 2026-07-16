@@ -240,6 +240,17 @@
             ]
         },
         "A-108": "Before the Story",
+        "A-mus_snoresymphony": "mus_snoresymphony",
+        "A-mus_dogshrine_xbox": "Dog Shrine (XBOX)",
+        "A-mus_sfx_dogseal": "mus_sfx_dogseal",
+        "A-mus_dance_of_dog": "mus_dance_of_dog",
+        "A-mus_sigh_of_dog": "mus_sigh_of_dog",
+        "A-mus_annoying_dog_ps4": "Annoying Dog PS4 Theme",
+        "A-snd_grandpatemi": "snd_grandpatemi",
+        "A-happy_town": "Happy Town",
+        "A-meat_factory": "Meat Factory",
+        "A-trouble_dingle": "Trouble Dingle",
+        "A-gaster_s_theme": "Gaster's Theme",
         "B-1": "ANOTHER HIM",
         "B-2": "Beginning",
         "B-3": {
@@ -293,6 +304,8 @@
             "prefix": "DR-1 Dogcheck",
             "subtitle": "DELTARUNE Chapter 1 Dogcheck"
         },
+        "B-snd_ralseising1": "snd_ralseising1",
+        "B-snd_ralseising2": "snd_ralseising2",
         "C-1": "Faint Glow",
         "C-2": "Girl Next Door",
         "C-3": "My Castle Town",
@@ -491,6 +504,10 @@
             "prefix": "DR-4 Dogcheck",
             "subtitle": "DELTARUNE Chapter 4 Dogcheck"
         },
+        "D-lancer_annoying": "lancer_annoying",
+        "D-smallpiano_room": "smallpiano_room",
+        "D-snd_act_perform": "snd_act_perform",
+        "D-snd_act_perform_better": "snd_act_perform_better",
         "E-1": "Chapter 5 Logo",
         "E-2": "Inappropriate Recycling",
         "E-3": "Pirate Dojo",
@@ -567,6 +584,19 @@
             "name": "inukuma_wip.ogg",
             "prefix": "DR-5 Dogcheck",
             "subtitle": "DELTARUNE Chapter 5 Dogcheck"
+        },
+        "E-dog_balloon": "dog_balloon",
+        "E-ch5_trailer": "DELTARUNE Chapter 5 Trailer Music",
+        "E-stealth": "stealth",
+        "E-ch5_weird_monologue_deep": "ch5_weird_monologue_deep",
+        "E-meeting_flower_upbeat_drum": "meeting_flower_upbeat_drum",
+        "E-asgore_serious_drums_only_flowery_version": "asgore_serious_drums_only_flowery_version",
+        "E-happy_town": {
+            "name": "happy_town",
+            "leitmotifs": [
+                "B-37",
+                "D-47"
+            ]
         },
         "AV-1": "Abandoned Town",
         "AV-2": "Doghole",
@@ -762,9 +792,13 @@
                 "A-21",
                 "A-43",
                 "A-44",
+                "A-mus_dogshrine_xbox",
+                "A-mus_sfx_dogseal",
+                "A-mus_annoying_dog_ps4",
                 "B-dogcheck",
                 "C-honksong",
-                "E-dogcheck"
+                "E-dogcheck",
+                "E-dog_balloon"
             ]
         },
         "ghost_fight_A": {
@@ -795,6 +829,7 @@
             "associations": [
                 "A-11",
                 "A-77",
+                "A-mus_snoresymphony",
                 "AV-7"
             ]
         },
@@ -943,6 +978,7 @@
                 "A-50",
                 "A-66",
                 "A-68",
+                "A-snd_grandpatemi",
                 "C-honksong"
             ]
         },
@@ -1102,7 +1138,8 @@
                 "D-74",
                 "E-8",
                 "E-11",
-                "E-39"
+                "E-39",
+                "E-ch5_trailer"
             ]
         },
         "don_t_forget_B": {
@@ -1140,7 +1177,8 @@
                 "E-32",
                 "E-33",
                 "E-34",
-                "E-39"
+                "E-39",
+                "E-ch5_trailer"
             ]
         },
         "hometown": {
@@ -1180,6 +1218,8 @@
             "associations": [
                 "B-8",
                 "B-11",
+                "B-snd_ralseising1",
+                "B-snd_ralseising2",
                 "C-3",
                 "D-39",
                 "D-43",
@@ -1210,7 +1250,8 @@
                 "B-25",
                 "B-30",
                 "C-28",
-                "D-9"
+                "D-9",
+                "D-lancer_annoying"
             ]
         },
         "lancer_B": {
@@ -1221,7 +1262,8 @@
                 "B-20",
                 "B-21",
                 "C-28",
-                "C-29"
+                "C-29",
+                "D-lancer_annoying"
             ]
         },
         "checker_dance": {
@@ -1280,7 +1322,8 @@
                 "C-30",
                 "C-31",
                 "D-20",
-                "D-46"
+                "D-46",
+                "E-stealth"
             ]
         },
         "lost_girl_B": {
@@ -1444,7 +1487,10 @@
                 "D-67",
                 "D-68",
                 "D-72",
-                "D-dogcheck"
+                "D-dogcheck",
+                "D-smallpiano_room",
+                "D-snd_act_perform",
+                "D-snd_act_perform_better"
             ]
         },
         "gerson": {
@@ -1602,7 +1648,8 @@
             "group": "deltarune",
             "associations": [
                 "D-1",
-                "D-34"
+                "D-34",
+                "E-ch5_weird_monologue_deep"
             ]
         },
         "doom_board_melody": {
@@ -1648,7 +1695,8 @@
             "associations": [
                 "D-20",
                 "D-75",
-                "D-76"
+                "D-76",
+                "E-stealth"
             ]
         },
         "friends_A": {
@@ -1695,7 +1743,8 @@
                 "E-34",
                 "E-36",
                 "E-37",
-                "E-40"
+                "E-40",
+                "E-asgore_serious_drums_only_flowery_version"
             ]
         },
         "six_flowers_A": {
@@ -1709,7 +1758,8 @@
                 "E-26",
                 "E-27",
                 "E-28",
-                "E-34"
+                "E-34",
+                "E-meeting_flower_upbeat_drum"
             ]
         },
         "six_flowers_B": {
@@ -1719,7 +1769,8 @@
                 "E-16",
                 "E-26",
                 "E-27",
-                "E-28"
+                "E-28",
+                "E-meeting_flower_upbeat_drum"
             ]
         },
         "violet_tactics": {
