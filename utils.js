@@ -51,7 +51,11 @@ function fileExists(url)
 {
     var http = new XMLHttpRequest();
     http.open('HEAD', url, false);
-    http.send();
+    try {
+        http.send();   
+    } catch (error) {
+        // frick all 
+    }
     return http.status == 200;
 }
 // test comment testtesttest yayyyy
