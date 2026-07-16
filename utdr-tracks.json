@@ -6,7 +6,32 @@
         "gerson": "motifs/gerson_placeholder",
         "roots": "motifs/roots",
 
+        "A-mus_snoresymphony": "unlisted/mus_snoresymphony",
+        "A-mus_dogshrine_xbox": "unlisted/mus_dogshrine_xbox",
+        "A-mus_sfx_dogseal": "unlisted/mus_sfx_dogseal",
+        "A-mus_dance_of_dog": "unlisted/mus_dance_of_dog",
+        "A-mus_sigh_of_dog": "unlisted/mus_sigh_of_dog",
+        "A-snd_grandpatemi": "unlisted/snd_grandpatemi",
+
+        "A-happy_town": "unlisted/mus_st_happytown",
+        "A-meat_factory": "unlisted/mus_st_meatfactory",
+        "A-trouble_dingle": "unlisted/mus_st_trouble_dingle",
+        "A-gaster_s_theme": "unlisted/mus_st_him",
+
+        "B-snd_ralseising1": "unlisted/snd_ralseising1",
+        "B-snd_ralseising2": "unlisted/snd_ralseising2",
         "C-honksong": "unlisted/honksong",
+        "D-smallpiano_room": "unlisted/smallpiano_room",
+        "D-snd_act_perform": "unlisted/snd_act_perform",
+        "D-snd_act_perform_better": "unlisted/snd_act_perform_better",
+        "D-lancer_annoying": "unlisted/lancer_annoying",
+        "E-stealth": "unlisted/stealth",
+        "E-ch5_weird_monologue_deep": "unlisted/ch5_weird_monologue_deep",
+        "E-meeting_flower_upbeat_drum": "unlisted/meeting_flower_upbeat_drum",
+        "E-asgore_serious_drums_only_flowery_version": "unlisted/asgore_serious_drums_only_flowery_version",
+        "E-happy_town": "unlisted/happy_town",
+
+        "E-ch5_trailer": "unlisted/ch5_trailer",
 
         "B-dogcheck": "unlisted/dogcheck/dogcheck",
         "C-dogcheck": "unlisted/dogcheck/alarm_titlescreen",
@@ -17,6 +42,9 @@
         "D-man_nes": "unlisted/man_nes",
         "D-man_2": "unlisted/man_2",
         "E-man": "unlisted/deltarune_piano_collections_by_trevor_alan_gomes",
+
+        "E-dog_balloon": "unlisted/dog_balloon",
+        "A-annoying_dog_ps4": "unlisted/mus_annoying_dog_ps4",
 
         "D-kris_sevenfour": "unlisted/krispiano/sevenfour",
         "D-kris_quiz": "unlisted/krispiano/quiz",
