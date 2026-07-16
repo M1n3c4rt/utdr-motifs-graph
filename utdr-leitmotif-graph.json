@@ -898,23 +898,15 @@
                 "A-26",
                 "A-30",
                 "A-32",
-                "D-51",
-                "D-52",
-                "C-honksong"
-            ]
-        },
-        "undyne_variation": {
-            "name": "Undyne (Variation)",
-            "group": "undertale",
-            "associations": [
-                "undyne",
                 "A-45",
                 "A-46",
                 "A-77",
                 "A-95",
-                "D-56",
+                "D-51",
+                "D-52",
                 "D-58",
-                "D-69"
+                "D-69",
+                "C-honksong"
             ]
         },
         "waterfall": {
