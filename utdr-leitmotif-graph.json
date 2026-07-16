@@ -583,14 +583,18 @@
         "E-dogcheck": {
             "name": "inukuma_wip.ogg",
             "prefix": "DR-5 Dogcheck",
-            "subtitle": "DELTARUNE Chapter 5 Dogcheck"
+            "subtitle": "DELTARUNE Chapter 5 Dogcheck",
+            "searchTerms": [ "danganronpa", "monokuma" ]
         },
         "E-dog_balloon": "dog_balloon.ogg",
         "E-ch5_trailer": "DELTARUNE Chapter 5 Trailer Music",
         "E-stealth": "stealth.ogg",
         "E-ch5_weird_monologue_deep": "ch5_weird_monologue_deep.ogg",
         "E-meeting_flower_upbeat_drum": "meeting_flower_upbeat_drum.ogg",
-        "E-asgore_serious_drum_only_flowery_version": "asgore_serious_drum_only_flowery_version.ogg",
+        "E-asgore_serious_drum_only_flowery_version": {
+            "name": "asgore_serious_drum_only_flowery_version.ogg",
+            "searchTerms": [ "Flower King", "E-22" ]
+        },
         "E-happy_town": {
             "name": "happy_town.ogg",
             "style": "rendition",
