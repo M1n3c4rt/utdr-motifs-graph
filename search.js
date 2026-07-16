@@ -72,18 +72,20 @@ async function playBallTrack(ball) {
         trackContainer.currentTime = 0;
         trackContainer.play();
     } else {
-        for (i in trackLoadAttempt) {
-            const trackURL = "assets/tracks/" + trackLoadAttempt[i] + "/" + ball.id + ".ogg";
-            if (fileExists(trackURL)) {
-                trackIntegration.setAttribute("src", trackURL);
-
-                trackContainer.load();
-                youtube.setAttribute("src", "");
-
-                if (trackContainer.volume == 1) trackContainer.volume = 0.3;
-                trackContainer.currentTime = 0;
-                trackContainer.play();
-                break;
+        for (i in fileExtAttempt) {
+            for (j in trackLoadAttempt) {
+                const trackURL = "assets/tracks/" + trackLoadAttempt[j] + "/" + ball.id + fileExtAttempt[i];
+                if (fileExists(trackURL)) {
+                    trackIntegration.setAttribute("src", trackURL);
+    
+                    trackContainer.load();
+                    youtube.setAttribute("src", "");
+    
+                    if (trackContainer.volume == 1) trackContainer.volume = 0.3;
+                    trackContainer.currentTime = 0;
+                    trackContainer.play();
+                    break;
+                }
             }
         }
     }
