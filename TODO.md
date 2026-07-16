@@ -24,3 +24,6 @@
     - (X) Another Medium should connect to Ruins (motif) and not Ruins (song)
     - (X) Undyne and Ruins (variations) should connect to their respective original motifs
     - (X) An Ending should connect to Ruins as well as Ruins (variation)
+    - Merge Undyne and Undyne (Variation)
+    - Add Don't Forget B to Crumbling Tower
+    - Circus should connect to THE WORLD REVOLVING A instead of B (wait on wiki for this one)

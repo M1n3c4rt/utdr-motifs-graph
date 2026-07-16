@@ -46,6 +46,7 @@ function freyalerp(from, to, halftime, deltaTime) {
 }
 
 const trackLoadAttempt = [ "motifs" /*, "unlisted"*/ ];
+const fileExtAttempt = [ ".ogg", ".wav", ".mp3", ".ogx"];
 function fileExists(url)
 {
     var http = new XMLHttpRequest();

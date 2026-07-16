@@ -58,7 +58,13 @@ async function playBallTrack(ball) {
         trackIntegration.setAttribute("src", "");
         trackContainer.pause();
     } else if (ball.trackEmbed) {
-        trackIntegration.setAttribute("src", "assets/tracks/" + ball.trackEmbed.id + ".ogg");
+        for (i in fileExtAttempt) {
+            const trackURL = "assets/tracks/" + ball.trackEmbed.id + fileExtAttempt[i]
+            if (fileExists(trackURL)) {
+                trackIntegration.setAttribute("src", trackURL);
+                break;
+            };
+        }
         youtube.setAttribute("src", "");
 
         trackContainer.load();
